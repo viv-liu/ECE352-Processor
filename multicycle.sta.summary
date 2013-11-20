@@ -1,0 +1,53 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow Model Setup 'KEY[1]'
+Slack : -6.514
+TNS   : -395.299
+
+Type  : Slow Model Setup 'FSMExecute:FSMExecute|stop_operation_finished'
+Slack : -1.582
+TNS   : -10.305
+
+Type  : Slow Model Hold 'KEY[1]'
+Slack : -2.473
+TNS   : -27.932
+
+Type  : Slow Model Hold 'FSMExecute:FSMExecute|stop_operation_finished'
+Slack : 0.919
+TNS   : 0.000
+
+Type  : Slow Model Minimum Pulse Width 'KEY[1]'
+Slack : -2.000
+TNS   : -366.222
+
+Type  : Slow Model Minimum Pulse Width 'FSMExecute:FSMExecute|stop_operation_finished'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Fast Model Setup 'KEY[1]'
+Slack : -2.303
+TNS   : -135.708
+
+Type  : Fast Model Setup 'FSMExecute:FSMExecute|stop_operation_finished'
+Slack : -0.253
+TNS   : -1.275
+
+Type  : Fast Model Hold 'KEY[1]'
+Slack : -1.516
+TNS   : -22.988
+
+Type  : Fast Model Hold 'FSMExecute:FSMExecute|stop_operation_finished'
+Slack : 0.495
+TNS   : 0.000
+
+Type  : Fast Model Minimum Pulse Width 'KEY[1]'
+Slack : -2.000
+TNS   : -366.222
+
+Type  : Fast Model Minimum Pulse Width 'FSMExecute:FSMExecute|stop_operation_finished'
+Slack : 0.500
+TNS   : 0.000
+
+------------------------------------------------------------
