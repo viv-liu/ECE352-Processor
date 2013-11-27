@@ -1,5 +1,5 @@
 Analysis & Synthesis report for multicycle
-Tue Nov 26 16:28:28 2013
+Tue Nov 26 22:10:27 2013
 Quartus II 32-bit Version 11.1 Build 259 01/25/2012 Service Pack 2 SJ Web Edition
 
 
@@ -19,7 +19,7 @@ Quartus II 32-bit Version 11.1 Build 259 01/25/2012 Service Pack 2 SJ Web Editio
  11. General Register Statistics
  12. Inverted Register Statistics
  13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Source assignments for memory:DataMem|DualMem:inst|altsyncram:altsyncram_component|altsyncram_up82:auto_generated
+ 14. Source assignments for memory:DataMem|DualMem:inst|altsyncram:altsyncram_component|altsyncram_pv82:auto_generated
  15. Parameter Settings for User Entity Instance: Top-level Entity: |multicycle
  16. Parameter Settings for User Entity Instance: FSMExecute:FSMExecute
  17. Parameter Settings for User Entity Instance: FSMWB:FSMWB
@@ -30,20 +30,25 @@ Quartus II 32-bit Version 11.1 Build 259 01/25/2012 Service Pack 2 SJ Web Editio
  22. Parameter Settings for User Entity Instance: zExtend:ZE5
  23. altsyncram Parameter Settings by Entity Instance
  24. Port Connectivity Checks: "register_8bit:ALUOut_reg"
- 25. Port Connectivity Checks: "register_8bit:R2"
- 26. Port Connectivity Checks: "register_8bit:R1"
- 27. Port Connectivity Checks: "ALU:PC_ALU"
- 28. Port Connectivity Checks: "register_8bit:PC3"
- 29. Port Connectivity Checks: "register_8bit:PC2"
- 30. Port Connectivity Checks: "register_8bit:PC1"
- 31. Port Connectivity Checks: "register_8bit_ir:IR3_reg"
- 32. Port Connectivity Checks: "register_8bit_ir:IR2_reg"
- 33. Port Connectivity Checks: "register_8bit_ir:IR1_reg"
- 34. Port Connectivity Checks: "mux5to1_8bit:ALU_in2_mux"
- 35. Port Connectivity Checks: "mux5to1_8bit:ALU_in1_mux"
- 36. Port Connectivity Checks: "FSMExecute:FSMExecute"
- 37. Elapsed Time Per Partition
- 38. Analysis & Synthesis Messages
+ 25. Port Connectivity Checks: "mux4to1_8bit:R2_in_BP_mux"
+ 26. Port Connectivity Checks: "mux4to1_8bit:R1_in_BP_mux"
+ 27. Port Connectivity Checks: "register_8bit:R2"
+ 28. Port Connectivity Checks: "register_8bit:R1"
+ 29. Port Connectivity Checks: "ALU:PC_ALU"
+ 30. Port Connectivity Checks: "register_8bit:PC2"
+ 31. Port Connectivity Checks: "register_8bit:PC1"
+ 32. Port Connectivity Checks: "register_8bit_ir:IR3_reg"
+ 33. Port Connectivity Checks: "register_8bit_ir:IR2_reg"
+ 34. Port Connectivity Checks: "register_8bit_ir:IR1_reg"
+ 35. Port Connectivity Checks: "mux5to1_8bit:ALU_in2_mux"
+ 36. Port Connectivity Checks: "mux5to1_8bit:ALU_in1_mux"
+ 37. Port Connectivity Checks: "mux4to1_8bit:ALU_in2_BP_mux"
+ 38. Port Connectivity Checks: "mux4to1_8bit:ALU_in1_BP_mux"
+ 39. Port Connectivity Checks: "mux4to1_8bit:DataMem_address_BP_mux"
+ 40. Port Connectivity Checks: "mux4to1_8bit:DataMem_data_BP_mux"
+ 41. Port Connectivity Checks: "FSMExecute:FSMExecute"
+ 42. Elapsed Time Per Partition
+ 43. Analysis & Synthesis Messages
 
 
 
@@ -69,15 +74,15 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                       ;
 +------------------------------------+-----------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Nov 26 16:28:28 2013         ;
+; Analysis & Synthesis Status        ; Successful - Tue Nov 26 22:10:27 2013         ;
 ; Quartus II 32-bit Version          ; 11.1 Build 259 01/25/2012 SP 2 SJ Web Edition ;
 ; Revision Name                      ; multicycle                                    ;
 ; Top-level Entity Name              ; multicycle                                    ;
 ; Family                             ; Cyclone II                                    ;
-; Total logic elements               ; 402                                           ;
-;     Total combinational functions  ; 333                                           ;
-;     Dedicated logic registers      ; 129                                           ;
-; Total registers                    ; 129                                           ;
+; Total logic elements               ; 465                                           ;
+;     Total combinational functions  ; 418                                           ;
+;     Dedicated logic registers      ; 121                                           ;
+; Total registers                    ; 121                                           ;
 ; Total pins                         ; 88                                            ;
 ; Total virtual pins                 ; 0                                             ;
 ; Total memory bits                  ; 2,048                                         ;
@@ -206,8 +211,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; altrom.inc                       ; yes             ; Megafunction                           ; c:/altera/11.1sp2/quartus/libraries/megafunctions/altrom.inc             ;
 ; altram.inc                       ; yes             ; Megafunction                           ; c:/altera/11.1sp2/quartus/libraries/megafunctions/altram.inc             ;
 ; altdpram.inc                     ; yes             ; Megafunction                           ; c:/altera/11.1sp2/quartus/libraries/megafunctions/altdpram.inc           ;
-; db/altsyncram_up82.tdf           ; yes             ; Auto-Generated Megafunction            ; Z:/processor_v3_verilogReset/processor_v3_verilog/db/altsyncram_up82.tdf ;
-; trial2.mif                       ; yes             ; Auto-Found Memory Initialization File  ; Z:/processor_v3_verilogReset/processor_v3_verilog/trial2.mif             ;
+; db/altsyncram_pv82.tdf           ; yes             ; Auto-Generated Megafunction            ; Z:/processor_v3_verilogReset/processor_v3_verilog/db/altsyncram_pv82.tdf ;
+; wk4test2.mif                     ; yes             ; Auto-Found Memory Initialization File  ; Z:/processor_v3_verilogReset/processor_v3_verilog/wk4test2.mif           ;
 +----------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------+
 
 
@@ -216,28 +221,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+--------+
 ; Resource                                    ; Usage  ;
 +---------------------------------------------+--------+
-; Estimated Total logic elements              ; 402    ;
+; Estimated Total logic elements              ; 465    ;
 ;                                             ;        ;
-; Total combinational functions               ; 333    ;
+; Total combinational functions               ; 418    ;
 ; Logic element usage by number of LUT inputs ;        ;
-;     -- 4 input functions                    ; 189    ;
-;     -- 3 input functions                    ; 108    ;
-;     -- <=2 input functions                  ; 36     ;
+;     -- 4 input functions                    ; 239    ;
+;     -- 3 input functions                    ; 116    ;
+;     -- <=2 input functions                  ; 63     ;
 ;                                             ;        ;
 ; Logic elements by mode                      ;        ;
-;     -- normal mode                          ; 298    ;
+;     -- normal mode                          ; 383    ;
 ;     -- arithmetic mode                      ; 35     ;
 ;                                             ;        ;
-; Total registers                             ; 129    ;
-;     -- Dedicated logic registers            ; 129    ;
+; Total registers                             ; 121    ;
+;     -- Dedicated logic registers            ; 121    ;
 ;     -- I/O registers                        ; 0      ;
 ;                                             ;        ;
 ; I/O pins                                    ; 88     ;
 ; Total memory bits                           ; 2048   ;
 ; Maximum fan-out node                        ; KEY[1] ;
-; Maximum fan-out                             ; 137    ;
-; Total fan-out                               ; 1822   ;
-; Average fan-out                             ; 3.27   ;
+; Maximum fan-out                             ; 129    ;
+; Total fan-out                               ; 2126   ;
+; Average fan-out                             ; 3.35   ;
 +---------------------------------------------+--------+
 
 
@@ -246,10 +251,10 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                    ; Library Name ;
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------+--------------+
-; |multicycle                                  ; 333 (34)          ; 129 (18)     ; 2048        ; 0            ; 0       ; 0         ; 88   ; 0            ; |multicycle                                                                                            ;              ;
+; |multicycle                                  ; 418 (34)          ; 121 (18)     ; 2048        ; 0            ; 0       ; 0         ; 88   ; 0            ; |multicycle                                                                                            ;              ;
 ;    |ALU:ALU|                                 ; 79 (79)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multicycle|ALU:ALU                                                                                    ;              ;
-;    |DataHazardControl:DataHazardControl|     ; 26 (26)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multicycle|DataHazardControl:DataHazardControl                                                        ;              ;
-;    |FSMExecute:FSMExecute|                   ; 22 (22)           ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multicycle|FSMExecute:FSMExecute                                                                      ;              ;
+;    |DataHazardControl:DataHazardControl|     ; 46 (46)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multicycle|DataHazardControl:DataHazardControl                                                        ;              ;
+;    |FSMExecute:FSMExecute|                   ; 24 (24)           ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multicycle|FSMExecute:FSMExecute                                                                      ;              ;
 ;    |FSMWB:FSMWB|                             ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multicycle|FSMWB:FSMWB                                                                                ;              ;
 ;    |HEXs:HEX_display|                        ; 56 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multicycle|HEXs:HEX_display                                                                           ;              ;
 ;       |HEX:hex0|                             ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multicycle|HEXs:HEX_display|HEX:hex0                                                                  ;              ;
@@ -260,39 +265,40 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;       |HEX:hex5|                             ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multicycle|HEXs:HEX_display|HEX:hex5                                                                  ;              ;
 ;       |HEX:hex6|                             ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multicycle|HEXs:HEX_display|HEX:hex6                                                                  ;              ;
 ;       |HEX:hex7|                             ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multicycle|HEXs:HEX_display|HEX:hex7                                                                  ;              ;
-;    |RF:RF_block|                             ; 36 (36)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multicycle|RF:RF_block                                                                                ;              ;
+;    |RF:RF_block|                             ; 4 (4)             ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multicycle|RF:RF_block                                                                                ;              ;
 ;    |memory:DataMem|                          ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |multicycle|memory:DataMem                                                                             ;              ;
 ;       |DualMem:inst|                         ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |multicycle|memory:DataMem|DualMem:inst                                                                ;              ;
 ;          |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |multicycle|memory:DataMem|DualMem:inst|altsyncram:altsyncram_component                                ;              ;
-;             |altsyncram_up82:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |multicycle|memory:DataMem|DualMem:inst|altsyncram:altsyncram_component|altsyncram_up82:auto_generated ;              ;
+;             |altsyncram_pv82:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |multicycle|memory:DataMem|DualMem:inst|altsyncram:altsyncram_component|altsyncram_pv82:auto_generated ;              ;
 ;    |mux2to1_2bit:R1Sel_mux|                  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multicycle|mux2to1_2bit:R1Sel_mux                                                                     ;              ;
-;    |mux2to1_8bit:ALU_in1_BP_mux|             ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multicycle|mux2to1_8bit:ALU_in1_BP_mux                                                                ;              ;
-;    |mux2to1_8bit:ALU_in2_BP_mux|             ; 22 (22)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multicycle|mux2to1_8bit:ALU_in2_BP_mux                                                                ;              ;
-;    |mux2to1_8bit:DataMem_address_BP_mux|     ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multicycle|mux2to1_8bit:DataMem_address_BP_mux                                                        ;              ;
-;    |mux2to1_8bit:DataMem_data_BP_mux|        ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multicycle|mux2to1_8bit:DataMem_data_BP_mux                                                           ;              ;
-;    |mux2to1_8bit:RegMux|                     ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multicycle|mux2to1_8bit:RegMux                                                                        ;              ;
-;    |mux5to1_8bit:ALU_in2_mux|                ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multicycle|mux5to1_8bit:ALU_in2_mux                                                                   ;              ;
+;    |mux2to1_8bit:RegMux|                     ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multicycle|mux2to1_8bit:RegMux                                                                        ;              ;
+;    |mux4to1_8bit:ALU_in1_BP_mux|             ; 19 (19)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multicycle|mux4to1_8bit:ALU_in1_BP_mux                                                                ;              ;
+;    |mux4to1_8bit:ALU_in2_BP_mux|             ; 34 (34)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multicycle|mux4to1_8bit:ALU_in2_BP_mux                                                                ;              ;
+;    |mux4to1_8bit:DataMem_address_BP_mux|     ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multicycle|mux4to1_8bit:DataMem_address_BP_mux                                                        ;              ;
+;    |mux4to1_8bit:DataMem_data_BP_mux|        ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multicycle|mux4to1_8bit:DataMem_data_BP_mux                                                           ;              ;
+;    |mux4to1_8bit:R1_in_BP_mux|               ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multicycle|mux4to1_8bit:R1_in_BP_mux                                                                  ;              ;
+;    |mux4to1_8bit:R2_in_BP_mux|               ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multicycle|mux4to1_8bit:R2_in_BP_mux                                                                  ;              ;
+;    |mux5to1_8bit:ALU_in2_mux|                ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multicycle|mux5to1_8bit:ALU_in2_mux                                                                   ;              ;
 ;    |register_8bit:ALUOut_reg|                ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multicycle|register_8bit:ALUOut_reg                                                                   ;              ;
 ;    |register_8bit:MDR_reg|                   ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multicycle|register_8bit:MDR_reg                                                                      ;              ;
 ;    |register_8bit:PC1|                       ; 8 (8)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multicycle|register_8bit:PC1                                                                          ;              ;
 ;    |register_8bit:PC2|                       ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multicycle|register_8bit:PC2                                                                          ;              ;
-;    |register_8bit:PC3|                       ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multicycle|register_8bit:PC3                                                                          ;              ;
-;    |register_8bit:R1|                        ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multicycle|register_8bit:R1                                                                           ;              ;
-;    |register_8bit:R2|                        ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multicycle|register_8bit:R2                                                                           ;              ;
-;    |register_8bit_ir:IR1_reg|                ; 2 (2)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multicycle|register_8bit_ir:IR1_reg                                                                   ;              ;
-;    |register_8bit_ir:IR2_reg|                ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multicycle|register_8bit_ir:IR2_reg                                                                   ;              ;
+;    |register_8bit:R1|                        ; 9 (9)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multicycle|register_8bit:R1                                                                           ;              ;
+;    |register_8bit:R2|                        ; 9 (9)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multicycle|register_8bit:R2                                                                           ;              ;
+;    |register_8bit_ir:IR1_reg|                ; 8 (8)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multicycle|register_8bit_ir:IR1_reg                                                                   ;              ;
+;    |register_8bit_ir:IR2_reg|                ; 8 (8)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multicycle|register_8bit_ir:IR2_reg                                                                   ;              ;
 ;    |register_8bit_ir:IR3_reg|                ; 0 (0)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multicycle|register_8bit_ir:IR3_reg                                                                   ;              ;
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                              ;
-+-------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+------+------------+
-; Name                                                                                                  ; Type ; Mode           ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF        ;
-+-------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+------+------------+
-; memory:DataMem|DualMem:inst|altsyncram:altsyncram_component|altsyncram_up82:auto_generated|ALTSYNCRAM ; AUTO ; True Dual Port ; 256          ; 8            ; 256          ; 8            ; 2048 ; trial2.mif ;
-+-------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+------+------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                ;
++-------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+------+--------------+
+; Name                                                                                                  ; Type ; Mode           ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF          ;
++-------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+------+--------------+
+; memory:DataMem|DualMem:inst|altsyncram:altsyncram_component|altsyncram_pv82:auto_generated|ALTSYNCRAM ; AUTO ; True Dual Port ; 256          ; 8            ; 256          ; 8            ; 2048 ; wk4test2.mif ;
++-------------------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+------+--------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -304,27 +310,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+-----------------------------------------+-------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                                                            ;
-+-----------------------------------------------------------+-----------------------------------------------------------+------------------------+
-; Latch Name                                                ; Latch Enable Signal                                       ; Free of Timing Hazards ;
-+-----------------------------------------------------------+-----------------------------------------------------------+------------------------+
-; FSMExecute:FSMExecute|ALU_in1_mux_ctrl[0]                 ; FSMExecute:FSMExecute|stop_operation_finished             ; yes                    ;
-; DataHazardControl:DataHazardControl|ALU_in1_BPSel         ; DataHazardControl:DataHazardControl|ALU_in1_BPSel         ; yes                    ;
-; FSMExecute:FSMExecute|ALU_in2_mux_ctrl[0]                 ; FSMExecute:FSMExecute|stop_operation_finished             ; yes                    ;
-; FSMExecute:FSMExecute|ALU_in2_mux_ctrl[2]                 ; FSMExecute:FSMExecute|stop_operation_finished             ; yes                    ;
-; FSMExecute:FSMExecute|ALU_in2_mux_ctrl[1]                 ; FSMExecute:FSMExecute|stop_operation_finished             ; yes                    ;
-; DataHazardControl:DataHazardControl|ALU_in2_BPSel         ; DataHazardControl:DataHazardControl|ALU_in2_BPSel         ; yes                    ;
-; FSMExecute:FSMExecute|ALUop[0]                            ; FSMExecute:FSMExecute|stop_operation_finished             ; yes                    ;
-; FSMExecute:FSMExecute|ALUop[1]                            ; FSMExecute:FSMExecute|stop_operation_finished             ; yes                    ;
-; FSMExecute:FSMExecute|ALUop[2]                            ; FSMExecute:FSMExecute|stop_operation_finished             ; yes                    ;
-; DataHazardControl:DataHazardControl|DataMem_data_BPSel    ; DataHazardControl:DataHazardControl|DataMem_data_BPSel    ; yes                    ;
-; DataHazardControl:DataHazardControl|DataMem_address_BPSel ; DataHazardControl:DataHazardControl|DataMem_address_BPSel ; yes                    ;
-; FSMExecute:FSMExecute|squashIR2                           ; FSMExecute:FSMExecute|stop_operation_finished             ; yes                    ;
-; FSMExecute:FSMExecute|PCSel                               ; FSMExecute:FSMExecute|stop_operation_finished             ; yes                    ;
-; FSMExecute:FSMExecute|squashIR1                           ; FSMExecute:FSMExecute|stop_operation_finished             ; yes                    ;
-; Number of user-specified and inferred latches = 14        ;                                                           ;                        ;
-+-----------------------------------------------------------+-----------------------------------------------------------+------------------------+
++------------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                          ;
++-----------------------------------------------------+-----------------------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal                           ; Free of Timing Hazards ;
++-----------------------------------------------------+-----------------------------------------------+------------------------+
+; FSMExecute:FSMExecute|ALU_in2_mux_ctrl[0]           ; FSMExecute:FSMExecute|stop_operation_finished ; yes                    ;
+; FSMExecute:FSMExecute|ALU_in2_mux_ctrl[2]           ; FSMExecute:FSMExecute|stop_operation_finished ; yes                    ;
+; FSMExecute:FSMExecute|ALU_in2_mux_ctrl[1]           ; FSMExecute:FSMExecute|stop_operation_finished ; yes                    ;
+; FSMExecute:FSMExecute|ALU_in1_mux_ctrl[0]           ; FSMExecute:FSMExecute|stop_operation_finished ; yes                    ;
+; FSMExecute:FSMExecute|ALUop[0]                      ; FSMExecute:FSMExecute|stop_operation_finished ; yes                    ;
+; FSMExecute:FSMExecute|ALUop[1]                      ; FSMExecute:FSMExecute|stop_operation_finished ; yes                    ;
+; FSMExecute:FSMExecute|ALUop[2]                      ; FSMExecute:FSMExecute|stop_operation_finished ; yes                    ;
+; FSMExecute:FSMExecute|squashIR2                     ; FSMExecute:FSMExecute|stop_operation_finished ; yes                    ;
+; FSMExecute:FSMExecute|squashIR1                     ; FSMExecute:FSMExecute|stop_operation_finished ; yes                    ;
+; FSMExecute:FSMExecute|PCSel                         ; FSMExecute:FSMExecute|stop_operation_finished ; yes                    ;
+; Number of user-specified and inferred latches = 10  ;                                               ;                        ;
++-----------------------------------------------------+-----------------------------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
@@ -333,10 +335,10 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 129   ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 8     ;
-; Number of registers using Asynchronous Clear ; 129   ;
+; Total registers                              ; 121   ;
+; Number of registers using Synchronous Clear  ; 16    ;
+; Number of registers using Synchronous Load   ; 24    ;
+; Number of registers using Asynchronous Clear ; 121   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 57    ;
 ; Number of registers using Preset             ; 0     ;
@@ -348,35 +350,38 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
-; register_8bit_ir:IR3_reg|q[1]          ; 4       ;
-; register_8bit_ir:IR3_reg|q[3]          ; 3       ;
+; register_8bit_ir:IR3_reg|q[1]          ; 8       ;
+; register_8bit_ir:IR3_reg|q[3]          ; 5       ;
+; register_8bit_ir:IR2_reg|q[1]          ; 19      ;
 ; register_8bit_ir:IR2_reg|q[3]          ; 13      ;
-; register_8bit_ir:IR2_reg|q[1]          ; 16      ;
-; register_8bit_ir:IR1_reg|q[1]          ; 3       ;
-; register_8bit_ir:IR1_reg|q[3]          ; 1       ;
+; register_8bit_ir:IR1_reg|q[1]          ; 7       ;
+; register_8bit_ir:IR1_reg|q[3]          ; 4       ;
 ; Total number of inverted registers = 6 ;         ;
 +----------------------------------------+---------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                   ;
-+--------------------+-----------+---------------+----------------------+------------------------+----------------------------------------------------+----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered                                         ; Example Multiplexer Output ;
-+--------------------+-----------+---------------+----------------------+------------------------+----------------------------------------------------+----------------------------+
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; |multicycle|register_8bit:R2|q[3]                  ;                            ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; |multicycle|register_8bit:R1|q[4]                  ;                            ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; |multicycle|mux2to1_8bit:ALU_in1_BP_mux|result[4]  ;                            ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; |multicycle|FSMExecute:FSMExecute|ALU_in2_mux_ctrl ;                            ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; |multicycle|mux2to1_8bit:ALU_in2_BP_mux|result[6]  ;                            ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; |multicycle|mux2to1_8bit:ALU_in2_BP_mux|result[1]  ;                            ;
-; 9:1                ; 4 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; |multicycle|ALU:ALU|tmp_out[2]                     ;                            ;
-; 10:1               ; 2 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; |multicycle|ALU:ALU|N                              ;                            ;
-; 10:1               ; 2 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; |multicycle|ALU:ALU|tmp_out[1]                     ;                            ;
-+--------------------+-----------+---------------+----------------------+------------------------+----------------------------------------------------+----------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------------------------------------------------------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered                                                       ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------------------------------------------------------------+----------------------------+
+; 7:1                ; 8 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; |multicycle|register_8bit:R2|q[6]                                ;                            ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; |multicycle|register_8bit:R1|q[2]                                ;                            ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; |multicycle|DataHazardControl:DataHazardControl|ALU_in1_BPSel[1] ;                            ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; |multicycle|mux4to1_8bit:DataMem_address_BP_mux|Mux6             ;                            ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; |multicycle|mux4to1_8bit:DataMem_data_BP_mux|Mux1                ;                            ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; |multicycle|FSMExecute:FSMExecute|ALUop                          ;                            ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; |multicycle|mux4to1_8bit:ALU_in1_BP_mux|Mux4                     ;                            ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; |multicycle|mux4to1_8bit:ALU_in2_BP_mux|Mux0                     ;                            ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; |multicycle|mux4to1_8bit:ALU_in2_BP_mux|Mux5                     ;                            ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; |multicycle|ALU:ALU|tmp_out[4]                                   ;                            ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; |multicycle|ALU:ALU|tmp_out[6]                                   ;                            ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; |multicycle|ALU:ALU|tmp_out[0]                                   ;                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------------------------------------------------------------+----------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------+
-; Source assignments for memory:DataMem|DualMem:inst|altsyncram:altsyncram_component|altsyncram_up82:auto_generated ;
+; Source assignments for memory:DataMem|DualMem:inst|altsyncram:altsyncram_component|altsyncram_pv82:auto_generated ;
 +---------------------------------+--------------------+------+-----------------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                                  ;
 +---------------------------------+--------------------+------+-----------------------------------------------------+
@@ -506,7 +511,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA             ; Untyped                                      ;
 ; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                      ;
 ; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                      ;
-; INIT_FILE                          ; trial2.mif           ; Untyped                                      ;
+; INIT_FILE                          ; wk4test2.mif         ; Untyped                                      ;
 ; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                      ;
 ; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                      ;
 ; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                      ;
@@ -518,7 +523,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ENABLE_ECC                         ; FALSE                ; Untyped                                      ;
 ; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                      ;
 ; DEVICE_FAMILY                      ; Cyclone II           ; Untyped                                      ;
-; CBXI_PARAMETER                     ; altsyncram_up82      ; Untyped                                      ;
+; CBXI_PARAMETER                     ; altsyncram_pv82      ; Untyped                                      ;
 +------------------------------------+----------------------+----------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -582,6 +587,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------+-------+----------+--------------------------+
 
 
++-------------------------------------------------------+
+; Port Connectivity Checks: "mux4to1_8bit:R2_in_BP_mux" ;
++--------+-------+----------+---------------------------+
+; Port   ; Type  ; Severity ; Details                   ;
++--------+-------+----------+---------------------------+
+; data3x ; Input ; Info     ; Explicitly unconnected    ;
++--------+-------+----------+---------------------------+
+
+
++-------------------------------------------------------+
+; Port Connectivity Checks: "mux4to1_8bit:R1_in_BP_mux" ;
++--------+-------+----------+---------------------------+
+; Port   ; Type  ; Severity ; Details                   ;
++--------+-------+----------+---------------------------+
+; data3x ; Input ; Info     ; Explicitly unconnected    ;
++--------+-------+----------+---------------------------+
+
+
 +----------------------------------------------+
 ; Port Connectivity Checks: "register_8bit:R2" ;
 +--------+-------+----------+------------------+
@@ -614,15 +637,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +-----------------------------------------------+
-; Port Connectivity Checks: "register_8bit:PC3" ;
-+--------+-------+----------+-------------------+
-; Port   ; Type  ; Severity ; Details           ;
-+--------+-------+----------+-------------------+
-; enable ; Input ; Info     ; Stuck at VCC      ;
-+--------+-------+----------+-------------------+
-
-
-+-----------------------------------------------+
 ; Port Connectivity Checks: "register_8bit:PC2" ;
 +--------+-------+----------+-------------------+
 ; Port   ; Type  ; Severity ; Details           ;
@@ -640,13 +654,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------+-------+----------+-------------------+
 
 
-+------------------------------------------------------+
-; Port Connectivity Checks: "register_8bit_ir:IR3_reg" ;
-+--------+-------+----------+--------------------------+
-; Port   ; Type  ; Severity ; Details                  ;
-+--------+-------+----------+--------------------------+
-; enable ; Input ; Info     ; Stuck at VCC             ;
-+--------+-------+----------+--------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "register_8bit_ir:IR3_reg"                                                                                                                     ;
++--------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                                                                      ;
++--------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; enable ; Input ; Info     ; Stuck at VCC                                                                                                                                 ;
+; squash ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++--------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -688,6 +703,42 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------+-------+----------+--------------------------+
 
 
++---------------------------------------------------------+
+; Port Connectivity Checks: "mux4to1_8bit:ALU_in2_BP_mux" ;
++--------+-------+----------+-----------------------------+
+; Port   ; Type  ; Severity ; Details                     ;
++--------+-------+----------+-----------------------------+
+; data3x ; Input ; Info     ; Explicitly unconnected      ;
++--------+-------+----------+-----------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "mux4to1_8bit:ALU_in1_BP_mux" ;
++--------+-------+----------+-----------------------------+
+; Port   ; Type  ; Severity ; Details                     ;
++--------+-------+----------+-----------------------------+
+; data3x ; Input ; Info     ; Explicitly unconnected      ;
++--------+-------+----------+-----------------------------+
+
+
++-----------------------------------------------------------------+
+; Port Connectivity Checks: "mux4to1_8bit:DataMem_address_BP_mux" ;
++--------+-------+----------+-------------------------------------+
+; Port   ; Type  ; Severity ; Details                             ;
++--------+-------+----------+-------------------------------------+
+; data3x ; Input ; Info     ; Explicitly unconnected              ;
++--------+-------+----------+-------------------------------------+
+
+
++--------------------------------------------------------------+
+; Port Connectivity Checks: "mux4to1_8bit:DataMem_data_BP_mux" ;
++--------+-------+----------+----------------------------------+
+; Port   ; Type  ; Severity ; Details                          ;
++--------+-------+----------+----------------------------------+
+; data3x ; Input ; Info     ; Explicitly unconnected           ;
++--------+-------+----------+----------------------------------+
+
+
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "FSMExecute:FSMExecute"                                                                                                                          ;
 +------------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------+
@@ -702,7 +753,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:04     ;
 +----------------+--------------+
 
 
@@ -712,7 +763,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 11.1 Build 259 01/25/2012 Service Pack 2 SJ Web Edition
-    Info: Processing started: Tue Nov 26 16:28:23 2013
+    Info: Processing started: Tue Nov 26 22:10:21 2013
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off multicycle -c multicycle
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 2 entities, in source file register_8bit.v
@@ -722,8 +773,9 @@ Info (12021): Found 1 design units, including 1 entities, in source file mux2to1
     Info (12023): Found entity 1: mux2to1_8bit
 Info (12021): Found 1 design units, including 1 entities, in source file mux2to1_2bit.v
     Info (12023): Found entity 1: mux2to1_2bit
-Info (12021): Found 1 design units, including 1 entities, in source file mux5to1_8bit.v
-    Info (12023): Found entity 1: mux5to1_8bit
+Info (12021): Found 2 design units, including 2 entities, in source file mux5to1_8bit.v
+    Info (12023): Found entity 1: mux4to1_8bit
+    Info (12023): Found entity 2: mux5to1_8bit
 Info (12021): Found 1 design units, including 1 entities, in source file dualmem.v
     Info (12023): Found entity 1: DualMem
 Info (12021): Found 1 design units, including 1 entities, in source file multicycle.v
@@ -748,46 +800,38 @@ Info (12021): Found 3 design units, including 3 entities, in source file fsm.v
 Info (12021): Found 1 design units, including 1 entities, in source file memory.bdf
     Info (12023): Found entity 1: memory
 Info (12127): Elaborating entity "multicycle" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at multicycle.v(295): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at multicycle.v(339): truncated value with size 32 to match size of target (16)
+Warning (10230): Verilog HDL assignment warning at multicycle.v(309): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at multicycle.v(353): truncated value with size 32 to match size of target (16)
 Warning (10034): Output port "LEDG" at multicycle.v(37) has no driver
 Warning (10034): Output port "LEDR" at multicycle.v(38) has no driver
 Info (12128): Elaborating entity "HEXs" for hierarchy "HEXs:HEX_display"
 Info (12128): Elaborating entity "HEX" for hierarchy "HEXs:HEX_display|HEX:hex0"
 Info (12128): Elaborating entity "FSMExecute" for hierarchy "FSMExecute:FSMExecute"
-Warning (10240): Verilog HDL Always Construct warning at FSM.v(120): inferring latch(es) for variable "ALU_in2_mux_ctrl", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at FSM.v(120): inferring latch(es) for variable "ALUop", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at FSM.v(120): inferring latch(es) for variable "ALU_in1_mux_ctrl", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at FSM.v(120): inferring latch(es) for variable "PCSel", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at FSM.v(120): inferring latch(es) for variable "squashIR1", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at FSM.v(120): inferring latch(es) for variable "squashIR2", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "squashIR2" at FSM.v(225)
-Info (10041): Inferred latch for "squashIR1" at FSM.v(225)
-Info (10041): Inferred latch for "PCSel" at FSM.v(225)
-Info (10041): Inferred latch for "ALU_in1_mux_ctrl[0]" at FSM.v(225)
-Info (10041): Inferred latch for "ALU_in1_mux_ctrl[1]" at FSM.v(225)
-Info (10041): Inferred latch for "ALU_in1_mux_ctrl[2]" at FSM.v(225)
-Info (10041): Inferred latch for "ALU_in1_mux_ctrl[3]" at FSM.v(225)
-Info (10041): Inferred latch for "ALU_in1_mux_ctrl[4]" at FSM.v(225)
-Info (10041): Inferred latch for "ALU_in1_mux_ctrl[5]" at FSM.v(225)
-Info (10041): Inferred latch for "ALU_in1_mux_ctrl[6]" at FSM.v(225)
-Info (10041): Inferred latch for "ALU_in1_mux_ctrl[7]" at FSM.v(225)
-Info (10041): Inferred latch for "ALUop[0]" at FSM.v(225)
-Info (10041): Inferred latch for "ALUop[1]" at FSM.v(225)
-Info (10041): Inferred latch for "ALUop[2]" at FSM.v(225)
-Info (10041): Inferred latch for "ALU_in2_mux_ctrl[0]" at FSM.v(225)
-Info (10041): Inferred latch for "ALU_in2_mux_ctrl[1]" at FSM.v(225)
-Info (10041): Inferred latch for "ALU_in2_mux_ctrl[2]" at FSM.v(225)
+Warning (10240): Verilog HDL Always Construct warning at FSM.v(447): inferring latch(es) for variable "ALU_in2_mux_ctrl", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at FSM.v(447): inferring latch(es) for variable "ALUop", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at FSM.v(447): inferring latch(es) for variable "ALU_in1_mux_ctrl", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at FSM.v(447): inferring latch(es) for variable "PCSel", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at FSM.v(447): inferring latch(es) for variable "squashIR1", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at FSM.v(447): inferring latch(es) for variable "squashIR2", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "squashIR2" at FSM.v(560)
+Info (10041): Inferred latch for "squashIR1" at FSM.v(560)
+Info (10041): Inferred latch for "PCSel" at FSM.v(560)
+Info (10041): Inferred latch for "ALU_in1_mux_ctrl[0]" at FSM.v(560)
+Info (10041): Inferred latch for "ALU_in1_mux_ctrl[1]" at FSM.v(560)
+Info (10041): Inferred latch for "ALU_in1_mux_ctrl[2]" at FSM.v(560)
+Info (10041): Inferred latch for "ALU_in1_mux_ctrl[3]" at FSM.v(560)
+Info (10041): Inferred latch for "ALU_in1_mux_ctrl[4]" at FSM.v(560)
+Info (10041): Inferred latch for "ALU_in1_mux_ctrl[5]" at FSM.v(560)
+Info (10041): Inferred latch for "ALU_in1_mux_ctrl[6]" at FSM.v(560)
+Info (10041): Inferred latch for "ALU_in1_mux_ctrl[7]" at FSM.v(560)
+Info (10041): Inferred latch for "ALUop[0]" at FSM.v(560)
+Info (10041): Inferred latch for "ALUop[1]" at FSM.v(560)
+Info (10041): Inferred latch for "ALUop[2]" at FSM.v(560)
+Info (10041): Inferred latch for "ALU_in2_mux_ctrl[0]" at FSM.v(560)
+Info (10041): Inferred latch for "ALU_in2_mux_ctrl[1]" at FSM.v(560)
+Info (10041): Inferred latch for "ALU_in2_mux_ctrl[2]" at FSM.v(560)
 Info (12128): Elaborating entity "FSMWB" for hierarchy "FSMWB:FSMWB"
 Info (12128): Elaborating entity "DataHazardControl" for hierarchy "DataHazardControl:DataHazardControl"
-Warning (10240): Verilog HDL Always Construct warning at FSM.v(23): inferring latch(es) for variable "ALU_in1_BPSel", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at FSM.v(23): inferring latch(es) for variable "ALU_in2_BPSel", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at FSM.v(23): inferring latch(es) for variable "DataMem_data_BPSel", which holds its previous value in one or more paths through the always construct
-Warning (10240): Verilog HDL Always Construct warning at FSM.v(23): inferring latch(es) for variable "DataMem_address_BPSel", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "DataMem_address_BPSel" at FSM.v(33)
-Info (10041): Inferred latch for "DataMem_data_BPSel" at FSM.v(33)
-Info (10041): Inferred latch for "ALU_in2_BPSel" at FSM.v(33)
-Info (10041): Inferred latch for "ALU_in1_BPSel" at FSM.v(33)
 Info (12128): Elaborating entity "memory" for hierarchy "memory:DataMem"
 Info (12128): Elaborating entity "mux2to1_8bit" for hierarchy "memory:DataMem|mux2to1_8bit:inst3"
 Info (12128): Elaborating entity "DualMem" for hierarchy "memory:DataMem|DualMem:inst"
@@ -800,7 +844,7 @@ Info (12133): Instantiated megafunction "memory:DataMem|DualMem:inst|altsyncram:
     Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
     Info (12134): Parameter "clock_enable_output_b" = "BYPASS"
     Info (12134): Parameter "indata_reg_b" = "CLOCK0"
-    Info (12134): Parameter "init_file" = "trial2.mif"
+    Info (12134): Parameter "init_file" = "wk4test2.mif"
     Info (12134): Parameter "intended_device_family" = "Cyclone II"
     Info (12134): Parameter "lpm_type" = "altsyncram"
     Info (12134): Parameter "numwords_a" = "256"
@@ -819,9 +863,10 @@ Info (12133): Instantiated megafunction "memory:DataMem|DualMem:inst|altsyncram:
     Info (12134): Parameter "width_byteena_a" = "1"
     Info (12134): Parameter "width_byteena_b" = "1"
     Info (12134): Parameter "wrcontrol_wraddress_reg_b" = "CLOCK0"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_up82.tdf
-    Info (12023): Found entity 1: altsyncram_up82
-Info (12128): Elaborating entity "altsyncram_up82" for hierarchy "memory:DataMem|DualMem:inst|altsyncram:altsyncram_component|altsyncram_up82:auto_generated"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_pv82.tdf
+    Info (12023): Found entity 1: altsyncram_pv82
+Info (12128): Elaborating entity "altsyncram_pv82" for hierarchy "memory:DataMem|DualMem:inst|altsyncram:altsyncram_component|altsyncram_pv82:auto_generated"
+Info (12128): Elaborating entity "mux4to1_8bit" for hierarchy "mux4to1_8bit:DataMem_data_BP_mux"
 Info (12128): Elaborating entity "ALU" for hierarchy "ALU:ALU"
 Info (12128): Elaborating entity "mux5to1_8bit" for hierarchy "mux5to1_8bit:ALU_in1_mux"
 Info (12128): Elaborating entity "RF" for hierarchy "RF:RF_block"
@@ -831,18 +876,10 @@ Info (12128): Elaborating entity "register_8bit" for hierarchy "register_8bit:MD
 Info (12128): Elaborating entity "sExtend" for hierarchy "sExtend:SE4"
 Info (12128): Elaborating entity "zExtend" for hierarchy "zExtend:ZE3"
 Info (12128): Elaborating entity "zExtend" for hierarchy "zExtend:ZE5"
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
     Info (13026): Duplicate LATCH primitive "FSMExecute:FSMExecute|ALUop[2]" merged with LATCH primitive "FSMExecute:FSMExecute|ALU_in2_mux_ctrl[2]"
     Info (13026): Duplicate LATCH primitive "FSMExecute:FSMExecute|squashIR1" merged with LATCH primitive "FSMExecute:FSMExecute|squashIR2"
-Warning (13012): Latch DataHazardControl:DataHazardControl|ALU_in1_BPSel has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal register_8bit_ir:IR3_reg|q[3]
-Warning (13012): Latch DataHazardControl:DataHazardControl|ALU_in2_BPSel has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal register_8bit_ir:IR2_reg|q[3]
-Warning (13012): Latch DataHazardControl:DataHazardControl|DataMem_data_BPSel has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal register_8bit_ir:IR2_reg|q[3]
-Warning (13012): Latch DataHazardControl:DataHazardControl|DataMem_address_BPSel has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal register_8bit_ir:IR2_reg|q[3]
 Info (13000): Registers with preset signals will power-up high
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
@@ -877,15 +914,15 @@ Warning (21074): Design contains 3 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[0]"
     Warning (15610): No output dependent on input pin "SW[1]"
     Warning (15610): No output dependent on input pin "KEY[2]"
-Info (21057): Implemented 514 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 577 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
     Info (21059): Implemented 82 output pins
-    Info (21061): Implemented 418 logic cells
+    Info (21061): Implemented 481 logic cells
     Info (21064): Implemented 8 RAM segments
-Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 55 warnings
-    Info: Peak virtual memory: 304 megabytes
-    Info: Processing ended: Tue Nov 26 16:28:28 2013
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:04
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 43 warnings
+    Info: Peak virtual memory: 302 megabytes
+    Info: Processing ended: Tue Nov 26 22:10:27 2013
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:06
 
 

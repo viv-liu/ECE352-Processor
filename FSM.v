@@ -6,12 +6,13 @@ module DataHazardControl
 (	
 	IR1, IR2, IR3,
 	ALU_in1_BPSel, ALU_in2_BPSel, 
-	DataMem_data_BPSel, DataMem_address_BPSel
+	DataMem_data_BPSel, DataMem_address_BPSel, R1_in_BPSel, R2_in_BPSel
 );
 	input [7:0]IR1, IR2, IR3;
 	
-	output reg ALU_in1_BPSel, ALU_in2_BPSel;
-	output reg DataMem_data_BPSel, DataMem_address_BPSel;
+	output reg [1:0]ALU_in1_BPSel, ALU_in2_BPSel;
+	output reg [1:0]DataMem_data_BPSel, DataMem_address_BPSel;
+	output reg [1:0]R1_in_BPSel, R2_in_BPSel;
 	
 	parameter [3:0] OP_LOAD = 4'b0000, OP_STORE = 4'b0010, OP_ADD = 4'b0100, OP_SUB = 4'b0110, OP_NAND = 4'b1000;
 	parameter [3:0] OP_BZ = 4'b0101, OP_BNZ = 4'b1001, OP_BPZ = 4'b1101, OP_STOP = 4'b0001, OP_NOP = 4'b1010;
@@ -19,55 +20,381 @@ module DataHazardControl
 	
 	always@(*)
 	begin
+		ALU_in1_BPSel <= 0;
+		ALU_in2_BPSel <= 0;
+		
+		DataMem_data_BPSel <= 0;
+		DataMem_address_BPSel <= 0;
+		
+		R1_in_BPSel <= 0;
+		R2_in_BPSel <= 0;	
+		
+		/////////////////////////////////////////////////////////////////////////////////////////////////////
+		/////////////////////////////////////////////////////////////////////////////////////////////////////
+		/////////////////////////////////////////////////////////////////////////////////////////////////////
+		// consecutive instructions, use IR3 and IR2 for hazard detection.
+		
 		// add, add
-		if (		(IR3[3:0] == OP_ADD || IR3[3:0] == OP_SUB || IR3[3:0] == OP_NAND) &&	(IR2[3:0] == OP_ADD || IR2[3:0] == OP_SUB || IR2[3:0] == OP_NAND)) 
+		if ((IR3[3:0] == OP_ADD || IR3[3:0] == OP_SUB || IR3[3:0] == OP_NAND) &&	(IR2[3:0] == OP_ADD || IR2[3:0] == OP_SUB || IR2[3:0] == OP_NAND)) 
 		begin
 			if (IR2[7:6] == IR3[7:6])
-				ALU_in1_BPSel = 1;
+				ALU_in1_BPSel <= 1;
 			if (IR2[5:4] == IR3[7:6])
-				ALU_in2_BPSel = 1;
-
+				ALU_in2_BPSel <= 1;
 		end
 		
 		// add, ori
-		else if(	(IR3[3:0] == OP_ADD || IR3[3:0] == OP_SUB || IR3[3:0] == OP_NAND) &&	IR2[2:0] == OP_ORI)
+		else if((IR3[3:0] == OP_ADD || IR3[3:0] == OP_SUB || IR3[3:0] == OP_NAND) &&	IR2[2:0] == OP_ORI)
 		begin
 			if (IR3[7:6] == 1)
-				ALU_in1_BPSel = 1;
+				ALU_in1_BPSel <= 1;
 		end
 		
 		// add, shift
-		else if(	(IR3[3:0] == OP_ADD || IR3[3:0] == OP_SUB || IR3[3:0] == OP_NAND) &&	IR2[2:0] == OP_SHIFT)
+		else if((IR3[3:0] == OP_ADD || IR3[3:0] == OP_SUB || IR3[3:0] == OP_NAND) &&	IR2[2:0] == OP_SHIFT)
 		begin
 			if (IR2[7:6] == IR3[7:6])
-				ALU_in1_BPSel = 1;
+				ALU_in1_BPSel <= 1;
 		end	
 		
 		// add, store
-		else if(	(IR3[3:0] == OP_ADD || IR3[3:0] == OP_SUB || IR3[3:0] == OP_NAND) &&	IR2[3:0] == OP_STORE)
+		else if((IR3[3:0] == OP_ADD || IR3[3:0] == OP_SUB || IR3[3:0] == OP_NAND) &&	IR2[3:0] == OP_STORE)
 		begin
 			if (IR2[7:6] == IR3[7:6])
-				DataMem_data_BPSel = 1;	
+				DataMem_data_BPSel <= 1;	
 			if (IR2[5:4] == IR3[7:6])
-				DataMem_address_BPSel = 1;
+				DataMem_address_BPSel <= 1;
 		end
 		
 		// add, load
-		else if(	(IR3[3:0] == OP_ADD || IR3[3:0] == OP_SUB || IR3[3:0] == OP_NAND) &&	IR2[3:0] == OP_LOAD)
+		else if((IR3[3:0] == OP_ADD || IR3[3:0] == OP_SUB || IR3[3:0] == OP_NAND) &&	IR2[3:0] == OP_LOAD)
 		begin
 			if (IR2[5:4] == IR3[7:6])
-				DataMem_address_BPSel = 1;
+				DataMem_address_BPSel <= 1;
 		end
 		
-		// add, 
+		// add, br (works as intended)
+	   /////////////////////////////////////////////////////////////////////////////////////////////////////
+		// ori, add
+		else if(IR3[2:0] == OP_ORI && (IR2[3:0] == OP_ADD || IR2[3:0] == OP_SUB || IR2[3:0] == OP_NAND))
+		begin
+			if (IR2[7:6] == 1)
+				ALU_in1_BPSel <= 1;
+			if (IR2[5:4] == 1)
+				ALU_in2_BPSel <= 1;
+		end
 		
+		// ori, ori
+		else if(IR3[2:0] == OP_ORI && IR2[2:0] == OP_ORI)
+		begin
+			ALU_in1_BPSel <= 1;
+		end
+		
+		// ori, shift
+		else if(IR3[2:0] == OP_ORI && IR2[2:0] == OP_SHIFT)
+		begin
+			if (IR2[7:6] == 1)
+				ALU_in1_BPSel <= 1;
+		end
+		
+		// ori, store
+		else if(IR3[2:0] == OP_ORI &&	IR2[3:0] == OP_STORE)
+		begin
+			if (IR2[7:6] == 1)
+				DataMem_data_BPSel <= 1;	
+			if (IR2[5:4] == 1)
+				DataMem_address_BPSel <= 1;
+		end
+
+		// ori, load
+		else if(IR3[2:0] == OP_ORI &&	IR2[3:0] == OP_LOAD)
+		begin
+			if (IR2[5:4] == 1)
+				DataMem_address_BPSel <= 1;
+		end
+
+		// ori, br (again, works as intended)
+		/////////////////////////////////////////////////////////////////////////////////////////////////////	
+		// shift, add
+		else if(IR3[2:0] == OP_SHIFT && (IR2[3:0] == OP_ADD || IR2[3:0] == OP_SUB || IR2[3:0] == OP_NAND))
+		begin
+			if (IR2[7:6] == IR3[7:6])
+				ALU_in1_BPSel <= 1;
+			if (IR2[5:4] == IR3[7:6])
+				ALU_in2_BPSel <= 1;
+		end
+
+		// shift, ori
+		else if(IR3[2:0] == OP_SHIFT && IR2[2:0] == OP_ORI)
+		begin
+			if (IR3[7:6] == 1)
+				ALU_in1_BPSel <= 1;
+		end
+		
+		// shift, shift
+		else if(IR3[2:0] == OP_SHIFT && IR2[2:0] == OP_SHIFT)
+		begin
+			if (IR2[7:6] == IR3[7:6])
+				ALU_in1_BPSel <= 1;
+		end
+		
+		// shift, store
+		else if(IR3[2:0] == OP_SHIFT &&	IR2[3:0] == OP_STORE)
+		begin
+			if (IR2[7:6] == IR3[7:6])
+				DataMem_data_BPSel <= 1;	
+			if (IR2[5:4] == IR3[7:6])
+				DataMem_address_BPSel <= 1;
+		end
+
+		// shift, load
+		else if(IR3[2:0] == OP_SHIFT &&	IR2[3:0] == OP_LOAD)
+		begin
+			if (IR2[5:4] == IR3[7:6])
+				DataMem_address_BPSel <= 1;
+		end
+		
+		// shift, br (again, works as intended)
+	   /////////////////////////////////////////////////////////////////////////////////////////////////////
+		// store, add (not a data hazard)
+		// store, ori (not a data hazard)
+		// store, shift (not a data hazard)
+		// store, store (not a data hazard)
+		// store, load (not a data hazard)
+		// store, br (again, works as intended)
+	   /////////////////////////////////////////////////////////////////////////////////////////////////////
+		// load, add
+		else if(IR3[3:0] == OP_LOAD && (IR2[3:0] == OP_ADD || IR2[3:0] == OP_SUB || IR2[3:0] == OP_NAND))
+		begin
+			if (IR2[7:6] == IR3[7:6])
+				ALU_in1_BPSel <= 2;
+			if (IR2[5:4] == IR3[7:6])
+				ALU_in2_BPSel <= 2;
+		end
+		
+		// load, ori
+		else if(IR3[3:0] == OP_LOAD && IR2[2:0] == OP_ORI)
+		begin
+			if (IR3[7:6] == 1)
+				ALU_in1_BPSel <= 2;
+		end
+
+		// load, shift
+		else if(IR3[3:0] == OP_LOAD && IR2[2:0] == OP_SHIFT)
+		begin
+			if (IR2[7:6] == IR3[7:6])
+				ALU_in1_BPSel <= 2;
+		end
+		
+		// load, store
+		else if(IR3[3:0] == OP_LOAD && IR2[3:0] == OP_STORE)
+		begin
+			if (IR2[7:6] == IR3[7:6])
+				DataMem_data_BPSel <= 2;	
+			if (IR2[5:4] == IR3[7:6])
+				DataMem_address_BPSel <= 2;
+		end
+		
+		// load, load
+		else if(IR3[3:0] == OP_LOAD && IR2[3:0] == OP_LOAD)
+		begin
+			if (IR2[5:4] == IR3[7:6])
+				DataMem_address_BPSel <= 2;
+		end
+		
+		// load, br (works as intended)
+		/////////////////////////////////////////////////////////////////////////////////////////////////////
+		// br .. doesnt give any hazards\
 		else
 		begin
-			ALU_in1_BPSel = 0;
-			ALU_in2_BPSel = 0;
+			ALU_in1_BPSel <= 0;
+			ALU_in2_BPSel <= 0;
 			
-			DataMem_data_BPSel = 0;
-			DataMem_address_BPSel = 0;
+			DataMem_data_BPSel <= 0;
+			DataMem_address_BPSel <= 0;
+		end
+		
+		/////////////////////////////////////////////////////////////////////////////////////////////////////
+		/////////////////////////////////////////////////////////////////////////////////////////////////////
+		/////////////////////////////////////////////////////////////////////////////////////////////////////
+		// instructions seprated by one instruction, use IR3 and IR1 for hazard detection.
+		
+			
+		// add, d/m, add
+		if ((IR3[3:0] == OP_ADD || IR3[3:0] == OP_SUB || IR3[3:0] == OP_NAND) &&	(IR1[3:0] == OP_ADD || IR1[3:0] == OP_SUB || IR1[3:0] == OP_NAND)) 
+		begin
+			if (IR1[7:6] == IR3[7:6])
+				R1_in_BPSel <= 1;
+			if (IR1[5:4] == IR3[7:6])
+				R2_in_BPSel <= 1;
+		end
+		
+		// add, d/m, ori
+		else if((IR3[3:0] == OP_ADD || IR3[3:0] == OP_SUB || IR3[3:0] == OP_NAND) &&	IR1[2:0] == OP_ORI)
+		begin
+			if (IR3[7:6] == 1)
+				R1_in_BPSel <= 1;
+		end
+		
+		// add, d/m, shift
+		else if((IR3[3:0] == OP_ADD || IR3[3:0] == OP_SUB || IR3[3:0] == OP_NAND) &&	IR1[2:0] == OP_SHIFT)
+		begin
+			if (IR1[7:6] == IR3[7:6])
+				R1_in_BPSel <= 1;
+		end	
+		
+		// add, d/m, store
+		else if((IR3[3:0] == OP_ADD || IR3[3:0] == OP_SUB || IR3[3:0] == OP_NAND) &&	IR1[3:0] == OP_STORE)
+		begin
+			if (IR1[7:6] == IR3[7:6])
+				R1_in_BPSel <= 1;
+			if (IR1[5:4] == IR3[7:6])
+				R2_in_BPSel <= 1;
+		end
+		
+		// add, d/m, load
+		else if((IR3[3:0] == OP_ADD || IR3[3:0] == OP_SUB || IR3[3:0] == OP_NAND) &&	IR1[3:0] == OP_LOAD)
+		begin
+			if (IR1[5:4] == IR3[7:6])
+				R2_in_BPSel <= 1;
+		end
+		
+		// add, d/m, br (works as intended)
+	   /////////////////////////////////////////////////////////////////////////////////////////////////////
+		// ori, d/m, add
+		else if(IR3[2:0] == OP_ORI && (IR1[3:0] == OP_ADD || IR1[3:0] == OP_SUB || IR1[3:0] == OP_NAND))
+		begin
+			if (IR1[7:6] == 1)
+				R1_in_BPSel <= 1;
+			if (IR1[5:4] == 1)
+				R2_in_BPSel <= 1;
+		end
+		
+		// ori, d/m, ori
+		else if(IR3[2:0] == OP_ORI && IR1[2:0] == OP_ORI)
+		begin
+			R1_in_BPSel <= 1;
+		end
+		
+		// ori, d/m, shift
+		else if(IR3[2:0] == OP_ORI && IR1[2:0] == OP_SHIFT)
+		begin
+			if (IR1[7:6] == 1)
+				R1_in_BPSel <= 1;
+		end
+		
+		// ori, d/m, store
+		else if(IR3[2:0] == OP_ORI &&	IR1[3:0] == OP_STORE)
+		begin
+			if (IR1[7:6] == 1)
+				R1_in_BPSel <= 1;	
+			if (IR1[5:4] == 1)
+				R2_in_BPSel <= 1;
+		end
+
+		// ori, d/m, load
+		else if(IR3[2:0] == OP_ORI &&	IR1[3:0] == OP_LOAD)
+		begin
+			if (IR1[5:4] == 1)
+				R2_in_BPSel <= 1;
+		end
+
+		// ori, br (again, works as intended)
+		/////////////////////////////////////////////////////////////////////////////////////////////////////	
+		// shift, d/m, add
+		else if(IR3[2:0] == OP_SHIFT && (IR1[3:0] == OP_ADD || IR1[3:0] == OP_SUB || IR1[3:0] == OP_NAND))
+		begin
+			if (IR1[7:6] == IR3[7:6])
+				R1_in_BPSel <= 1;
+			if (IR1[5:4] == IR3[7:6])
+				R2_in_BPSel <= 1;
+		end
+
+		// shift, d/m, ori
+		else if(IR3[2:0] == OP_SHIFT && IR1[2:0] == OP_ORI)
+		begin
+			if (IR3[7:6] == 1)
+				R1_in_BPSel <= 1;
+		end
+		
+		// shift, d/m, shift
+		else if(IR3[2:0] == OP_SHIFT && IR1[2:0] == OP_SHIFT)
+		begin
+			if (IR1[7:6] == IR3[7:6])
+				R1_in_BPSel <= 1;
+		end
+		
+		// shift, d/m, store
+		else if(IR3[2:0] == OP_SHIFT &&	IR1[3:0] == OP_STORE)
+		begin
+			if (IR1[7:6] == IR3[7:6])
+				R1_in_BPSel <= 1;	
+			if (IR1[5:4] == IR3[7:6])
+				R2_in_BPSel <= 1;
+		end
+
+		// shift, d/m, load
+		else if(IR3[2:0] == OP_SHIFT &&	IR1[3:0] == OP_LOAD)
+		begin
+			if (IR1[5:4] == IR3[7:6])
+				R2_in_BPSel <= 1;
+		end
+		
+		// shift, d/m, br (again, works as intended)
+	   /////////////////////////////////////////////////////////////////////////////////////////////////////
+		// store, d/m, add (not a data hazard)
+		// store, d/m, ori (not a data hazard)
+		// store, d/m, shift (not a data hazard)
+		// store, d/m, store (not a data hazard)
+		// store, d/m, load (not a data hazard)
+		// store, d/m, br (again, works as intended)
+	   /////////////////////////////////////////////////////////////////////////////////////////////////////
+		// load, d/m, add
+		else if(IR3[3:0] == OP_LOAD && (IR1[3:0] == OP_ADD || IR1[3:0] == OP_SUB || IR1[3:0] == OP_NAND))
+		begin
+			if (IR1[7:6] == IR3[7:6])
+				R1_in_BPSel <= 2;
+			if (IR1[5:4] == IR3[7:6])
+				R2_in_BPSel <= 2;
+		end
+		
+		// load, d/m, ori
+		else if(IR3[3:0] == OP_LOAD && IR1[2:0] == OP_ORI)
+		begin
+			if (IR3[7:6] == 1)
+				R1_in_BPSel <= 2;
+		end
+
+		// load, d/m, shift
+		else if(IR3[3:0] == OP_LOAD && IR1[2:0] == OP_SHIFT)
+		begin
+			if (IR1[7:6] == IR3[7:6])
+				R1_in_BPSel <= 2;
+		end
+		
+		// load, d/m, store
+		else if(IR3[3:0] == OP_LOAD && IR1[3:0] == OP_STORE)
+		begin
+			if (IR1[7:6] == IR3[7:6])
+				R1_in_BPSel <= 2;	
+			if (IR1[5:4] == IR3[7:6])
+				R2_in_BPSel <= 2;
+		end
+		
+		// load, d/m, load
+		else if(IR3[3:0] == OP_LOAD && IR1[3:0] == OP_LOAD)
+		begin
+			if (IR1[5:4] == IR3[7:6])
+				R2_in_BPSel <= 2;
+		end
+		
+		// load, d/m, br (works as intended)
+		/////////////////////////////////////////////////////////////////////////////////////////////////////
+		// br .. doesnt give any hazards\
+		else
+		begin
+			R1_in_BPSel <= 0;
+			R2_in_BPSel <= 0;	
 		end
 	end
 	
@@ -196,6 +523,12 @@ module	FSMExecute
 					
 				if((instr[3:0] == OP_BZ && Z) || (instr[3:0] == OP_BNZ && ~Z) || (instr[3:0] == OP_BPZ && ~N))
 				begin
+					if(instr[7:4] == 1)
+					begin
+						PCSel = 1;
+						squashIR1 = 0;
+						squashIR2 = 0;
+					end
 					if(instr[7:4] == 2)
 					begin
 						PCSel = 1;
@@ -209,9 +542,11 @@ module	FSMExecute
 						squashIR2 = 1;
 					end
 					else
-					PCSel = 0;
-					squashIR1 = 1;
-					squashIR2 = 1;
+					begin
+						PCSel = 0;
+						squashIR1 = 1;
+						squashIR2 = 1;
+					end
 				end
 				else
 				begin

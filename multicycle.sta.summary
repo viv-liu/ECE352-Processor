@@ -3,88 +3,64 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow Model Setup 'KEY[1]'
-Slack : -7.971
-TNS   : -457.417
-
-Type  : Slow Model Setup 'register_8bit_ir:IR2_reg|q[0]'
-Slack : -3.713
-TNS   : -12.326
+Slack : -9.349
+TNS   : -555.948
 
 Type  : Slow Model Setup 'FSMExecute:FSMExecute|stop_operation_finished'
-Slack : -3.473
-TNS   : -15.560
+Slack : -1.955
+TNS   : -11.447
 
 Type  : Slow Model Hold 'KEY[1]'
-Slack : -2.472
-TNS   : -24.430
+Slack : -2.446
+TNS   : -15.937
 
 Type  : Slow Model Hold 'FSMExecute:FSMExecute|stop_operation_finished'
-Slack : -2.418
-TNS   : -10.264
-
-Type  : Slow Model Hold 'register_8bit_ir:IR2_reg|q[0]'
-Slack : -2.250
-TNS   : -7.010
+Slack : 0.229
+TNS   : 0.000
 
 Type  : Slow Model Recovery 'KEY[1]'
-Slack : -1.292
-TNS   : -16.966
+Slack : 1.061
+TNS   : 0.000
 
 Type  : Slow Model Removal 'KEY[1]'
-Slack : -1.147
-TNS   : -15.034
+Slack : -1.014
+TNS   : -14.663
 
 Type  : Slow Model Minimum Pulse Width 'KEY[1]'
 Slack : -2.000
-TNS   : -350.222
-
-Type  : Slow Model Minimum Pulse Width 'register_8bit_ir:IR2_reg|q[0]'
-Slack : -0.511
-TNS   : -8.198
+TNS   : -342.222
 
 Type  : Slow Model Minimum Pulse Width 'FSMExecute:FSMExecute|stop_operation_finished'
 Slack : 0.500
 TNS   : 0.000
 
 Type  : Fast Model Setup 'KEY[1]'
-Slack : -2.736
-TNS   : -157.316
-
-Type  : Fast Model Setup 'register_8bit_ir:IR2_reg|q[0]'
-Slack : -1.690
-TNS   : -5.603
+Slack : -3.596
+TNS   : -208.338
 
 Type  : Fast Model Setup 'FSMExecute:FSMExecute|stop_operation_finished'
-Slack : -0.972
-TNS   : -2.154
+Slack : -0.381
+TNS   : -1.233
 
 Type  : Fast Model Hold 'KEY[1]'
-Slack : -1.517
-TNS   : -21.347
+Slack : -1.493
+TNS   : -17.194
 
 Type  : Fast Model Hold 'FSMExecute:FSMExecute|stop_operation_finished'
-Slack : -1.446
-TNS   : -7.368
-
-Type  : Fast Model Hold 'register_8bit_ir:IR2_reg|q[0]'
-Slack : -1.016
-TNS   : -3.149
+Slack : 0.203
+TNS   : 0.000
 
 Type  : Fast Model Recovery 'KEY[1]'
-Slack : -0.177
-TNS   : -0.685
+Slack : 1.062
+TNS   : 0.000
 
 Type  : Fast Model Removal 'KEY[1]'
-Slack : -0.778
-TNS   : -11.246
+Slack : -0.782
+TNS   : -11.812
 
 Type  : Fast Model Minimum Pulse Width 'KEY[1]'
 Slack : -2.000
-TNS   : -350.222
-
-Type  : Fast Model Minimum Pulse Width 'register_8bit_ir:IR2_reg|q[0]'
-Slack : 0.053
-TNS   : 0.000
+TNS   : -342.222
 
 Type  : Fast Model Minimum Pulse Width 'FSMExecute:FSMExecute|stop_operation_finished'
 Slack : 0.500

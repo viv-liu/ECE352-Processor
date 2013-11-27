@@ -1,5 +1,5 @@
 Fitter report for multicycle
-Tue Nov 26 16:28:38 2013
+Tue Nov 26 22:10:38 2013
 Quartus II 32-bit Version 11.1 Build 259 01/25/2012 Service Pack 2 SJ Web Edition
 
 
@@ -39,9 +39,7 @@ Quartus II 32-bit Version 11.1 Build 259 01/25/2012 Service Pack 2 SJ Web Editio
  31. LAB Distinct Inputs
  32. Fitter Device Options
  33. Operating Settings and Conditions
- 34. Estimated Delay Added for Hold Timing Summary
- 35. Estimated Delay Added for Hold Timing Details
- 36. Fitter Messages
+ 34. Fitter Messages
 
 
 
@@ -67,17 +65,17 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                     ;
 +------------------------------------+-----------------------------------------------+
-; Fitter Status                      ; Successful - Tue Nov 26 16:28:38 2013         ;
+; Fitter Status                      ; Successful - Tue Nov 26 22:10:38 2013         ;
 ; Quartus II 32-bit Version          ; 11.1 Build 259 01/25/2012 SP 2 SJ Web Edition ;
 ; Revision Name                      ; multicycle                                    ;
 ; Top-level Entity Name              ; multicycle                                    ;
 ; Family                             ; Cyclone II                                    ;
 ; Device                             ; EP2C35F672C6                                  ;
 ; Timing Models                      ; Final                                         ;
-; Total logic elements               ; 344 / 33,216 ( 1 % )                          ;
-;     Total combinational functions  ; 333 / 33,216 ( 1 % )                          ;
-;     Dedicated logic registers      ; 121 / 33,216 ( < 1 % )                        ;
-; Total registers                    ; 121                                           ;
+; Total logic elements               ; 419 / 33,216 ( 1 % )                          ;
+;     Total combinational functions  ; 418 / 33,216 ( 1 % )                          ;
+;     Dedicated logic registers      ; 113 / 33,216 ( < 1 % )                        ;
+; Total registers                    ; 113                                           ;
 ; Total pins                         ; 88 / 475 ( 19 % )                             ;
 ; Total virtual pins                 ; 0                                             ;
 ; Total memory bits                  ; 2,048 / 483,840 ( < 1 % )                     ;
@@ -149,14 +147,14 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+-----------------+------------------+---------------------+-----------+----------------+---------------------------------------------------------------------------------------------------+------------------+-----------------------+
 ; Node                       ; Action          ; Operation        ; Reason              ; Node Port ; Node Port Name ; Destination Node                                                                                  ; Destination Port ; Destination Port Name ;
 +----------------------------+-----------------+------------------+---------------------+-----------+----------------+---------------------------------------------------------------------------------------------------+------------------+-----------------------+
-; register_8bit:MDR_reg|q[0] ; Packed Register ; Register Packing ; Timing optimization ; REGOUT    ;                ; memory:DataMem|DualMem:inst|altsyncram:altsyncram_component|altsyncram_up82:auto_generated|q_a[0] ; PORTADATAOUT     ;                       ;
-; register_8bit:MDR_reg|q[1] ; Packed Register ; Register Packing ; Timing optimization ; REGOUT    ;                ; memory:DataMem|DualMem:inst|altsyncram:altsyncram_component|altsyncram_up82:auto_generated|q_a[1] ; PORTADATAOUT     ;                       ;
-; register_8bit:MDR_reg|q[2] ; Packed Register ; Register Packing ; Timing optimization ; REGOUT    ;                ; memory:DataMem|DualMem:inst|altsyncram:altsyncram_component|altsyncram_up82:auto_generated|q_a[2] ; PORTADATAOUT     ;                       ;
-; register_8bit:MDR_reg|q[3] ; Packed Register ; Register Packing ; Timing optimization ; REGOUT    ;                ; memory:DataMem|DualMem:inst|altsyncram:altsyncram_component|altsyncram_up82:auto_generated|q_a[3] ; PORTADATAOUT     ;                       ;
-; register_8bit:MDR_reg|q[4] ; Packed Register ; Register Packing ; Timing optimization ; REGOUT    ;                ; memory:DataMem|DualMem:inst|altsyncram:altsyncram_component|altsyncram_up82:auto_generated|q_a[4] ; PORTADATAOUT     ;                       ;
-; register_8bit:MDR_reg|q[5] ; Packed Register ; Register Packing ; Timing optimization ; REGOUT    ;                ; memory:DataMem|DualMem:inst|altsyncram:altsyncram_component|altsyncram_up82:auto_generated|q_a[5] ; PORTADATAOUT     ;                       ;
-; register_8bit:MDR_reg|q[6] ; Packed Register ; Register Packing ; Timing optimization ; REGOUT    ;                ; memory:DataMem|DualMem:inst|altsyncram:altsyncram_component|altsyncram_up82:auto_generated|q_a[6] ; PORTADATAOUT     ;                       ;
-; register_8bit:MDR_reg|q[7] ; Packed Register ; Register Packing ; Timing optimization ; REGOUT    ;                ; memory:DataMem|DualMem:inst|altsyncram:altsyncram_component|altsyncram_up82:auto_generated|q_a[7] ; PORTADATAOUT     ;                       ;
+; register_8bit:MDR_reg|q[0] ; Packed Register ; Register Packing ; Timing optimization ; REGOUT    ;                ; memory:DataMem|DualMem:inst|altsyncram:altsyncram_component|altsyncram_pv82:auto_generated|q_a[0] ; PORTADATAOUT     ;                       ;
+; register_8bit:MDR_reg|q[1] ; Packed Register ; Register Packing ; Timing optimization ; REGOUT    ;                ; memory:DataMem|DualMem:inst|altsyncram:altsyncram_component|altsyncram_pv82:auto_generated|q_a[1] ; PORTADATAOUT     ;                       ;
+; register_8bit:MDR_reg|q[2] ; Packed Register ; Register Packing ; Timing optimization ; REGOUT    ;                ; memory:DataMem|DualMem:inst|altsyncram:altsyncram_component|altsyncram_pv82:auto_generated|q_a[2] ; PORTADATAOUT     ;                       ;
+; register_8bit:MDR_reg|q[3] ; Packed Register ; Register Packing ; Timing optimization ; REGOUT    ;                ; memory:DataMem|DualMem:inst|altsyncram:altsyncram_component|altsyncram_pv82:auto_generated|q_a[3] ; PORTADATAOUT     ;                       ;
+; register_8bit:MDR_reg|q[4] ; Packed Register ; Register Packing ; Timing optimization ; REGOUT    ;                ; memory:DataMem|DualMem:inst|altsyncram:altsyncram_component|altsyncram_pv82:auto_generated|q_a[4] ; PORTADATAOUT     ;                       ;
+; register_8bit:MDR_reg|q[5] ; Packed Register ; Register Packing ; Timing optimization ; REGOUT    ;                ; memory:DataMem|DualMem:inst|altsyncram:altsyncram_component|altsyncram_pv82:auto_generated|q_a[5] ; PORTADATAOUT     ;                       ;
+; register_8bit:MDR_reg|q[6] ; Packed Register ; Register Packing ; Timing optimization ; REGOUT    ;                ; memory:DataMem|DualMem:inst|altsyncram:altsyncram_component|altsyncram_pv82:auto_generated|q_a[6] ; PORTADATAOUT     ;                       ;
+; register_8bit:MDR_reg|q[7] ; Packed Register ; Register Packing ; Timing optimization ; REGOUT    ;                ; memory:DataMem|DualMem:inst|altsyncram:altsyncram_component|altsyncram_pv82:auto_generated|q_a[7] ; PORTADATAOUT     ;                       ;
 +----------------------------+-----------------+------------------+---------------------+-----------+----------------+---------------------------------------------------------------------------------------------------+------------------+-----------------------+
 
 
@@ -191,8 +189,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Type                ; Value                  ;
 +---------------------+------------------------+
 ; Placement (by node) ;                        ;
-;     -- Requested    ; 0 / 556 ( 0.00 % )     ;
-;     -- Achieved     ; 0 / 556 ( 0.00 % )     ;
+;     -- Requested    ; 0 / 633 ( 0.00 % )     ;
+;     -- Achieved     ; 0 / 633 ( 0.00 % )     ;
 ;                     ;                        ;
 ; Routing (by net)    ;                        ;
 ;     -- Requested    ; 0 / 0 ( 0.00 % )       ;
@@ -215,7 +213,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 ; Partition Name                 ; # Nodes ; # Preserved Nodes ; Preservation Level Used ; Netlist Type Used ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
-; Top                            ; 553     ; 0                 ; N/A                     ; Source File       ;
+; Top                            ; 630     ; 0                 ; N/A                     ; Source File       ;
 ; hard_block:auto_generated_inst ; 3       ; 0                 ; N/A                     ; Source File       ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 
@@ -231,26 +229,26 @@ The pin-out file can be found in Z:/processor_v3_verilogReset/processor_v3_veril
 +---------------------------------------------+---------------------------+
 ; Resource                                    ; Usage                     ;
 +---------------------------------------------+---------------------------+
-; Total logic elements                        ; 344 / 33,216 ( 1 % )      ;
-;     -- Combinational with no register       ; 223                       ;
-;     -- Register only                        ; 11                        ;
-;     -- Combinational with a register        ; 110                       ;
+; Total logic elements                        ; 419 / 33,216 ( 1 % )      ;
+;     -- Combinational with no register       ; 306                       ;
+;     -- Register only                        ; 1                         ;
+;     -- Combinational with a register        ; 112                       ;
 ;                                             ;                           ;
 ; Logic element usage by number of LUT inputs ;                           ;
-;     -- 4 input functions                    ; 189                       ;
-;     -- 3 input functions                    ; 108                       ;
-;     -- <=2 input functions                  ; 36                        ;
-;     -- Register only                        ; 11                        ;
+;     -- 4 input functions                    ; 239                       ;
+;     -- 3 input functions                    ; 116                       ;
+;     -- <=2 input functions                  ; 63                        ;
+;     -- Register only                        ; 1                         ;
 ;                                             ;                           ;
 ; Logic elements by mode                      ;                           ;
-;     -- normal mode                          ; 298                       ;
+;     -- normal mode                          ; 383                       ;
 ;     -- arithmetic mode                      ; 35                        ;
 ;                                             ;                           ;
-; Total registers*                            ; 121 / 34,593 ( < 1 % )    ;
-;     -- Dedicated logic registers            ; 121 / 33,216 ( < 1 % )    ;
+; Total registers*                            ; 113 / 34,593 ( < 1 % )    ;
+;     -- Dedicated logic registers            ; 113 / 33,216 ( < 1 % )    ;
 ;     -- I/O registers                        ; 0 / 1,377 ( 0 % )         ;
 ;                                             ;                           ;
-; Total LABs:  partially or completely used   ; 28 / 2,076 ( 1 % )        ;
+; Total LABs:  partially or completely used   ; 35 / 2,076 ( 2 % )        ;
 ; User inserted logic elements                ; 0                         ;
 ; Virtual pins                                ; 0                         ;
 ; I/O pins                                    ; 88 / 475 ( 19 % )         ;
@@ -265,14 +263,14 @@ The pin-out file can be found in Z:/processor_v3_verilogReset/processor_v3_veril
 ; JTAGs                                       ; 0 / 1 ( 0 % )             ;
 ; ASMI blocks                                 ; 0 / 1 ( 0 % )             ;
 ; CRC blocks                                  ; 0 / 1 ( 0 % )             ;
-; Average interconnect usage (total/H/V)      ; 0% / 0% / 0%              ;
-; Peak interconnect usage (total/H/V)         ; 6% / 7% / 6%              ;
+; Average interconnect usage (total/H/V)      ; 0% / 1% / 0%              ;
+; Peak interconnect usage (total/H/V)         ; 7% / 7% / 6%              ;
 ; Maximum fan-out node                        ; KEY[1]~clkctrl            ;
-; Maximum fan-out                             ; 110                       ;
+; Maximum fan-out                             ; 115                       ;
 ; Highest non-global fan-out signal           ; KEY[0]                    ;
-; Highest non-global fan-out                  ; 107                       ;
-; Total fan-out                               ; 1672                      ;
-; Average fan-out                             ; 2.99                      ;
+; Highest non-global fan-out                  ; 99                        ;
+; Total fan-out                               ; 1967                      ;
+; Average fan-out                             ; 3.14                      ;
 +---------------------------------------------+---------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -285,26 +283,26 @@ The pin-out file can be found in Z:/processor_v3_verilogReset/processor_v3_veril
 +---------------------------------------------+-----------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                   ; Low                            ;
 ;                                             ;                       ;                                ;
-; Total logic elements                        ; 344 / 33216 ( 1 % )   ; 0 / 33216 ( 0 % )              ;
-;     -- Combinational with no register       ; 223                   ; 0                              ;
-;     -- Register only                        ; 11                    ; 0                              ;
-;     -- Combinational with a register        ; 110                   ; 0                              ;
+; Total logic elements                        ; 419 / 33216 ( 1 % )   ; 0 / 33216 ( 0 % )              ;
+;     -- Combinational with no register       ; 306                   ; 0                              ;
+;     -- Register only                        ; 1                     ; 0                              ;
+;     -- Combinational with a register        ; 112                   ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic element usage by number of LUT inputs ;                       ;                                ;
-;     -- 4 input functions                    ; 189                   ; 0                              ;
-;     -- 3 input functions                    ; 108                   ; 0                              ;
-;     -- <=2 input functions                  ; 36                    ; 0                              ;
-;     -- Register only                        ; 11                    ; 0                              ;
+;     -- 4 input functions                    ; 239                   ; 0                              ;
+;     -- 3 input functions                    ; 116                   ; 0                              ;
+;     -- <=2 input functions                  ; 63                    ; 0                              ;
+;     -- Register only                        ; 1                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic elements by mode                      ;                       ;                                ;
-;     -- normal mode                          ; 298                   ; 0                              ;
+;     -- normal mode                          ; 383                   ; 0                              ;
 ;     -- arithmetic mode                      ; 35                    ; 0                              ;
 ;                                             ;                       ;                                ;
-; Total registers                             ; 121                   ; 0                              ;
-;     -- Dedicated logic registers            ; 121 / 33216 ( < 1 % ) ; 0 / 33216 ( 0 % )              ;
+; Total registers                             ; 113                   ; 0                              ;
+;     -- Dedicated logic registers            ; 113 / 33216 ( < 1 % ) ; 0 / 33216 ( 0 % )              ;
 ;     -- I/O registers                        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
-; Total LABs:  partially or completely used   ; 28 / 2076 ( 1 % )     ; 0 / 2076 ( 0 % )               ;
+; Total LABs:  partially or completely used   ; 35 / 2076 ( 1 % )     ; 0 / 2076 ( 0 % )               ;
 ;                                             ;                       ;                                ;
 ; Virtual pins                                ; 0                     ; 0                              ;
 ; I/O pins                                    ; 88                    ; 0                              ;
@@ -322,8 +320,8 @@ The pin-out file can be found in Z:/processor_v3_verilogReset/processor_v3_veril
 ;     -- Registered Output Connections        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Internal Connections                        ;                       ;                                ;
-;     -- Total Connections                    ; 1680                  ; 0                              ;
-;     -- Registered Connections               ; 527                   ; 0                              ;
+;     -- Total Connections                    ; 1975                  ; 0                              ;
+;     -- Registered Connections               ; 635                   ; 0                              ;
 ;                                             ;                       ;                                ;
 ; External Connections                        ;                       ;                                ;
 ;     -- Top                                  ; 0                     ; 0                              ;
@@ -355,8 +353,8 @@ The pin-out file can be found in Z:/processor_v3_verilogReset/processor_v3_veril
 +--------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
 ; Name   ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination ; Location assigned by ;
 +--------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
-; KEY[0] ; G26   ; 5        ; 65           ; 27           ; 1           ; 107                   ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
-; KEY[1] ; N23   ; 5        ; 65           ; 20           ; 2           ; 14                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; KEY[0] ; G26   ; 5        ; 65           ; 27           ; 1           ; 99                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; KEY[1] ; N23   ; 5        ; 65           ; 20           ; 2           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
 ; KEY[2] ; P23   ; 6        ; 65           ; 18           ; 0           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
 ; SW[0]  ; N25   ; 5        ; 65           ; 19           ; 0           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
 ; SW[1]  ; N26   ; 5        ; 65           ; 19           ; 1           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
@@ -1202,40 +1200,41 @@ Note: User assignments will override these defaults. The user specified values a
 +----------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                   ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M4Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                                                    ; Library Name ;
 +----------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------------------------------------------------------------------------------------+--------------+
-; |multicycle                                  ; 344 (30)    ; 121 (18)                  ; 0 (0)         ; 2048        ; 1    ; 0            ; 0       ; 0         ; 88   ; 0            ; 223 (12)     ; 11 (0)            ; 110 (22)         ; |multicycle                                                                                            ;              ;
-;    |ALU:ALU|                                 ; 79 (79)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 70 (70)      ; 0 (0)             ; 9 (9)            ; |multicycle|ALU:ALU                                                                                    ;              ;
-;    |DataHazardControl:DataHazardControl|     ; 26 (26)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 21 (21)      ; 0 (0)             ; 5 (5)            ; |multicycle|DataHazardControl:DataHazardControl                                                        ;              ;
-;    |FSMExecute:FSMExecute|                   ; 22 (22)     ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 17 (17)      ; 0 (0)             ; 5 (5)            ; |multicycle|FSMExecute:FSMExecute                                                                      ;              ;
-;    |FSMWB:FSMWB|                             ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; |multicycle|FSMWB:FSMWB                                                                                ;              ;
-;    |HEXs:HEX_display|                        ; 56 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 51 (0)       ; 0 (0)             ; 5 (0)            ; |multicycle|HEXs:HEX_display                                                                           ;              ;
+; |multicycle                                  ; 419 (35)    ; 113 (18)                  ; 0 (0)         ; 2048        ; 1    ; 0            ; 0       ; 0         ; 88   ; 0            ; 306 (18)     ; 1 (0)             ; 112 (16)         ; |multicycle                                                                                            ;              ;
+;    |ALU:ALU|                                 ; 79 (79)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 71 (71)      ; 0 (0)             ; 8 (8)            ; |multicycle|ALU:ALU                                                                                    ;              ;
+;    |DataHazardControl:DataHazardControl|     ; 46 (46)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 41 (41)      ; 0 (0)             ; 5 (5)            ; |multicycle|DataHazardControl:DataHazardControl                                                        ;              ;
+;    |FSMExecute:FSMExecute|                   ; 24 (24)     ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 23 (23)      ; 0 (0)             ; 1 (1)            ; |multicycle|FSMExecute:FSMExecute                                                                      ;              ;
+;    |FSMWB:FSMWB|                             ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; |multicycle|FSMWB:FSMWB                                                                                ;              ;
+;    |HEXs:HEX_display|                        ; 56 (0)      ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 56 (0)       ; 0 (0)             ; 0 (0)            ; |multicycle|HEXs:HEX_display                                                                           ;              ;
 ;       |HEX:hex0|                             ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |multicycle|HEXs:HEX_display|HEX:hex0                                                                  ;              ;
 ;       |HEX:hex1|                             ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |multicycle|HEXs:HEX_display|HEX:hex1                                                                  ;              ;
 ;       |HEX:hex2|                             ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |multicycle|HEXs:HEX_display|HEX:hex2                                                                  ;              ;
 ;       |HEX:hex3|                             ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |multicycle|HEXs:HEX_display|HEX:hex3                                                                  ;              ;
-;       |HEX:hex4|                             ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 2 (2)            ; |multicycle|HEXs:HEX_display|HEX:hex4                                                                  ;              ;
-;       |HEX:hex5|                             ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 3 (3)            ; |multicycle|HEXs:HEX_display|HEX:hex5                                                                  ;              ;
+;       |HEX:hex4|                             ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |multicycle|HEXs:HEX_display|HEX:hex4                                                                  ;              ;
+;       |HEX:hex5|                             ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |multicycle|HEXs:HEX_display|HEX:hex5                                                                  ;              ;
 ;       |HEX:hex6|                             ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |multicycle|HEXs:HEX_display|HEX:hex6                                                                  ;              ;
 ;       |HEX:hex7|                             ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |multicycle|HEXs:HEX_display|HEX:hex7                                                                  ;              ;
-;    |RF:RF_block|                             ; 54 (54)     ; 32 (32)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 50 (50)          ; |multicycle|RF:RF_block                                                                                ;              ;
+;    |RF:RF_block|                             ; 36 (36)     ; 32 (32)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 32 (32)          ; |multicycle|RF:RF_block                                                                                ;              ;
 ;    |memory:DataMem|                          ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 2048        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |multicycle|memory:DataMem                                                                             ;              ;
 ;       |DualMem:inst|                         ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 2048        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |multicycle|memory:DataMem|DualMem:inst                                                                ;              ;
 ;          |altsyncram:altsyncram_component|   ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 2048        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |multicycle|memory:DataMem|DualMem:inst|altsyncram:altsyncram_component                                ;              ;
-;             |altsyncram_up82:auto_generated| ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 2048        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |multicycle|memory:DataMem|DualMem:inst|altsyncram:altsyncram_component|altsyncram_up82:auto_generated ;              ;
-;    |mux2to1_2bit:R1Sel_mux|                  ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 2 (2)            ; |multicycle|mux2to1_2bit:R1Sel_mux                                                                     ;              ;
-;    |mux2to1_8bit:ALU_in1_BP_mux|             ; 16 (16)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 8 (8)            ; |multicycle|mux2to1_8bit:ALU_in1_BP_mux                                                                ;              ;
-;    |mux2to1_8bit:ALU_in2_BP_mux|             ; 22 (22)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 22 (22)      ; 0 (0)             ; 0 (0)            ; |multicycle|mux2to1_8bit:ALU_in2_BP_mux                                                                ;              ;
-;    |mux2to1_8bit:DataMem_address_BP_mux|     ; 8 (8)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; |multicycle|mux2to1_8bit:DataMem_address_BP_mux                                                        ;              ;
-;    |mux2to1_8bit:DataMem_data_BP_mux|        ; 8 (8)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; |multicycle|mux2to1_8bit:DataMem_data_BP_mux                                                           ;              ;
-;    |mux2to1_8bit:RegMux|                     ; 9 (9)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 9 (9)            ; |multicycle|mux2to1_8bit:RegMux                                                                        ;              ;
-;    |mux5to1_8bit:ALU_in2_mux|                ; 3 (3)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 1 (1)            ; |multicycle|mux5to1_8bit:ALU_in2_mux                                                                   ;              ;
-;    |register_8bit:ALUOut_reg|                ; 8 (8)       ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 8 (8)            ; |multicycle|register_8bit:ALUOut_reg                                                                   ;              ;
+;             |altsyncram_pv82:auto_generated| ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 2048        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |multicycle|memory:DataMem|DualMem:inst|altsyncram:altsyncram_component|altsyncram_pv82:auto_generated ;              ;
+;    |mux2to1_2bit:R1Sel_mux|                  ; 2 (2)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; |multicycle|mux2to1_2bit:R1Sel_mux                                                                     ;              ;
+;    |mux2to1_8bit:RegMux|                     ; 8 (8)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 8 (8)            ; |multicycle|mux2to1_8bit:RegMux                                                                        ;              ;
+;    |mux4to1_8bit:ALU_in1_BP_mux|             ; 19 (19)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 9 (9)        ; 0 (0)             ; 10 (10)          ; |multicycle|mux4to1_8bit:ALU_in1_BP_mux                                                                ;              ;
+;    |mux4to1_8bit:ALU_in2_BP_mux|             ; 34 (34)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 34 (34)      ; 0 (0)             ; 0 (0)            ; |multicycle|mux4to1_8bit:ALU_in2_BP_mux                                                                ;              ;
+;    |mux4to1_8bit:DataMem_address_BP_mux|     ; 16 (16)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 16 (16)      ; 0 (0)             ; 0 (0)            ; |multicycle|mux4to1_8bit:DataMem_address_BP_mux                                                        ;              ;
+;    |mux4to1_8bit:DataMem_data_BP_mux|        ; 16 (16)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 16 (16)      ; 0 (0)             ; 0 (0)            ; |multicycle|mux4to1_8bit:DataMem_data_BP_mux                                                           ;              ;
+;    |mux4to1_8bit:R1_in_BP_mux|               ; 16 (16)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 13 (13)          ; |multicycle|mux4to1_8bit:R1_in_BP_mux                                                                  ;              ;
+;    |mux4to1_8bit:R2_in_BP_mux|               ; 16 (16)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 11 (11)          ; |multicycle|mux4to1_8bit:R2_in_BP_mux                                                                  ;              ;
+;    |mux5to1_8bit:ALU_in2_mux|                ; 4 (4)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; |multicycle|mux5to1_8bit:ALU_in2_mux                                                                   ;              ;
+;    |register_8bit:ALUOut_reg|                ; 8 (8)       ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 7 (7)            ; |multicycle|register_8bit:ALUOut_reg                                                                   ;              ;
 ;    |register_8bit:PC1|                       ; 8 (8)       ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 8 (8)            ; |multicycle|register_8bit:PC1                                                                          ;              ;
-;    |register_8bit:PC2|                       ; 8 (8)       ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 8 (8)             ; 0 (0)            ; |multicycle|register_8bit:PC2                                                                          ;              ;
-;    |register_8bit:PC3|                       ; 8 (8)       ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 8 (8)            ; |multicycle|register_8bit:PC3                                                                          ;              ;
-;    |register_8bit:R1|                        ; 8 (8)       ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 8 (8)            ; |multicycle|register_8bit:R1                                                                           ;              ;
-;    |register_8bit:R2|                        ; 8 (8)       ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 8 (8)            ; |multicycle|register_8bit:R2                                                                           ;              ;
-;    |register_8bit_ir:IR1_reg|                ; 8 (8)       ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 7 (7)            ; |multicycle|register_8bit_ir:IR1_reg                                                                   ;              ;
-;    |register_8bit_ir:IR2_reg|                ; 8 (8)       ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 2 (2)             ; 6 (6)            ; |multicycle|register_8bit_ir:IR2_reg                                                                   ;              ;
+;    |register_8bit:PC2|                       ; 8 (8)       ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 8 (8)            ; |multicycle|register_8bit:PC2                                                                          ;              ;
+;    |register_8bit:R1|                        ; 9 (9)       ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 8 (8)            ; |multicycle|register_8bit:R1                                                                           ;              ;
+;    |register_8bit:R2|                        ; 9 (9)       ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 8 (8)            ; |multicycle|register_8bit:R2                                                                           ;              ;
+;    |register_8bit_ir:IR1_reg|                ; 8 (8)       ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 8 (8)            ; |multicycle|register_8bit_ir:IR1_reg                                                                   ;              ;
+;    |register_8bit_ir:IR2_reg|                ; 8 (8)       ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 8 (8)            ; |multicycle|register_8bit_ir:IR2_reg                                                                   ;              ;
 ;    |register_8bit_ir:IR3_reg|                ; 6 (6)       ; 6 (6)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 6 (6)            ; |multicycle|register_8bit_ir:IR3_reg                                                                   ;              ;
 +----------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -1347,19 +1346,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; KEY[2]                                                                                                         ;                   ;         ;
 ; SW[2]                                                                                                          ;                   ;         ;
 ; KEY[1]                                                                                                         ;                   ;         ;
-;      - register_8bit_ir:IR3_reg|q[0]                                                                           ; 0                 ; 0       ;
-;      - register_8bit_ir:IR3_reg|q[1]                                                                           ; 0                 ; 0       ;
-;      - register_8bit_ir:IR3_reg|q[2]                                                                           ; 0                 ; 0       ;
-;      - register_8bit_ir:IR3_reg|q[3]                                                                           ; 0                 ; 0       ;
-;      - register_8bit_ir:IR3_reg|q[7]                                                                           ; 1                 ; 0       ;
-;      - register_8bit_ir:IR3_reg|q[6]                                                                           ; 1                 ; 0       ;
-;      - register_8bit_ir:IR2_reg|q[5]                                                                           ; 1                 ; 0       ;
-;      - register_8bit_ir:IR2_reg|q[6]                                                                           ; 1                 ; 0       ;
-;      - register_8bit_ir:IR2_reg|q[4]                                                                           ; 1                 ; 0       ;
-;      - register_8bit_ir:IR2_reg|q[3]                                                                           ; 1                 ; 0       ;
-;      - register_8bit_ir:IR2_reg|q[1]                                                                           ; 0                 ; 0       ;
-;      - register_8bit_ir:IR2_reg|q[2]                                                                           ; 0                 ; 0       ;
-;      - register_8bit_ir:IR2_reg|q[7]                                                                           ; 1                 ; 0       ;
 ; KEY[0]                                                                                                         ;                   ;         ;
 ;      - counter[0]                                                                                              ; 1                 ; 6       ;
 ;      - RF:RF_block|k3[0]                                                                                       ; 1                 ; 6       ;
@@ -1420,6 +1406,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - register_8bit:PC1|q[5]                                                                                  ; 1                 ; 6       ;
 ;      - register_8bit:PC1|q[6]                                                                                  ; 1                 ; 6       ;
 ;      - register_8bit:PC1|q[7]                                                                                  ; 1                 ; 6       ;
+;      - register_8bit:R1|q[0]                                                                                   ; 1                 ; 6       ;
+;      - register_8bit:R2|q[0]                                                                                   ; 1                 ; 6       ;
+;      - register_8bit:R1|q[1]                                                                                   ; 1                 ; 6       ;
+;      - register_8bit:R2|q[2]                                                                                   ; 1                 ; 6       ;
+;      - register_8bit:R2|q[1]                                                                                   ; 1                 ; 6       ;
+;      - register_8bit:R1|q[2]                                                                                   ; 1                 ; 6       ;
+;      - register_8bit:R1|q[3]                                                                                   ; 1                 ; 6       ;
+;      - register_8bit:R1|q[4]                                                                                   ; 1                 ; 6       ;
+;      - register_8bit:R1|q[5]                                                                                   ; 1                 ; 6       ;
+;      - register_8bit:R2|q[3]                                                                                   ; 1                 ; 6       ;
+;      - register_8bit:R1|q[6]                                                                                   ; 1                 ; 6       ;
+;      - register_8bit:R2|q[4]                                                                                   ; 1                 ; 6       ;
+;      - register_8bit:R1|q[7]                                                                                   ; 1                 ; 6       ;
+;      - register_8bit:R2|q[5]                                                                                   ; 1                 ; 6       ;
+;      - register_8bit:R2|q[6]                                                                                   ; 1                 ; 6       ;
+;      - register_8bit:R2|q[7]                                                                                   ; 1                 ; 6       ;
 ;      - register_8bit_ir:IR3_reg|q[3]                                                                           ; 1                 ; 6       ;
 ;      - register_8bit_ir:IR3_reg|q[1]                                                                           ; 1                 ; 6       ;
 ;      - register_8bit_ir:IR3_reg|q[7]                                                                           ; 1                 ; 6       ;
@@ -1432,79 +1434,55 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - register_8bit:ALUOut_reg|q[6]                                                                           ; 1                 ; 6       ;
 ;      - register_8bit:ALUOut_reg|q[7]                                                                           ; 1                 ; 6       ;
 ;      - FSMExecute:FSMExecute|stop_operation_finished                                                           ; 1                 ; 6       ;
-;      - register_8bit:PC3|q[1]                                                                                  ; 1                 ; 6       ;
-;      - register_8bit:R1|q[1]                                                                                   ; 1                 ; 6       ;
-;      - register_8bit:PC3|q[0]                                                                                  ; 1                 ; 6       ;
-;      - register_8bit:R1|q[0]                                                                                   ; 1                 ; 6       ;
-;      - register_8bit:R2|q[2]                                                                                   ; 1                 ; 6       ;
-;      - register_8bit:R2|q[1]                                                                                   ; 1                 ; 6       ;
-;      - register_8bit:R2|q[0]                                                                                   ; 1                 ; 6       ;
-;      - register_8bit:PC3|q[3]                                                                                  ; 1                 ; 6       ;
-;      - register_8bit:R1|q[3]                                                                                   ; 1                 ; 6       ;
-;      - register_8bit:PC3|q[2]                                                                                  ; 1                 ; 6       ;
-;      - register_8bit:R1|q[2]                                                                                   ; 1                 ; 6       ;
-;      - register_8bit:PC3|q[4]                                                                                  ; 1                 ; 6       ;
-;      - register_8bit:R1|q[4]                                                                                   ; 1                 ; 6       ;
-;      - register_8bit:PC3|q[5]                                                                                  ; 1                 ; 6       ;
-;      - register_8bit:R1|q[5]                                                                                   ; 1                 ; 6       ;
-;      - register_8bit:PC3|q[6]                                                                                  ; 1                 ; 6       ;
-;      - register_8bit:R1|q[6]                                                                                   ; 1                 ; 6       ;
-;      - register_8bit:R2|q[3]                                                                                   ; 1                 ; 6       ;
-;      - register_8bit:PC3|q[7]                                                                                  ; 1                 ; 6       ;
-;      - register_8bit:R1|q[7]                                                                                   ; 1                 ; 6       ;
-;      - register_8bit:R2|q[4]                                                                                   ; 1                 ; 6       ;
-;      - register_8bit:R2|q[5]                                                                                   ; 1                 ; 6       ;
-;      - register_8bit:R2|q[6]                                                                                   ; 1                 ; 6       ;
-;      - register_8bit:R2|q[7]                                                                                   ; 1                 ; 6       ;
 ;      - register_8bit:PC2|q[1]                                                                                  ; 1                 ; 6       ;
 ;      - register_8bit:PC2|q[0]                                                                                  ; 1                 ; 6       ;
-;      - comb~0                                                                                                  ; 1                 ; 6       ;
 ;      - register_8bit:PC2|q[3]                                                                                  ; 1                 ; 6       ;
 ;      - register_8bit:PC2|q[2]                                                                                  ; 1                 ; 6       ;
 ;      - register_8bit:PC2|q[4]                                                                                  ; 1                 ; 6       ;
 ;      - register_8bit:PC2|q[5]                                                                                  ; 1                 ; 6       ;
 ;      - register_8bit:PC2|q[6]                                                                                  ; 1                 ; 6       ;
 ;      - register_8bit:PC2|q[7]                                                                                  ; 1                 ; 6       ;
+;      - comb~0                                                                                                  ; 1                 ; 6       ;
 ;      - Z                                                                                                       ; 1                 ; 6       ;
 ;      - N                                                                                                       ; 1                 ; 6       ;
-;      - memory:DataMem|DualMem:inst|altsyncram:altsyncram_component|altsyncram_up82:auto_generated|ram_block1a0 ; 1                 ; 6       ;
+;      - memory:DataMem|DualMem:inst|altsyncram:altsyncram_component|altsyncram_pv82:auto_generated|ram_block1a0 ; 1                 ; 6       ;
 +----------------------------------------------------------------------------------------------------------------+-------------------+---------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                                                                                                          ;
-+-------------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; Name                                                        ; Location           ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+-------------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; DataHazardControl:DataHazardControl|ALU_in1_BPSel~9         ; LCCOMB_X46_Y18_N30 ; 1       ; Latch enable ; no     ; --                   ; --               ; --                        ;
-; DataHazardControl:DataHazardControl|ALU_in2_BPSel~2         ; LCCOMB_X46_Y18_N2  ; 1       ; Latch enable ; no     ; --                   ; --               ; --                        ;
-; DataHazardControl:DataHazardControl|DataMem_address_BPSel~0 ; LCCOMB_X45_Y18_N26 ; 1       ; Latch enable ; no     ; --                   ; --               ; --                        ;
-; DataHazardControl:DataHazardControl|DataMem_data_BPSel~3    ; LCCOMB_X45_Y18_N24 ; 1       ; Latch enable ; no     ; --                   ; --               ; --                        ;
-; FSMExecute:FSMExecute|FlagWrite~0                           ; LCCOMB_X46_Y18_N6  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; FSMExecute:FSMExecute|MemRead~0                             ; LCCOMB_X44_Y18_N6  ; 1       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; FSMExecute:FSMExecute|MemWrite~0                            ; LCCOMB_X44_Y18_N20 ; 1       ; Write enable ; no     ; --                   ; --               ; --                        ;
-; FSMExecute:FSMExecute|PCSel                                 ; LCCOMB_X48_Y18_N0  ; 9       ; Sync. load   ; no     ; --                   ; --               ; --                        ;
-; FSMExecute:FSMExecute|stop_operation_finished               ; LCFF_X48_Y18_N13   ; 22      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; FSMExecute:FSMExecute|stop_operation_finished               ; LCFF_X48_Y18_N13   ; 8       ; Latch enable ; yes    ; Global Clock         ; GCLK6            ; --                        ;
-; KEY[0]                                                      ; PIN_G26            ; 107     ; Async. clear ; no     ; --                   ; --               ; --                        ;
-; KEY[1]                                                      ; PIN_N23            ; 14      ; Clock        ; no     ; --                   ; --               ; --                        ;
-; KEY[1]~clk_delay_ctrl                                       ; CLKDELAYCTRL_G4    ; 109     ; Clock        ; yes    ; Global Clock         ; GCLK4            ; --                        ;
-; RF:RF_block|Decoder0~0                                      ; LCCOMB_X48_Y17_N16 ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; RF:RF_block|Decoder0~1                                      ; LCCOMB_X48_Y17_N2  ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; RF:RF_block|Decoder0~2                                      ; LCCOMB_X48_Y17_N4  ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; RF:RF_block|Decoder0~3                                      ; LCCOMB_X48_Y17_N6  ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; comb~0                                                      ; LCCOMB_X48_Y18_N4  ; 16      ; Async. clear ; no     ; --                   ; --               ; --                        ;
-+-------------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                                                                    ;
++-------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
+; Name                                                  ; Location           ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++-------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
+; DataHazardControl:DataHazardControl|R1_in_BPSel[1]~4  ; LCCOMB_X44_Y20_N20 ; 8       ; Sync. load   ; no     ; --                   ; --               ; --                        ;
+; DataHazardControl:DataHazardControl|R2_in_BPSel[1]~12 ; LCCOMB_X42_Y20_N22 ; 8       ; Sync. load   ; no     ; --                   ; --               ; --                        ;
+; FSMExecute:FSMExecute|FlagWrite~0                     ; LCCOMB_X44_Y20_N22 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; FSMExecute:FSMExecute|MemRead~1                       ; LCCOMB_X40_Y21_N24 ; 1       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; FSMExecute:FSMExecute|MemWrite~0                      ; LCCOMB_X40_Y21_N2  ; 1       ; Write enable ; no     ; --                   ; --               ; --                        ;
+; FSMExecute:FSMExecute|PCSel                           ; LCCOMB_X43_Y21_N14 ; 9       ; Sync. load   ; no     ; --                   ; --               ; --                        ;
+; FSMExecute:FSMExecute|stop_operation_finished         ; LCFF_X43_Y21_N9    ; 22      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; FSMExecute:FSMExecute|stop_operation_finished         ; LCFF_X43_Y21_N9    ; 8       ; Latch enable ; yes    ; Global Clock         ; GCLK5            ; --                        ;
+; KEY[0]                                                ; PIN_G26            ; 99      ; Async. clear ; no     ; --                   ; --               ; --                        ;
+; KEY[1]                                                ; PIN_N23            ; 1       ; Clock        ; no     ; --                   ; --               ; --                        ;
+; KEY[1]~clk_delay_ctrl                                 ; CLKDELAYCTRL_G4    ; 114     ; Clock        ; yes    ; Global Clock         ; GCLK4            ; --                        ;
+; RF:RF_block|Decoder0~0                                ; LCCOMB_X46_Y20_N10 ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; RF:RF_block|Decoder0~1                                ; LCCOMB_X46_Y20_N28 ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; RF:RF_block|Decoder0~2                                ; LCCOMB_X46_Y20_N6  ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; RF:RF_block|Decoder0~3                                ; LCCOMB_X46_Y20_N0  ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; comb~0                                                ; LCCOMB_X43_Y21_N18 ; 16      ; Async. clear ; no     ; --                   ; --               ; --                        ;
+; register_8bit:R1|q[2]~8                               ; LCCOMB_X38_Y21_N24 ; 8       ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
+; register_8bit:R2|q[6]~8                               ; LCCOMB_X42_Y20_N4  ; 8       ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
++-------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------+
-; Global & Other Fast Signals                                                                                                                      ;
-+-----------------------------------------------+------------------+---------+----------------------+------------------+---------------------------+
-; Name                                          ; Location         ; Fan-Out ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+-----------------------------------------------+------------------+---------+----------------------+------------------+---------------------------+
-; FSMExecute:FSMExecute|stop_operation_finished ; LCFF_X48_Y18_N13 ; 8       ; Global Clock         ; GCLK6            ; --                        ;
-; KEY[1]~clk_delay_ctrl                         ; CLKDELAYCTRL_G4  ; 109     ; Global Clock         ; GCLK4            ; --                        ;
-+-----------------------------------------------+------------------+---------+----------------------+------------------+---------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Global & Other Fast Signals                                                                                                                     ;
++-----------------------------------------------+-----------------+---------+----------------------+------------------+---------------------------+
+; Name                                          ; Location        ; Fan-Out ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++-----------------------------------------------+-----------------+---------+----------------------+------------------+---------------------------+
+; FSMExecute:FSMExecute|stop_operation_finished ; LCFF_X43_Y21_N9 ; 8       ; Global Clock         ; GCLK5            ; --                        ;
+; KEY[1]~clk_delay_ctrl                         ; CLKDELAYCTRL_G4 ; 114     ; Global Clock         ; GCLK4            ; --                        ;
++-----------------------------------------------+-----------------+---------+----------------------+------------------+---------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------+
@@ -1512,34 +1490,37 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------------------------------------------+---------+
 ; Name                                                                                              ; Fan-Out ;
 +---------------------------------------------------------------------------------------------------+---------+
-; KEY[0]                                                                                            ; 107     ;
+; KEY[0]                                                                                            ; 99      ;
+; FSMExecute:FSMExecute|ALU_in2_mux_ctrl[2]                                                         ; 22      ;
 ; FSMExecute:FSMExecute|stop_operation_finished                                                     ; 21      ;
-; FSMExecute:FSMExecute|ALUop[1]                                                                    ; 18      ;
-; FSMExecute:FSMExecute|ALU_in2_mux_ctrl[2]                                                         ; 17      ;
-; DataHazardControl:DataHazardControl|ALU_in1_BPSel                                                 ; 17      ;
+; FSMExecute:FSMExecute|ALUop[1]                                                                    ; 19      ;
+; register_8bit_ir:IR2_reg|q[1]                                                                     ; 19      ;
+; FSMExecute:FSMExecute|squashIR2                                                                   ; 17      ;
+; mux4to1_8bit:ALU_in2_BP_mux|Mux7~4                                                                ; 17      ;
+; register_8bit_ir:IR2_reg|q[0]                                                                     ; 17      ;
+; FSMWB:FSMWB|RegIn~0                                                                               ; 17      ;
 ; SW[2]                                                                                             ; 16      ;
+; register_8bit_ir:IR1_reg|q[5]                                                                     ; 16      ;
+; register_8bit_ir:IR1_reg|q[4]                                                                     ; 16      ;
 ; comb~0                                                                                            ; 16      ;
-; register_8bit_ir:IR2_reg|q[2]                                                                     ; 16      ;
-; register_8bit_ir:IR2_reg|q[0]                                                                     ; 16      ;
-; register_8bit_ir:IR2_reg|q[1]                                                                     ; 16      ;
-; mux2to1_8bit:ALU_in2_BP_mux|result[1]~8                                                           ; 15      ;
-; mux2to1_8bit:ALU_in2_BP_mux|result[2]~5                                                           ; 15      ;
-; KEY[1]                                                                                            ; 14      ;
-; DataHazardControl:DataHazardControl|ALU_in2_BPSel                                                 ; 14      ;
-; mux2to1_8bit:ALU_in2_BP_mux|result[0]~9                                                           ; 14      ;
-; FSMExecute:FSMExecute|ALU_in2_mux_ctrl[1]                                                         ; 13      ;
-; register_8bit_ir:IR1_reg|q[4]                                                                     ; 13      ;
-; register_8bit_ir:IR1_reg|q[5]                                                                     ; 13      ;
+; DataHazardControl:DataHazardControl|DataMem_address_BPSel[1]~0                                    ; 16      ;
+; DataHazardControl:DataHazardControl|DataMem_data_BPSel[1]~0                                       ; 16      ;
+; mux4to1_8bit:ALU_in2_BP_mux|Mux6~3                                                                ; 16      ;
+; mux4to1_8bit:ALU_in2_BP_mux|Mux5~5                                                                ; 14      ;
+; register_8bit_ir:IR2_reg|q[2]                                                                     ; 14      ;
+; register_8bit_ir:IR3_reg|q[2]                                                                     ; 14      ;
 ; register_8bit_ir:IR2_reg|q[3]                                                                     ; 13      ;
-; mux2to1_2bit:R1Sel_mux|result[0]~1                                                                ; 12      ;
-; mux2to1_2bit:R1Sel_mux|result[1]~0                                                                ; 12      ;
-; FSMExecute:FSMExecute|ALUop[0]                                                                    ; 10      ;
-; DataHazardControl:DataHazardControl|always0~0                                                     ; 10      ;
+; mux2to1_2bit:R1Sel_mux|result[1]~1                                                                ; 12      ;
+; mux2to1_2bit:R1Sel_mux|result[0]~0                                                                ; 12      ;
+; FSMExecute:FSMExecute|ALUop[0]                                                                    ; 11      ;
+; DataHazardControl:DataHazardControl|ALU_in2_BPSel[0]~6                                            ; 11      ;
+; FSMExecute:FSMExecute|ALU_in2_mux_ctrl[1]                                                         ; 10      ;
+; register_8bit_ir:IR3_reg|q[0]                                                                     ; 10      ;
 ; FSMExecute:FSMExecute|PCSel                                                                       ; 9       ;
-; DataHazardControl:DataHazardControl|DataMem_address_BPSel                                         ; 9       ;
-; DataHazardControl:DataHazardControl|DataMem_data_BPSel                                            ; 9       ;
-; FSMExecute:FSMExecute|ALU_in1_mux_ctrl[0]                                                         ; 9       ;
-; register_8bit_ir:IR2_reg|q[7]                                                                     ; 9       ;
+; DataHazardControl:DataHazardControl|R2_in_BPSel[0]~10                                             ; 9       ;
+; DataHazardControl:DataHazardControl|R1_in_BPSel[0]~2                                              ; 9       ;
+; register_8bit_ir:IR3_reg|q[6]                                                                     ; 9       ;
+; register_8bit_ir:IR3_reg|q[7]                                                                     ; 9       ;
 ; RF:RF_block|k2[7]                                                                                 ; 9       ;
 ; RF:RF_block|k2[6]                                                                                 ; 9       ;
 ; RF:RF_block|k2[5]                                                                                 ; 9       ;
@@ -1558,21 +1539,40 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; RF:RF_block|k3[0]                                                                                 ; 9       ;
 ; ~GND                                                                                              ; 8       ;
 ; FSMExecute:FSMExecute|ALU_in2_mux_ctrl[0]                                                         ; 8       ;
+; mux4to1_8bit:ALU_in1_BP_mux|Mux4~9                                                                ; 8       ;
+; mux4to1_8bit:ALU_in1_BP_mux|Mux4~8                                                                ; 8       ;
+; mux4to1_8bit:ALU_in1_BP_mux|Mux4~7                                                                ; 8       ;
+; DataHazardControl:DataHazardControl|R2_in_BPSel[1]~12                                             ; 8       ;
+; register_8bit:R2|q[6]~8                                                                           ; 8       ;
+; DataHazardControl:DataHazardControl|R1_in_BPSel[1]~4                                              ; 8       ;
+; register_8bit:R1|q[2]~8                                                                           ; 8       ;
+; register_8bit_ir:IR1_reg|q[0]                                                                     ; 8       ;
+; DataHazardControl:DataHazardControl|DataMem_address_BPSel[0]~1                                    ; 8       ;
+; DataHazardControl:DataHazardControl|DataMem_data_BPSel[0]~1                                       ; 8       ;
 ; ALU:ALU|N~0                                                                                       ; 8       ;
+; register_8bit_ir:IR2_reg|q[7]                                                                     ; 8       ;
 ; RF:RF_block|Decoder0~3                                                                            ; 8       ;
 ; RF:RF_block|Decoder0~2                                                                            ; 8       ;
 ; RF:RF_block|Decoder0~1                                                                            ; 8       ;
 ; RF:RF_block|Decoder0~0                                                                            ; 8       ;
-; mux2to1_8bit:RegMux|result[0]~0                                                                   ; 8       ;
-; register_8bit:ALUOut_reg|q[0]                                                                     ; 8       ;
-; mux2to1_8bit:ALU_in1_BP_mux|result[6]~13                                                          ; 7       ;
-; mux2to1_8bit:ALU_in1_BP_mux|result[5]~11                                                          ; 7       ;
-; mux2to1_8bit:ALU_in1_BP_mux|result[4]~9                                                           ; 7       ;
-; mux2to1_8bit:ALU_in1_BP_mux|result[2]~7                                                           ; 7       ;
-; mux2to1_8bit:ALU_in1_BP_mux|result[3]~5                                                           ; 7       ;
-; mux2to1_8bit:ALU_in1_BP_mux|result[1]~1                                                           ; 7       ;
-; register_8bit_ir:IR3_reg|q[6]                                                                     ; 7       ;
-; register_8bit_ir:IR3_reg|q[7]                                                                     ; 7       ;
+; register_8bit_ir:IR3_reg|q[1]                                                                     ; 8       ;
+; register_8bit_ir:IR1_reg|q[2]                                                                     ; 7       ;
+; register_8bit_ir:IR1_reg|q[1]                                                                     ; 7       ;
+; mux4to1_8bit:ALU_in1_BP_mux|Mux1                                                                  ; 7       ;
+; mux4to1_8bit:ALU_in1_BP_mux|Mux2                                                                  ; 7       ;
+; mux4to1_8bit:ALU_in1_BP_mux|Mux3                                                                  ; 7       ;
+; mux4to1_8bit:ALU_in1_BP_mux|Mux5                                                                  ; 7       ;
+; mux4to1_8bit:ALU_in1_BP_mux|Mux4                                                                  ; 7       ;
+; DataHazardControl:DataHazardControl|ALU_in2_BPSel[1]~2                                            ; 7       ;
+; mux4to1_8bit:ALU_in1_BP_mux|Mux6                                                                  ; 7       ;
+; register_8bit:ALUOut_reg|q[7]                                                                     ; 7       ;
+; register_8bit:ALUOut_reg|q[6]                                                                     ; 7       ;
+; register_8bit:ALUOut_reg|q[5]                                                                     ; 7       ;
+; register_8bit:ALUOut_reg|q[4]                                                                     ; 7       ;
+; register_8bit:ALUOut_reg|q[3]                                                                     ; 7       ;
+; register_8bit:ALUOut_reg|q[2]                                                                     ; 7       ;
+; register_8bit:ALUOut_reg|q[1]                                                                     ; 7       ;
+; register_8bit:ALUOut_reg|q[0]                                                                     ; 7       ;
 ; hexin0[7]~7                                                                                       ; 7       ;
 ; hexin0[6]~6                                                                                       ; 7       ;
 ; hexin0[5]~5                                                                                       ; 7       ;
@@ -1589,56 +1589,63 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; hexin1[2]~2                                                                                       ; 7       ;
 ; hexin1[1]~1                                                                                       ; 7       ;
 ; hexin1[0]~0                                                                                       ; 7       ;
-; DataHazardControl:DataHazardControl|ALU_in1_BPSel~2                                               ; 6       ;
-; DataHazardControl:DataHazardControl|Equal4~0                                                      ; 6       ;
-; mux2to1_8bit:ALU_in1_BP_mux|result[7]~15                                                          ; 6       ;
+; register_8bit:MDR_reg|q[1]                                                                        ; 7       ;
+; register_8bit:MDR_reg|q[2]                                                                        ; 7       ;
+; register_8bit:MDR_reg|q[3]                                                                        ; 7       ;
+; register_8bit:MDR_reg|q[4]                                                                        ; 7       ;
+; register_8bit:MDR_reg|q[5]                                                                        ; 7       ;
+; register_8bit:MDR_reg|q[6]                                                                        ; 7       ;
+; register_8bit:MDR_reg|q[7]                                                                        ; 7       ;
+; register_8bit:MDR_reg|q[0]                                                                        ; 7       ;
+; mux4to1_8bit:ALU_in1_BP_mux|Mux0                                                                  ; 6       ;
+; mux4to1_8bit:ALU_in2_BP_mux|Mux0~0                                                                ; 6       ;
+; register_8bit_ir:IR2_reg|q[5]                                                                     ; 6       ;
+; register_8bit_ir:IR2_reg|q[4]                                                                     ; 6       ;
+; mux4to1_8bit:ALU_in1_BP_mux|Mux7                                                                  ; 6       ;
 ; register_8bit_ir:IR2_reg|q[6]                                                                     ; 6       ;
-; mux2to1_8bit:ALU_in1_BP_mux|result[0]~3                                                           ; 6       ;
-; DataHazardControl:DataHazardControl|Equal9~0                                                      ; 5       ;
-; register_8bit_ir:IR2_reg|q[4]                                                                     ; 5       ;
-; register_8bit_ir:IR2_reg|q[5]                                                                     ; 5       ;
-; register_8bit:ALUOut_reg|q[7]                                                                     ; 5       ;
-; register_8bit:ALUOut_reg|q[6]                                                                     ; 5       ;
-; register_8bit:ALUOut_reg|q[5]                                                                     ; 5       ;
-; register_8bit:ALUOut_reg|q[4]                                                                     ; 5       ;
-; register_8bit:ALUOut_reg|q[3]                                                                     ; 5       ;
-; register_8bit:ALUOut_reg|q[2]                                                                     ; 5       ;
-; register_8bit:ALUOut_reg|q[1]                                                                     ; 5       ;
-; ALU:ALU|N~8                                                                                       ; 4       ;
-; mux5to1_8bit:ALU_in2_mux|Mux7~2                                                                   ; 4       ;
-; mux2to1_8bit:RegMux|result[7]~8                                                                   ; 4       ;
-; mux2to1_8bit:RegMux|result[6]~7                                                                   ; 4       ;
-; mux2to1_8bit:RegMux|result[5]~6                                                                   ; 4       ;
-; mux2to1_8bit:RegMux|result[4]~5                                                                   ; 4       ;
-; mux2to1_8bit:RegMux|result[3]~4                                                                   ; 4       ;
-; mux2to1_8bit:RegMux|result[2]~3                                                                   ; 4       ;
-; mux2to1_8bit:RegMux|result[1]~2                                                                   ; 4       ;
-; FSMWB:FSMWB|Equal3~0                                                                              ; 4       ;
+; DataHazardControl:DataHazardControl|ALU_in1_BPSel[0]~1                                            ; 6       ;
+; mux4to1_8bit:ALU_in2_BP_mux|Mux0~1                                                                ; 5       ;
+; FSMExecute:FSMExecute|MemRead~0                                                                   ; 5       ;
+; register_8bit_ir:IR3_reg|q[3]                                                                     ; 5       ;
+; DataHazardControl:DataHazardControl|R2_in_BPSel[1]~2                                              ; 4       ;
+; register_8bit_ir:IR1_reg|q[7]                                                                     ; 4       ;
+; register_8bit_ir:IR1_reg|q[6]                                                                     ; 4       ;
+; register_8bit_ir:IR1_reg|q[3]                                                                     ; 4       ;
+; ALU:ALU|N~5                                                                                       ; 4       ;
+; mux4to1_8bit:ALU_in2_BP_mux|Mux0~2                                                                ; 4       ;
+; mux4to1_8bit:ALU_in2_BP_mux|Mux5~1                                                                ; 4       ;
+; DataHazardControl:DataHazardControl|ALU_in2_BPSel[1]~0                                            ; 4       ;
+; DataHazardControl:DataHazardControl|ALU_in1_BPSel[0]~4                                            ; 4       ;
+; mux2to1_8bit:RegMux|result[7]~7                                                                   ; 4       ;
+; mux2to1_8bit:RegMux|result[6]~6                                                                   ; 4       ;
+; mux2to1_8bit:RegMux|result[5]~5                                                                   ; 4       ;
+; mux2to1_8bit:RegMux|result[4]~4                                                                   ; 4       ;
+; mux2to1_8bit:RegMux|result[3]~3                                                                   ; 4       ;
+; mux2to1_8bit:RegMux|result[2]~2                                                                   ; 4       ;
+; mux2to1_8bit:RegMux|result[1]~1                                                                   ; 4       ;
+; DataHazardControl:DataHazardControl|ALU_in1_BPSel[0]~0                                            ; 4       ;
 ; FSMWB:FSMWB|RFWrite~0                                                                             ; 4       ;
-; mux2to1_8bit:RegMux|result[0]~1                                                                   ; 4       ;
-; register_8bit_ir:IR3_reg|q[1]                                                                     ; 4       ;
-; register_8bit_ir:IR3_reg|q[0]                                                                     ; 4       ;
-; register_8bit_ir:IR3_reg|q[2]                                                                     ; 4       ;
-; DataHazardControl:DataHazardControl|ALU_in1_BPSel~10                                              ; 3       ;
-; register_8bit_ir:IR1_reg|q[0]                                                                     ; 3       ;
-; register_8bit_ir:IR1_reg|q[2]                                                                     ; 3       ;
-; register_8bit_ir:IR1_reg|q[1]                                                                     ; 3       ;
-; mux2to1_8bit:ALU_in2_BP_mux|result[7]~21                                                          ; 3       ;
-; ALU:ALU|tmp_out[6]~38                                                                             ; 3       ;
-; mux2to1_8bit:ALU_in2_BP_mux|result[6]~19                                                          ; 3       ;
-; ALU:ALU|tmp_out[5]~33                                                                             ; 3       ;
-; mux2to1_8bit:ALU_in2_BP_mux|result[5]~17                                                          ; 3       ;
-; mux2to1_8bit:ALU_in2_BP_mux|result[5]~16                                                          ; 3       ;
-; ALU:ALU|tmp_out[4]~28                                                                             ; 3       ;
-; mux2to1_8bit:ALU_in2_BP_mux|result[4]~14                                                          ; 3       ;
-; ALU:ALU|tmp_out[3]~23                                                                             ; 3       ;
-; mux2to1_8bit:ALU_in2_BP_mux|result[3]~12                                                          ; 3       ;
-; ALU:ALU|tmp_out[2]~18                                                                             ; 3       ;
-; ALU:ALU|tmp_out[1]~13                                                                             ; 3       ;
-; DataHazardControl:DataHazardControl|Equal0~0                                                      ; 3       ;
-; ALU:ALU|tmp_out[0]~8                                                                              ; 3       ;
-; mux2to1_8bit:ALU_in2_BP_mux|result[1]~4                                                           ; 3       ;
-; register_8bit_ir:IR3_reg|q[3]                                                                     ; 3       ;
+; mux2to1_8bit:RegMux|result[0]~0                                                                   ; 4       ;
+; DataHazardControl:DataHazardControl|R2_in_BPSel[1]~6                                              ; 3       ;
+; DataHazardControl:DataHazardControl|ALU_in1_BPSel[0]~13                                           ; 3       ;
+; mux4to1_8bit:ALU_in2_BP_mux|Mux0                                                                  ; 3       ;
+; ALU:ALU|tmp_out[6]~40                                                                             ; 3       ;
+; mux4to1_8bit:ALU_in2_BP_mux|Mux1                                                                  ; 3       ;
+; mux4to1_8bit:ALU_in2_BP_mux|Mux2                                                                  ; 3       ;
+; mux5to1_8bit:ALU_in2_mux|Mux0~3                                                                   ; 3       ;
+; ALU:ALU|tmp_out[4]~27                                                                             ; 3       ;
+; mux4to1_8bit:ALU_in2_BP_mux|Mux3                                                                  ; 3       ;
+; ALU:ALU|tmp_out[3]~22                                                                             ; 3       ;
+; mux4to1_8bit:ALU_in2_BP_mux|Mux4~3                                                                ; 3       ;
+; ALU:ALU|tmp_out[2]~17                                                                             ; 3       ;
+; ALU:ALU|tmp_out[1]~12                                                                             ; 3       ;
+; ALU:ALU|tmp_out[0]~7                                                                              ; 3       ;
+; DataHazardControl:DataHazardControl|ALU_in2_BPSel[1]~1                                            ; 3       ;
+; DataHazardControl:DataHazardControl|ALU_in1_BPSel[1]~12                                           ; 3       ;
+; DataHazardControl:DataHazardControl|Equal13~0                                                     ; 3       ;
+; DataHazardControl:DataHazardControl|ALU_in1_BPSel[0]~10                                           ; 3       ;
+; DataHazardControl:DataHazardControl|ALU_in1_BPSel[0]~7                                            ; 3       ;
+; DataHazardControl:DataHazardControl|ALU_in1_BPSel[0]~3                                            ; 3       ;
 ; RF:RF_block|k0[7]                                                                                 ; 3       ;
 ; RF:RF_block|k0[6]                                                                                 ; 3       ;
 ; RF:RF_block|k0[5]                                                                                 ; 3       ;
@@ -1664,51 +1671,57 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; register_8bit:PC1|q[2]                                                                            ; 3       ;
 ; register_8bit:PC1|q[1]                                                                            ; 3       ;
 ; register_8bit:PC1|q[0]                                                                            ; 3       ;
-; FSMExecute:FSMExecute|squashIR2                                                                   ; 2       ;
+; FSMExecute:FSMExecute|ALU_in1_mux_ctrl[0]                                                         ; 2       ;
 ; FSMExecute:FSMExecute|FlagWrite~0                                                                 ; 2       ;
-; DataHazardControl:DataHazardControl|DataMem_data_BPSel~2                                          ; 2       ;
-; DataHazardControl:DataHazardControl|always0~2                                                     ; 2       ;
 ; FSMExecute:FSMExecute|always1~0                                                                   ; 2       ;
-; DataHazardControl:DataHazardControl|ALU_in2_BPSel~1                                               ; 2       ;
-; DataHazardControl:DataHazardControl|ALU_in1_BPSel~8                                               ; 2       ;
-; DataHazardControl:DataHazardControl|always0~1                                                     ; 2       ;
-; register_8bit_ir:IR1_reg|q[6]                                                                     ; 2       ;
-; register_8bit_ir:IR1_reg|q[7]                                                                     ; 2       ;
-; FSMExecute:FSMExecute|always0~0                                                                   ; 2       ;
-; register_8bit:R2|q[7]                                                                             ; 2       ;
-; register_8bit:R2|q[6]                                                                             ; 2       ;
-; ALU:ALU|N~3                                                                                       ; 2       ;
-; ALU:ALU|N~2                                                                                       ; 2       ;
-; ALU:ALU|N~1                                                                                       ; 2       ;
-; register_8bit:R2|q[5]                                                                             ; 2       ;
-; ALU:ALU|ShiftRight0~5                                                                             ; 2       ;
+; DataHazardControl:DataHazardControl|R2_in_BPSel[1]~11                                             ; 2       ;
+; DataHazardControl:DataHazardControl|Equal16~0                                                     ; 2       ;
+; DataHazardControl:DataHazardControl|R1_in_BPSel[1]~3                                              ; 2       ;
+; DataHazardControl:DataHazardControl|R1_in_BPSel[0]~1                                              ; 2       ;
+; DataHazardControl:DataHazardControl|R1_in_BPSel[0]~0                                              ; 2       ;
+; FSMExecute:FSMExecute|Equal0~1                                                                    ; 2       ;
+; ALU:ALU|tmp_out[6]~35                                                                             ; 2       ;
+; ALU:ALU|tmp_out[6]~34                                                                             ; 2       ;
+; ALU:ALU|tmp_out[6]~33                                                                             ; 2       ;
+; ALU:ALU|tmp_out[5]~32                                                                             ; 2       ;
+; ALU:ALU|tmp_out[5]~31                                                                             ; 2       ;
+; ALU:ALU|tmp_out[5]~29                                                                             ; 2       ;
 ; ALU:ALU|ShiftLeft0~5                                                                              ; 2       ;
-; register_8bit:R2|q[4]                                                                             ; 2       ;
+; ALU:ALU|ShiftRight0~5                                                                             ; 2       ;
 ; ALU:ALU|ShiftLeft0~4                                                                              ; 2       ;
 ; ALU:ALU|ShiftRight0~4                                                                             ; 2       ;
-; register_8bit:R1|q[7]                                                                             ; 2       ;
-; register_8bit:R2|q[3]                                                                             ; 2       ;
-; ALU:ALU|ShiftRight0~3                                                                             ; 2       ;
-; register_8bit:R1|q[6]                                                                             ; 2       ;
 ; ALU:ALU|ShiftLeft0~3                                                                              ; 2       ;
+; ALU:ALU|ShiftRight0~3                                                                             ; 2       ;
 ; ALU:ALU|ShiftLeft0~2                                                                              ; 2       ;
 ; ALU:ALU|ShiftRight0~2                                                                             ; 2       ;
-; register_8bit:R1|q[5]                                                                             ; 2       ;
 ; ALU:ALU|ShiftRight0~1                                                                             ; 2       ;
-; register_8bit:R1|q[4]                                                                             ; 2       ;
 ; ALU:ALU|ShiftLeft0~1                                                                              ; 2       ;
-; ALU:ALU|tmp_out[1]~2                                                                              ; 2       ;
-; ALU:ALU|tmp_out[1]~1                                                                              ; 2       ;
+; ALU:ALU|tmp_out[0]~2                                                                              ; 2       ;
+; ALU:ALU|tmp_out[0]~1                                                                              ; 2       ;
 ; ALU:ALU|ShiftRight0~0                                                                             ; 2       ;
+; ALU:ALU|ShiftLeft0~0                                                                              ; 2       ;
+; ALU:ALU|tmp_out[0]~0                                                                              ; 2       ;
+; mux5to1_8bit:ALU_in2_mux|Mux0~1                                                                   ; 2       ;
+; mux4to1_8bit:ALU_in2_BP_mux|Mux5~0                                                                ; 2       ;
+; DataHazardControl:DataHazardControl|ALU_in2_BPSel[0]~5                                            ; 2       ;
+; DataHazardControl:DataHazardControl|ALU_in2_BPSel[0]~4                                            ; 2       ;
+; DataHazardControl:DataHazardControl|ALU_in1_BPSel[0]~8                                            ; 2       ;
+; DataHazardControl:DataHazardControl|ALU_in1_BPSel[0]~5                                            ; 2       ;
+; DataHazardControl:DataHazardControl|ALU_in1_BPSel[0]~2                                            ; 2       ;
+; register_8bit:R2|q[7]                                                                             ; 2       ;
+; register_8bit:R2|q[6]                                                                             ; 2       ;
+; register_8bit:R2|q[5]                                                                             ; 2       ;
+; register_8bit:R2|q[4]                                                                             ; 2       ;
+; register_8bit:R1|q[7]                                                                             ; 2       ;
+; register_8bit:R2|q[3]                                                                             ; 2       ;
+; register_8bit:R1|q[6]                                                                             ; 2       ;
+; register_8bit:R1|q[5]                                                                             ; 2       ;
+; register_8bit:R1|q[4]                                                                             ; 2       ;
 ; register_8bit:R1|q[2]                                                                             ; 2       ;
 ; register_8bit:R1|q[3]                                                                             ; 2       ;
-; ALU:ALU|ShiftLeft0~0                                                                              ; 2       ;
 ; register_8bit:R2|q[0]                                                                             ; 2       ;
-; ALU:ALU|tmp_out[1]~0                                                                              ; 2       ;
-; register_8bit:R2|q[1]                                                                             ; 2       ;
-; mux2to1_8bit:ALU_in2_BP_mux|result[2]~2                                                           ; 2       ;
 ; register_8bit:R2|q[2]                                                                             ; 2       ;
-; mux2to1_8bit:ALU_in2_BP_mux|result[1]~0                                                           ; 2       ;
+; register_8bit:R2|q[1]                                                                             ; 2       ;
 ; register_8bit:R1|q[0]                                                                             ; 2       ;
 ; register_8bit:R1|q[1]                                                                             ; 2       ;
 ; counter[7]                                                                                        ; 2       ;
@@ -1726,153 +1739,187 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; counter[10]                                                                                       ; 2       ;
 ; counter[9]                                                                                        ; 2       ;
 ; counter[8]                                                                                        ; 2       ;
-; register_8bit_ir:IR1_reg|q[3]~1                                                                   ; 1       ;
-; register_8bit_ir:IR1_reg|q[1]~0                                                                   ; 1       ;
-; DataHazardControl:DataHazardControl|DataMem_data_BPSel~4                                          ; 1       ;
-; FSMExecute:FSMExecute|PCSel~0                                                                     ; 1       ;
-; FSMExecute:FSMExecute|Equal12~0                                                                   ; 1       ;
+; KEY[1]                                                                                            ; 1       ;
+; ALU:ALU|Equal5~5                                                                                  ; 1       ;
+; FSMExecute:FSMExecute|PCSel~2                                                                     ; 1       ;
+; DataHazardControl:DataHazardControl|R2_in_BPSel[1]~13                                             ; 1       ;
+; ALU:ALU|Equal5~4                                                                                  ; 1       ;
+; ALU:ALU|Equal5~3                                                                                  ; 1       ;
 ; ALU:ALU|Equal5~2                                                                                  ; 1       ;
-; ALU:ALU|Equal5~1                                                                                  ; 1       ;
-; ALU:ALU|Equal5~0                                                                                  ; 1       ;
-; DataHazardControl:DataHazardControl|DataMem_address_BPSel~0                                       ; 1       ;
-; DataHazardControl:DataHazardControl|DataMem_data_BPSel~3                                          ; 1       ;
+; FSMExecute:FSMExecute|Equal12~0                                                                   ; 1       ;
+; register_8bit_ir:IR1_reg|q~7                                                                      ; 1       ;
+; register_8bit_ir:IR1_reg|q~6                                                                      ; 1       ;
+; register_8bit_ir:IR1_reg|q~5                                                                      ; 1       ;
+; register_8bit_ir:IR1_reg|q~4                                                                      ; 1       ;
+; register_8bit_ir:IR1_reg|q~3                                                                      ; 1       ;
+; register_8bit_ir:IR1_reg|q~2                                                                      ; 1       ;
+; register_8bit_ir:IR1_reg|q~1                                                                      ; 1       ;
+; register_8bit_ir:IR1_reg|q~0                                                                      ; 1       ;
 ; FSMExecute:FSMExecute|always1~1                                                                   ; 1       ;
 ; N                                                                                                 ; 1       ;
 ; Z                                                                                                 ; 1       ;
-; mux2to1_8bit:DataMem_data_BP_mux|result[7]~7                                                      ; 1       ;
-; RF:RF_block|Mux8~1                                                                                ; 1       ;
-; RF:RF_block|Mux8~0                                                                                ; 1       ;
-; mux2to1_8bit:DataMem_data_BP_mux|result[6]~6                                                      ; 1       ;
-; RF:RF_block|Mux9~1                                                                                ; 1       ;
-; RF:RF_block|Mux9~0                                                                                ; 1       ;
-; mux2to1_8bit:DataMem_data_BP_mux|result[5]~5                                                      ; 1       ;
-; RF:RF_block|Mux10~1                                                                               ; 1       ;
-; RF:RF_block|Mux10~0                                                                               ; 1       ;
-; mux2to1_8bit:DataMem_data_BP_mux|result[4]~4                                                      ; 1       ;
-; RF:RF_block|Mux11~1                                                                               ; 1       ;
-; RF:RF_block|Mux11~0                                                                               ; 1       ;
-; RF:RF_block|Mux0~1                                                                                ; 1       ;
-; RF:RF_block|Mux0~0                                                                                ; 1       ;
-; register_8bit:PC2|q[7]                                                                            ; 1       ;
-; mux2to1_8bit:DataMem_data_BP_mux|result[3]~3                                                      ; 1       ;
-; RF:RF_block|Mux12~1                                                                               ; 1       ;
-; RF:RF_block|Mux12~0                                                                               ; 1       ;
-; RF:RF_block|Mux1~1                                                                                ; 1       ;
-; RF:RF_block|Mux1~0                                                                                ; 1       ;
-; register_8bit:PC2|q[6]                                                                            ; 1       ;
-; mux2to1_8bit:DataMem_data_BP_mux|result[2]~2                                                      ; 1       ;
-; RF:RF_block|Mux2~1                                                                                ; 1       ;
-; RF:RF_block|Mux2~0                                                                                ; 1       ;
-; register_8bit:PC2|q[5]                                                                            ; 1       ;
-; mux2to1_8bit:DataMem_data_BP_mux|result[1]~1                                                      ; 1       ;
-; RF:RF_block|Mux3~1                                                                                ; 1       ;
-; RF:RF_block|Mux3~0                                                                                ; 1       ;
-; register_8bit:PC2|q[4]                                                                            ; 1       ;
-; mux2to1_8bit:DataMem_address_BP_mux|result[7]~7                                                   ; 1       ;
-; mux2to1_8bit:DataMem_address_BP_mux|result[6]~6                                                   ; 1       ;
-; mux2to1_8bit:DataMem_address_BP_mux|result[5]~5                                                   ; 1       ;
-; mux2to1_8bit:DataMem_address_BP_mux|result[4]~4                                                   ; 1       ;
-; mux2to1_8bit:DataMem_address_BP_mux|result[3]~3                                                   ; 1       ;
-; mux2to1_8bit:DataMem_address_BP_mux|result[2]~2                                                   ; 1       ;
-; mux2to1_8bit:DataMem_address_BP_mux|result[1]~1                                                   ; 1       ;
-; mux2to1_8bit:DataMem_address_BP_mux|result[0]~0                                                   ; 1       ;
-; mux2to1_8bit:DataMem_data_BP_mux|result[0]~0                                                      ; 1       ;
-; FSMExecute:FSMExecute|MemWrite~0                                                                  ; 1       ;
-; FSMExecute:FSMExecute|ALU_in2_mux_ctrl~1                                                          ; 1       ;
+; mux4to1_8bit:R2_in_BP_mux|Mux0~1                                                                  ; 1       ;
+; mux4to1_8bit:R2_in_BP_mux|Mux0~0                                                                  ; 1       ;
+; mux4to1_8bit:DataMem_data_BP_mux|Mux0~1                                                           ; 1       ;
+; mux4to1_8bit:DataMem_data_BP_mux|Mux0~0                                                           ; 1       ;
+; mux4to1_8bit:R2_in_BP_mux|Mux1~1                                                                  ; 1       ;
+; mux4to1_8bit:R2_in_BP_mux|Mux1~0                                                                  ; 1       ;
+; mux4to1_8bit:DataMem_data_BP_mux|Mux1~1                                                           ; 1       ;
+; mux4to1_8bit:DataMem_data_BP_mux|Mux1~0                                                           ; 1       ;
+; mux4to1_8bit:R2_in_BP_mux|Mux2~1                                                                  ; 1       ;
+; mux4to1_8bit:R2_in_BP_mux|Mux2~0                                                                  ; 1       ;
+; mux4to1_8bit:DataMem_data_BP_mux|Mux2~1                                                           ; 1       ;
+; mux4to1_8bit:DataMem_data_BP_mux|Mux2~0                                                           ; 1       ;
+; mux4to1_8bit:R2_in_BP_mux|Mux3~1                                                                  ; 1       ;
+; mux4to1_8bit:R2_in_BP_mux|Mux3~0                                                                  ; 1       ;
+; mux4to1_8bit:R1_in_BP_mux|Mux0~1                                                                  ; 1       ;
+; mux4to1_8bit:R1_in_BP_mux|Mux0~0                                                                  ; 1       ;
+; mux4to1_8bit:DataMem_data_BP_mux|Mux3~1                                                           ; 1       ;
+; mux4to1_8bit:DataMem_data_BP_mux|Mux3~0                                                           ; 1       ;
+; mux4to1_8bit:R2_in_BP_mux|Mux4~1                                                                  ; 1       ;
+; mux4to1_8bit:R2_in_BP_mux|Mux4~0                                                                  ; 1       ;
+; mux4to1_8bit:R1_in_BP_mux|Mux1~1                                                                  ; 1       ;
+; mux4to1_8bit:R1_in_BP_mux|Mux1~0                                                                  ; 1       ;
+; mux4to1_8bit:DataMem_data_BP_mux|Mux4~1                                                           ; 1       ;
+; mux4to1_8bit:DataMem_data_BP_mux|Mux4~0                                                           ; 1       ;
+; mux4to1_8bit:R1_in_BP_mux|Mux2~1                                                                  ; 1       ;
+; mux4to1_8bit:R1_in_BP_mux|Mux2~0                                                                  ; 1       ;
+; mux4to1_8bit:DataMem_data_BP_mux|Mux5~1                                                           ; 1       ;
+; mux4to1_8bit:DataMem_data_BP_mux|Mux5~0                                                           ; 1       ;
+; mux4to1_8bit:R1_in_BP_mux|Mux3~1                                                                  ; 1       ;
+; mux4to1_8bit:R1_in_BP_mux|Mux3~0                                                                  ; 1       ;
+; mux4to1_8bit:DataMem_data_BP_mux|Mux6~1                                                           ; 1       ;
+; mux4to1_8bit:DataMem_data_BP_mux|Mux6~0                                                           ; 1       ;
+; FSMExecute:FSMExecute|ALUop~1                                                                     ; 1       ;
 ; FSMExecute:FSMExecute|ALUop~0                                                                     ; 1       ;
-; RF:RF_block|Mux5~1                                                                                ; 1       ;
-; RF:RF_block|Mux5~0                                                                                ; 1       ;
-; register_8bit:PC2|q[2]                                                                            ; 1       ;
-; RF:RF_block|Mux4~1                                                                                ; 1       ;
-; RF:RF_block|Mux4~0                                                                                ; 1       ;
-; register_8bit:PC2|q[3]                                                                            ; 1       ;
-; RF:RF_block|Mux15~1                                                                               ; 1       ;
-; RF:RF_block|Mux15~0                                                                               ; 1       ;
-; register_8bit_ir:IR1_reg|q[3]                                                                     ; 1       ;
-; RF:RF_block|Mux14~1                                                                               ; 1       ;
-; RF:RF_block|Mux14~0                                                                               ; 1       ;
-; DataHazardControl:DataHazardControl|ALU_in2_BPSel~2                                               ; 1       ;
-; DataHazardControl:DataHazardControl|ALU_in2_BPSel~0                                               ; 1       ;
-; RF:RF_block|Mux13~1                                                                               ; 1       ;
-; RF:RF_block|Mux13~0                                                                               ; 1       ;
+; mux4to1_8bit:R1_in_BP_mux|Mux5~1                                                                  ; 1       ;
+; mux4to1_8bit:R1_in_BP_mux|Mux5~0                                                                  ; 1       ;
+; mux4to1_8bit:R1_in_BP_mux|Mux4~1                                                                  ; 1       ;
+; mux4to1_8bit:R1_in_BP_mux|Mux4~0                                                                  ; 1       ;
+; mux4to1_8bit:R2_in_BP_mux|Mux7~1                                                                  ; 1       ;
+; mux4to1_8bit:R2_in_BP_mux|Mux7~0                                                                  ; 1       ;
+; mux4to1_8bit:R2_in_BP_mux|Mux5~1                                                                  ; 1       ;
+; mux4to1_8bit:R2_in_BP_mux|Mux5~0                                                                  ; 1       ;
+; DataHazardControl:DataHazardControl|R2_in_BPSel[0]~9                                              ; 1       ;
+; DataHazardControl:DataHazardControl|R2_in_BPSel[1]~8                                              ; 1       ;
+; DataHazardControl:DataHazardControl|R2_in_BPSel[1]~7                                              ; 1       ;
+; DataHazardControl:DataHazardControl|R2_in_BPSel[1]~5                                              ; 1       ;
+; DataHazardControl:DataHazardControl|R2_in_BPSel[1]~4                                              ; 1       ;
+; DataHazardControl:DataHazardControl|R2_in_BPSel[1]~3                                              ; 1       ;
+; mux4to1_8bit:R2_in_BP_mux|Mux6~1                                                                  ; 1       ;
+; mux4to1_8bit:R2_in_BP_mux|Mux6~0                                                                  ; 1       ;
 ; FSMExecute:FSMExecute|ALU_in2_mux_ctrl~0                                                          ; 1       ;
-; RF:RF_block|Mux7~1                                                                                ; 1       ;
-; RF:RF_block|Mux7~0                                                                                ; 1       ;
-; register_8bit:PC2|q[0]                                                                            ; 1       ;
-; DataHazardControl:DataHazardControl|ALU_in1_BPSel~9                                               ; 1       ;
-; DataHazardControl:DataHazardControl|ALU_in1_BPSel~7                                               ; 1       ;
-; DataHazardControl:DataHazardControl|ALU_in1_BPSel~6                                               ; 1       ;
-; DataHazardControl:DataHazardControl|ALU_in1_BPSel~5                                               ; 1       ;
-; DataHazardControl:DataHazardControl|ALU_in1_BPSel~4                                               ; 1       ;
-; DataHazardControl:DataHazardControl|ALU_in1_BPSel~3                                               ; 1       ;
-; RF:RF_block|Mux6~1                                                                                ; 1       ;
-; RF:RF_block|Mux6~0                                                                                ; 1       ;
-; register_8bit:PC2|q[1]                                                                            ; 1       ;
-; FSMExecute:FSMExecute|stop_operation_finished~0                                                   ; 1       ;
+; register_8bit_ir:IR2_reg|q~7                                                                      ; 1       ;
+; register_8bit_ir:IR2_reg|q~6                                                                      ; 1       ;
+; mux4to1_8bit:R1_in_BP_mux|Mux7~1                                                                  ; 1       ;
+; mux4to1_8bit:R1_in_BP_mux|Mux7~0                                                                  ; 1       ;
 ; FSMExecute:FSMExecute|always0~1                                                                   ; 1       ;
+; register_8bit_ir:IR2_reg|q~5                                                                      ; 1       ;
+; register_8bit_ir:IR2_reg|q~4                                                                      ; 1       ;
+; DataHazardControl:DataHazardControl|ALU_in1_BPSel[0]~15                                           ; 1       ;
+; DataHazardControl:DataHazardControl|ALU_in1_BPSel[0]~14                                           ; 1       ;
+; mux4to1_8bit:R1_in_BP_mux|Mux6~1                                                                  ; 1       ;
+; mux4to1_8bit:R1_in_BP_mux|Mux6~0                                                                  ; 1       ;
+; register_8bit_ir:IR2_reg|q~3                                                                      ; 1       ;
+; register_8bit_ir:IR2_reg|q~2                                                                      ; 1       ;
+; register_8bit_ir:IR2_reg|q~1                                                                      ; 1       ;
+; register_8bit_ir:IR2_reg|q~0                                                                      ; 1       ;
+; mux4to1_8bit:DataMem_address_BP_mux|Mux0~1                                                        ; 1       ;
+; mux4to1_8bit:DataMem_address_BP_mux|Mux0~0                                                        ; 1       ;
+; mux4to1_8bit:DataMem_address_BP_mux|Mux1~1                                                        ; 1       ;
+; mux4to1_8bit:DataMem_address_BP_mux|Mux1~0                                                        ; 1       ;
+; mux4to1_8bit:DataMem_address_BP_mux|Mux2~1                                                        ; 1       ;
+; mux4to1_8bit:DataMem_address_BP_mux|Mux2~0                                                        ; 1       ;
+; mux4to1_8bit:DataMem_address_BP_mux|Mux3~1                                                        ; 1       ;
+; mux4to1_8bit:DataMem_address_BP_mux|Mux3~0                                                        ; 1       ;
+; mux4to1_8bit:DataMem_address_BP_mux|Mux4~1                                                        ; 1       ;
+; mux4to1_8bit:DataMem_address_BP_mux|Mux4~0                                                        ; 1       ;
+; mux4to1_8bit:DataMem_address_BP_mux|Mux5~1                                                        ; 1       ;
+; mux4to1_8bit:DataMem_address_BP_mux|Mux5~0                                                        ; 1       ;
+; mux4to1_8bit:DataMem_address_BP_mux|Mux6~1                                                        ; 1       ;
+; mux4to1_8bit:DataMem_address_BP_mux|Mux6~0                                                        ; 1       ;
+; mux4to1_8bit:DataMem_address_BP_mux|Mux7~1                                                        ; 1       ;
+; mux4to1_8bit:DataMem_address_BP_mux|Mux7~0                                                        ; 1       ;
+; mux4to1_8bit:DataMem_data_BP_mux|Mux7~1                                                           ; 1       ;
+; mux4to1_8bit:DataMem_data_BP_mux|Mux7~0                                                           ; 1       ;
+; FSMExecute:FSMExecute|MemWrite~0                                                                  ; 1       ;
+; FSMExecute:FSMExecute|stop_operation_finished~0                                                   ; 1       ;
+; FSMExecute:FSMExecute|always0~0                                                                   ; 1       ;
 ; FSMExecute:FSMExecute|Equal0~0                                                                    ; 1       ;
-; ALU:ALU|N~7                                                                                       ; 1       ;
-; ALU:ALU|N~6                                                                                       ; 1       ;
-; mux2to1_8bit:ALU_in2_BP_mux|result[7]~20                                                          ; 1       ;
-; ALU:ALU|N~5                                                                                       ; 1       ;
 ; ALU:ALU|N~4                                                                                       ; 1       ;
+; ALU:ALU|N~3                                                                                       ; 1       ;
+; mux4to1_8bit:ALU_in2_BP_mux|Mux0~4                                                                ; 1       ;
+; mux4to1_8bit:ALU_in2_BP_mux|Mux0~3                                                                ; 1       ;
+; ALU:ALU|N~2                                                                                       ; 1       ;
+; ALU:ALU|N~1                                                                                       ; 1       ;
+; ALU:ALU|tmp_out[6]~39                                                                             ; 1       ;
+; ALU:ALU|tmp_out[6]~38                                                                             ; 1       ;
+; mux4to1_8bit:ALU_in2_BP_mux|Mux1~1                                                                ; 1       ;
+; mux4to1_8bit:ALU_in2_BP_mux|Mux1~0                                                                ; 1       ;
 ; ALU:ALU|tmp_out[6]~37                                                                             ; 1       ;
 ; ALU:ALU|tmp_out[6]~36                                                                             ; 1       ;
-; mux2to1_8bit:ALU_in2_BP_mux|result[6]~18                                                          ; 1       ;
-; ALU:ALU|tmp_out[6]~35                                                                             ; 1       ;
-; ALU:ALU|tmp_out[6]~34                                                                             ; 1       ;
-; ALU:ALU|tmp_out[5]~32                                                                             ; 1       ;
-; ALU:ALU|tmp_out[5]~31                                                                             ; 1       ;
-; mux2to1_8bit:ALU_in2_BP_mux|result[5]~15                                                          ; 1       ;
 ; ALU:ALU|tmp_out[5]~30                                                                             ; 1       ;
-; ALU:ALU|tmp_out[5]~29                                                                             ; 1       ;
-; ALU:ALU|tmp_out[4]~27                                                                             ; 1       ;
+; mux4to1_8bit:ALU_in2_BP_mux|Mux2~1                                                                ; 1       ;
+; mux4to1_8bit:ALU_in2_BP_mux|Mux2~0                                                                ; 1       ;
+; ALU:ALU|tmp_out[5]~28                                                                             ; 1       ;
 ; ALU:ALU|tmp_out[4]~26                                                                             ; 1       ;
-; mux2to1_8bit:ALU_in2_BP_mux|result[4]~13                                                          ; 1       ;
 ; ALU:ALU|tmp_out[4]~25                                                                             ; 1       ;
+; mux4to1_8bit:ALU_in2_BP_mux|Mux3~1                                                                ; 1       ;
+; mux4to1_8bit:ALU_in2_BP_mux|Mux3~0                                                                ; 1       ;
+; mux5to1_8bit:ALU_in2_mux|Mux0~2                                                                   ; 1       ;
 ; ALU:ALU|tmp_out[4]~24                                                                             ; 1       ;
-; mux2to1_8bit:ALU_in1_BP_mux|result[7]~14                                                          ; 1       ;
-; register_8bit:PC3|q[7]                                                                            ; 1       ;
-; ALU:ALU|tmp_out[3]~22                                                                             ; 1       ;
+; ALU:ALU|tmp_out[4]~23                                                                             ; 1       ;
+; mux4to1_8bit:ALU_in1_BP_mux|Mux0~0                                                                ; 1       ;
+; register_8bit:PC2|q[7]                                                                            ; 1       ;
 ; ALU:ALU|tmp_out[3]~21                                                                             ; 1       ;
-; mux2to1_8bit:ALU_in2_BP_mux|result[3]~11                                                          ; 1       ;
-; mux2to1_8bit:ALU_in2_BP_mux|result[3]~10                                                          ; 1       ;
 ; ALU:ALU|tmp_out[3]~20                                                                             ; 1       ;
+; mux4to1_8bit:ALU_in2_BP_mux|Mux4~2                                                                ; 1       ;
+; mux4to1_8bit:ALU_in2_BP_mux|Mux4~1                                                                ; 1       ;
+; mux4to1_8bit:ALU_in2_BP_mux|Mux4~0                                                                ; 1       ;
 ; ALU:ALU|tmp_out[3]~19                                                                             ; 1       ;
-; mux2to1_8bit:ALU_in1_BP_mux|result[6]~12                                                          ; 1       ;
-; register_8bit:PC3|q[6]                                                                            ; 1       ;
-; ALU:ALU|tmp_out[2]~17                                                                             ; 1       ;
+; ALU:ALU|tmp_out[3]~18                                                                             ; 1       ;
+; mux4to1_8bit:ALU_in1_BP_mux|Mux1~0                                                                ; 1       ;
+; register_8bit:PC2|q[6]                                                                            ; 1       ;
 ; ALU:ALU|tmp_out[2]~16                                                                             ; 1       ;
 ; ALU:ALU|tmp_out[2]~15                                                                             ; 1       ;
 ; ALU:ALU|tmp_out[2]~14                                                                             ; 1       ;
-; mux2to1_8bit:ALU_in1_BP_mux|result[5]~10                                                          ; 1       ;
-; register_8bit:PC3|q[5]                                                                            ; 1       ;
-; ALU:ALU|tmp_out[1]~12                                                                             ; 1       ;
+; ALU:ALU|tmp_out[2]~13                                                                             ; 1       ;
+; mux4to1_8bit:ALU_in1_BP_mux|Mux2~0                                                                ; 1       ;
+; register_8bit:PC2|q[5]                                                                            ; 1       ;
 ; ALU:ALU|tmp_out[1]~11                                                                             ; 1       ;
 ; ALU:ALU|tmp_out[1]~10                                                                             ; 1       ;
 ; ALU:ALU|tmp_out[1]~9                                                                              ; 1       ;
-; mux2to1_8bit:ALU_in1_BP_mux|result[4]~8                                                           ; 1       ;
-; register_8bit:PC3|q[4]                                                                            ; 1       ;
-; FSMExecute:FSMExecute|MemRead~0                                                                   ; 1       ;
-; ALU:ALU|tmp_out[0]~7                                                                              ; 1       ;
+; ALU:ALU|tmp_out[1]~8                                                                              ; 1       ;
+; mux4to1_8bit:ALU_in1_BP_mux|Mux3~0                                                                ; 1       ;
+; register_8bit:PC2|q[4]                                                                            ; 1       ;
 ; ALU:ALU|tmp_out[0]~6                                                                              ; 1       ;
 ; ALU:ALU|tmp_out[0]~5                                                                              ; 1       ;
 ; ALU:ALU|tmp_out[0]~4                                                                              ; 1       ;
 ; ALU:ALU|tmp_out[0]~3                                                                              ; 1       ;
-; mux2to1_8bit:ALU_in1_BP_mux|result[2]~6                                                           ; 1       ;
-; register_8bit:PC3|q[2]                                                                            ; 1       ;
-; mux2to1_8bit:ALU_in1_BP_mux|result[3]~4                                                           ; 1       ;
-; register_8bit:PC3|q[3]                                                                            ; 1       ;
-; mux5to1_8bit:ALU_in2_mux|Mux7~1                                                                   ; 1       ;
-; mux5to1_8bit:ALU_in2_mux|Mux7~0                                                                   ; 1       ;
-; mux2to1_8bit:ALU_in2_BP_mux|result[1]~7                                                           ; 1       ;
-; mux2to1_8bit:ALU_in2_BP_mux|result[1]~6                                                           ; 1       ;
-; mux2to1_8bit:ALU_in2_BP_mux|result[2]~3                                                           ; 1       ;
-; mux2to1_8bit:ALU_in2_BP_mux|result[2]~1                                                           ; 1       ;
-; mux2to1_8bit:ALU_in1_BP_mux|result[0]~2                                                           ; 1       ;
-; register_8bit:PC3|q[0]                                                                            ; 1       ;
-; mux2to1_8bit:ALU_in1_BP_mux|result[1]~0                                                           ; 1       ;
-; register_8bit:PC3|q[1]                                                                            ; 1       ;
+; mux4to1_8bit:ALU_in1_BP_mux|Mux5~0                                                                ; 1       ;
+; register_8bit:PC2|q[2]                                                                            ; 1       ;
+; mux4to1_8bit:ALU_in1_BP_mux|Mux4~6                                                                ; 1       ;
+; register_8bit:PC2|q[3]                                                                            ; 1       ;
+; mux4to1_8bit:ALU_in2_BP_mux|Mux7~3                                                                ; 1       ;
+; mux4to1_8bit:ALU_in2_BP_mux|Mux7~2                                                                ; 1       ;
+; mux4to1_8bit:ALU_in2_BP_mux|Mux7~1                                                                ; 1       ;
+; mux4to1_8bit:ALU_in2_BP_mux|Mux7~0                                                                ; 1       ;
+; mux4to1_8bit:ALU_in2_BP_mux|Mux5~4                                                                ; 1       ;
+; mux4to1_8bit:ALU_in2_BP_mux|Mux5~3                                                                ; 1       ;
+; mux4to1_8bit:ALU_in2_BP_mux|Mux5~2                                                                ; 1       ;
+; mux4to1_8bit:ALU_in2_BP_mux|Mux6~2                                                                ; 1       ;
+; mux4to1_8bit:ALU_in2_BP_mux|Mux6~1                                                                ; 1       ;
+; mux5to1_8bit:ALU_in2_mux|Mux0~0                                                                   ; 1       ;
+; mux4to1_8bit:ALU_in2_BP_mux|Mux6~0                                                                ; 1       ;
+; DataHazardControl:DataHazardControl|ALU_in2_BPSel[0]~3                                            ; 1       ;
+; mux4to1_8bit:ALU_in1_BP_mux|Mux7~0                                                                ; 1       ;
+; register_8bit:PC2|q[0]                                                                            ; 1       ;
+; mux4to1_8bit:ALU_in1_BP_mux|Mux6~0                                                                ; 1       ;
+; DataHazardControl:DataHazardControl|ALU_in1_BPSel[1]~11                                           ; 1       ;
+; DataHazardControl:DataHazardControl|ALU_in1_BPSel[0]~9                                            ; 1       ;
+; DataHazardControl:DataHazardControl|ALU_in1_BPSel[0]~6                                            ; 1       ;
+; register_8bit:PC2|q[1]                                                                            ; 1       ;
+; FSMExecute:FSMExecute|MemRead~1                                                                   ; 1       ;
 ; counter[0]~45                                                                                     ; 1       ;
 ; HEXs:HEX_display|HEX:hex0|WideOr0~0                                                               ; 1       ;
 ; HEXs:HEX_display|HEX:hex0|WideOr1~0                                                               ; 1       ;
@@ -1945,12 +1992,28 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; register_8bit:PC1|q[1]~10                                                                         ; 1       ;
 ; register_8bit:PC1|q[0]~9                                                                          ; 1       ;
 ; register_8bit:PC1|q[0]~8                                                                          ; 1       ;
+; register_8bit:R2|q[7]~7                                                                           ; 1       ;
+; register_8bit:R2|q[6]~6                                                                           ; 1       ;
+; register_8bit:R2|q[5]~5                                                                           ; 1       ;
+; register_8bit:R2|q[4]~4                                                                           ; 1       ;
+; register_8bit:R1|q[7]~7                                                                           ; 1       ;
+; register_8bit:R2|q[3]~3                                                                           ; 1       ;
+; register_8bit:R1|q[6]~6                                                                           ; 1       ;
+; register_8bit:R1|q[5]~5                                                                           ; 1       ;
+; register_8bit:R1|q[4]~4                                                                           ; 1       ;
+; register_8bit:R1|q[2]~2                                                                           ; 1       ;
+; register_8bit:R1|q[3]~3                                                                           ; 1       ;
+; register_8bit:R2|q[0]~0                                                                           ; 1       ;
+; register_8bit:R2|q[2]~1                                                                           ; 1       ;
+; register_8bit:R2|q[1]~2                                                                           ; 1       ;
+; register_8bit:R1|q[0]~0                                                                           ; 1       ;
+; register_8bit:R1|q[1]~1                                                                           ; 1       ;
 ; ALU:ALU|Add0~14                                                                                   ; 1       ;
 ; ALU:ALU|Add1~14                                                                                   ; 1       ;
-; ALU:ALU|Add0~13                                                                                   ; 1       ;
-; ALU:ALU|Add0~12                                                                                   ; 1       ;
 ; ALU:ALU|Add1~13                                                                                   ; 1       ;
 ; ALU:ALU|Add1~12                                                                                   ; 1       ;
+; ALU:ALU|Add0~13                                                                                   ; 1       ;
+; ALU:ALU|Add0~12                                                                                   ; 1       ;
 ; ALU:ALU|Add0~11                                                                                   ; 1       ;
 ; ALU:ALU|Add0~10                                                                                   ; 1       ;
 ; ALU:ALU|Add1~11                                                                                   ; 1       ;
@@ -1963,34 +2026,26 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; ALU:ALU|Add0~6                                                                                    ; 1       ;
 ; ALU:ALU|Add1~7                                                                                    ; 1       ;
 ; ALU:ALU|Add1~6                                                                                    ; 1       ;
-; ALU:ALU|Add1~5                                                                                    ; 1       ;
-; ALU:ALU|Add1~4                                                                                    ; 1       ;
 ; ALU:ALU|Add0~5                                                                                    ; 1       ;
 ; ALU:ALU|Add0~4                                                                                    ; 1       ;
+; ALU:ALU|Add1~5                                                                                    ; 1       ;
+; ALU:ALU|Add1~4                                                                                    ; 1       ;
 ; ALU:ALU|Add0~3                                                                                    ; 1       ;
 ; ALU:ALU|Add0~2                                                                                    ; 1       ;
 ; ALU:ALU|Add1~3                                                                                    ; 1       ;
 ; ALU:ALU|Add1~2                                                                                    ; 1       ;
-; memory:DataMem|DualMem:inst|altsyncram:altsyncram_component|altsyncram_up82:auto_generated|q_b[1] ; 1       ;
-; memory:DataMem|DualMem:inst|altsyncram:altsyncram_component|altsyncram_up82:auto_generated|q_b[2] ; 1       ;
-; memory:DataMem|DualMem:inst|altsyncram:altsyncram_component|altsyncram_up82:auto_generated|q_b[3] ; 1       ;
-; memory:DataMem|DualMem:inst|altsyncram:altsyncram_component|altsyncram_up82:auto_generated|q_b[4] ; 1       ;
-; memory:DataMem|DualMem:inst|altsyncram:altsyncram_component|altsyncram_up82:auto_generated|q_b[5] ; 1       ;
-; memory:DataMem|DualMem:inst|altsyncram:altsyncram_component|altsyncram_up82:auto_generated|q_b[6] ; 1       ;
-; memory:DataMem|DualMem:inst|altsyncram:altsyncram_component|altsyncram_up82:auto_generated|q_b[7] ; 1       ;
-; register_8bit:MDR_reg|q[1]                                                                        ; 1       ;
-; register_8bit:MDR_reg|q[2]                                                                        ; 1       ;
-; register_8bit:MDR_reg|q[3]                                                                        ; 1       ;
-; register_8bit:MDR_reg|q[4]                                                                        ; 1       ;
-; register_8bit:MDR_reg|q[5]                                                                        ; 1       ;
-; register_8bit:MDR_reg|q[6]                                                                        ; 1       ;
-; register_8bit:MDR_reg|q[7]                                                                        ; 1       ;
-; memory:DataMem|DualMem:inst|altsyncram:altsyncram_component|altsyncram_up82:auto_generated|q_b[0] ; 1       ;
-; register_8bit:MDR_reg|q[0]                                                                        ; 1       ;
 ; ALU:ALU|Add1~1                                                                                    ; 1       ;
 ; ALU:ALU|Add1~0                                                                                    ; 1       ;
 ; ALU:ALU|Add0~1                                                                                    ; 1       ;
 ; ALU:ALU|Add0~0                                                                                    ; 1       ;
+; memory:DataMem|DualMem:inst|altsyncram:altsyncram_component|altsyncram_pv82:auto_generated|q_b[1] ; 1       ;
+; memory:DataMem|DualMem:inst|altsyncram:altsyncram_component|altsyncram_pv82:auto_generated|q_b[2] ; 1       ;
+; memory:DataMem|DualMem:inst|altsyncram:altsyncram_component|altsyncram_pv82:auto_generated|q_b[3] ; 1       ;
+; memory:DataMem|DualMem:inst|altsyncram:altsyncram_component|altsyncram_pv82:auto_generated|q_b[4] ; 1       ;
+; memory:DataMem|DualMem:inst|altsyncram:altsyncram_component|altsyncram_pv82:auto_generated|q_b[5] ; 1       ;
+; memory:DataMem|DualMem:inst|altsyncram:altsyncram_component|altsyncram_pv82:auto_generated|q_b[6] ; 1       ;
+; memory:DataMem|DualMem:inst|altsyncram:altsyncram_component|altsyncram_pv82:auto_generated|q_b[7] ; 1       ;
+; memory:DataMem|DualMem:inst|altsyncram:altsyncram_component|altsyncram_pv82:auto_generated|q_b[0] ; 1       ;
 ; counter[15]~43                                                                                    ; 1       ;
 ; counter[14]~42                                                                                    ; 1       ;
 ; counter[14]~41                                                                                    ; 1       ;
@@ -2023,13 +2078,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------------------------------------------+---------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fitter RAM Summary                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ;
-+-------------------------------------------------------------------------------------------------------+------+----------------+-------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------------+-------------+
-; Name                                                                                                  ; Type ; Mode           ; Clock Mode  ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Port A Input Registers ; Port A Output Registers ; Port B Input Registers ; Port B Output Registers ; Size ; Implementation Port A Depth ; Implementation Port A Width ; Implementation Port B Depth ; Implementation Port B Width ; Implementation Bits ; M4Ks ; MIF        ; Location    ;
-+-------------------------------------------------------------------------------------------------------+------+----------------+-------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------------+-------------+
-; memory:DataMem|DualMem:inst|altsyncram:altsyncram_component|altsyncram_up82:auto_generated|ALTSYNCRAM ; AUTO ; True Dual Port ; Dual Clocks ; 256          ; 8            ; 256          ; 8            ; yes                    ; yes                     ; yes                    ; no                      ; 2048 ; 256                         ; 8                           ; 256                         ; 8                           ; 2048                ; 1    ; trial2.mif ; M4K_X52_Y18 ;
-+-------------------------------------------------------------------------------------------------------+------+----------------+-------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------------+-------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter RAM Summary                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     ;
++-------------------------------------------------------------------------------------------------------+------+----------------+-------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+--------------+-------------+
+; Name                                                                                                  ; Type ; Mode           ; Clock Mode  ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Port A Input Registers ; Port A Output Registers ; Port B Input Registers ; Port B Output Registers ; Size ; Implementation Port A Depth ; Implementation Port A Width ; Implementation Port B Depth ; Implementation Port B Width ; Implementation Bits ; M4Ks ; MIF          ; Location    ;
++-------------------------------------------------------------------------------------------------------+------+----------------+-------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+--------------+-------------+
+; memory:DataMem|DualMem:inst|altsyncram:altsyncram_component|altsyncram_pv82:auto_generated|ALTSYNCRAM ; AUTO ; True Dual Port ; Dual Clocks ; 256          ; 8            ; 256          ; 8            ; yes                    ; yes                     ; yes                    ; no                      ; 2048 ; 256                         ; 8                           ; 256                         ; 8                           ; 2048                ; 1    ; wk4test2.mif ; M4K_X52_Y21 ;
++-------------------------------------------------------------------------------------------------------+------+----------------+-------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+--------------+-------------+
 Note: Fitter may spread logical memories into multiple blocks to improve timing. The actual required RAM blocks can be found in the Fitter Resource Usage section.
 
 
@@ -2038,90 +2093,90 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 +----------------------------+------------------------+
 ; Interconnect Resource Type ; Usage                  ;
 +----------------------------+------------------------+
-; Block interconnects        ; 623 / 94,460 ( < 1 % ) ;
-; C16 interconnects          ; 25 / 3,315 ( < 1 % )   ;
-; C4 interconnects           ; 429 / 60,840 ( < 1 % ) ;
-; Direct links               ; 105 / 94,460 ( < 1 % ) ;
+; Block interconnects        ; 757 / 94,460 ( < 1 % ) ;
+; C16 interconnects          ; 14 / 3,315 ( < 1 % )   ;
+; C4 interconnects           ; 432 / 60,840 ( < 1 % ) ;
+; Direct links               ; 119 / 94,460 ( < 1 % ) ;
 ; Global clocks              ; 2 / 16 ( 13 % )        ;
-; Local interconnects        ; 168 / 33,216 ( < 1 % ) ;
-; R24 interconnects          ; 52 / 3,091 ( 2 % )     ;
-; R4 interconnects           ; 642 / 81,294 ( < 1 % ) ;
+; Local interconnects        ; 202 / 33,216 ( < 1 % ) ;
+; R24 interconnects          ; 44 / 3,091 ( 1 % )     ;
+; R4 interconnects           ; 787 / 81,294 ( < 1 % ) ;
 +----------------------------+------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                         ;
 +---------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 12.29) ; Number of LABs  (Total = 28) ;
+; Number of Logic Elements  (Average = 11.97) ; Number of LABs  (Total = 35) ;
 +---------------------------------------------+------------------------------+
-; 1                                           ; 2                            ;
+; 1                                           ; 3                            ;
 ; 2                                           ; 1                            ;
 ; 3                                           ; 0                            ;
-; 4                                           ; 2                            ;
-; 5                                           ; 0                            ;
+; 4                                           ; 0                            ;
+; 5                                           ; 2                            ;
 ; 6                                           ; 0                            ;
-; 7                                           ; 3                            ;
-; 8                                           ; 0                            ;
-; 9                                           ; 0                            ;
+; 7                                           ; 4                            ;
+; 8                                           ; 1                            ;
+; 9                                           ; 1                            ;
 ; 10                                          ; 0                            ;
-; 11                                          ; 1                            ;
-; 12                                          ; 0                            ;
+; 11                                          ; 0                            ;
+; 12                                          ; 2                            ;
 ; 13                                          ; 0                            ;
-; 14                                          ; 2                            ;
-; 15                                          ; 0                            ;
-; 16                                          ; 17                           ;
+; 14                                          ; 0                            ;
+; 15                                          ; 1                            ;
+; 16                                          ; 20                           ;
 +---------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 1.57) ; Number of LABs  (Total = 28) ;
+; LAB-wide Signals  (Average = 1.37) ; Number of LABs  (Total = 35) ;
 +------------------------------------+------------------------------+
-; 1 Async. clear                     ; 16                           ;
-; 1 Clock                            ; 15                           ;
-; 1 Clock enable                     ; 4                            ;
-; 1 Sync. load                       ; 1                            ;
-; 2 Async. clears                    ; 2                            ;
-; 2 Clock enables                    ; 3                            ;
-; 2 Clocks                           ; 3                            ;
+; 1 Async. clear                     ; 17                           ;
+; 1 Clock                            ; 19                           ;
+; 1 Clock enable                     ; 2                            ;
+; 1 Sync. clear                      ; 1                            ;
+; 1 Sync. load                       ; 3                            ;
+; 2 Async. clears                    ; 1                            ;
+; 2 Clock enables                    ; 5                            ;
 +------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 16.57) ; Number of LABs  (Total = 28) ;
+; Number of Signals Sourced  (Average = 15.20) ; Number of LABs  (Total = 35) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
-; 1                                            ; 2                            ;
+; 1                                            ; 3                            ;
 ; 2                                            ; 1                            ;
 ; 3                                            ; 0                            ;
-; 4                                            ; 1                            ;
-; 5                                            ; 0                            ;
+; 4                                            ; 0                            ;
+; 5                                            ; 2                            ;
 ; 6                                            ; 0                            ;
 ; 7                                            ; 4                            ;
-; 8                                            ; 0                            ;
-; 9                                            ; 0                            ;
+; 8                                            ; 1                            ;
+; 9                                            ; 1                            ;
 ; 10                                           ; 0                            ;
-; 11                                           ; 1                            ;
-; 12                                           ; 0                            ;
+; 11                                           ; 0                            ;
+; 12                                           ; 1                            ;
 ; 13                                           ; 0                            ;
 ; 14                                           ; 0                            ;
 ; 15                                           ; 0                            ;
-; 16                                           ; 2                            ;
+; 16                                           ; 3                            ;
 ; 17                                           ; 2                            ;
 ; 18                                           ; 1                            ;
 ; 19                                           ; 2                            ;
-; 20                                           ; 3                            ;
-; 21                                           ; 0                            ;
-; 22                                           ; 1                            ;
-; 23                                           ; 1                            ;
+; 20                                           ; 4                            ;
+; 21                                           ; 1                            ;
+; 22                                           ; 2                            ;
+; 23                                           ; 2                            ;
 ; 24                                           ; 2                            ;
-; 25                                           ; 0                            ;
-; 26                                           ; 0                            ;
-; 27                                           ; 2                            ;
-; 28                                           ; 2                            ;
+; 25                                           ; 1                            ;
+; 26                                           ; 1                            ;
+; 27                                           ; 0                            ;
+; 28                                           ; 0                            ;
 ; 29                                           ; 0                            ;
 ; 30                                           ; 0                            ;
 ; 31                                           ; 0                            ;
@@ -2132,73 +2187,68 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 +---------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                         ;
 +--------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 11.50) ; Number of LABs  (Total = 28) ;
+; Number of Signals Sourced Out  (Average = 10.06) ; Number of LABs  (Total = 35) ;
 +--------------------------------------------------+------------------------------+
 ; 0                                                ; 0                            ;
-; 1                                                ; 2                            ;
+; 1                                                ; 3                            ;
 ; 2                                                ; 1                            ;
 ; 3                                                ; 0                            ;
 ; 4                                                ; 2                            ;
-; 5                                                ; 0                            ;
-; 6                                                ; 0                            ;
-; 7                                                ; 4                            ;
-; 8                                                ; 0                            ;
-; 9                                                ; 2                            ;
-; 10                                               ; 1                            ;
-; 11                                               ; 1                            ;
+; 5                                                ; 1                            ;
+; 6                                                ; 1                            ;
+; 7                                                ; 6                            ;
+; 8                                                ; 1                            ;
+; 9                                                ; 1                            ;
+; 10                                               ; 0                            ;
+; 11                                               ; 4                            ;
 ; 12                                               ; 2                            ;
-; 13                                               ; 2                            ;
-; 14                                               ; 3                            ;
+; 13                                               ; 6                            ;
+; 14                                               ; 0                            ;
 ; 15                                               ; 0                            ;
-; 16                                               ; 3                            ;
+; 16                                               ; 2                            ;
 ; 17                                               ; 2                            ;
 ; 18                                               ; 0                            ;
-; 19                                               ; 0                            ;
-; 20                                               ; 0                            ;
-; 21                                               ; 1                            ;
-; 22                                               ; 0                            ;
-; 23                                               ; 0                            ;
-; 24                                               ; 2                            ;
+; 19                                               ; 3                            ;
 +--------------------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 17.21) ; Number of LABs  (Total = 28) ;
+; Number of Distinct Inputs  (Average = 17.03) ; Number of LABs  (Total = 35) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 0                            ;
-; 2                                            ; 1                            ;
+; 2                                            ; 2                            ;
 ; 3                                            ; 1                            ;
 ; 4                                            ; 5                            ;
-; 5                                            ; 0                            ;
+; 5                                            ; 1                            ;
 ; 6                                            ; 0                            ;
-; 7                                            ; 0                            ;
+; 7                                            ; 2                            ;
 ; 8                                            ; 0                            ;
-; 9                                            ; 1                            ;
+; 9                                            ; 0                            ;
 ; 10                                           ; 0                            ;
-; 11                                           ; 1                            ;
-; 12                                           ; 0                            ;
+; 11                                           ; 0                            ;
+; 12                                           ; 1                            ;
 ; 13                                           ; 1                            ;
 ; 14                                           ; 0                            ;
-; 15                                           ; 1                            ;
-; 16                                           ; 0                            ;
-; 17                                           ; 0                            ;
+; 15                                           ; 0                            ;
+; 16                                           ; 1                            ;
+; 17                                           ; 1                            ;
 ; 18                                           ; 1                            ;
 ; 19                                           ; 0                            ;
-; 20                                           ; 1                            ;
+; 20                                           ; 2                            ;
 ; 21                                           ; 1                            ;
-; 22                                           ; 3                            ;
-; 23                                           ; 0                            ;
-; 24                                           ; 0                            ;
-; 25                                           ; 2                            ;
+; 22                                           ; 2                            ;
+; 23                                           ; 1                            ;
+; 24                                           ; 1                            ;
+; 25                                           ; 0                            ;
 ; 26                                           ; 1                            ;
-; 27                                           ; 1                            ;
+; 27                                           ; 2                            ;
 ; 28                                           ; 1                            ;
 ; 29                                           ; 1                            ;
-; 30                                           ; 0                            ;
-; 31                                           ; 4                            ;
+; 30                                           ; 1                            ;
+; 31                                           ; 5                            ;
 +----------------------------------------------+------------------------------+
 
 
@@ -2231,44 +2281,13 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 +---------------------------+--------+
 
 
-+----------------------------------------------------------------------------+
-; Estimated Delay Added for Hold Timing Summary                              ;
-+-----------------+--------------------------------------+-------------------+
-; Source Clock(s) ; Destination Clock(s)                 ; Delay Added in ns ;
-+-----------------+--------------------------------------+-------------------+
-; KEY[1]          ; KEY[1],register_8bit_ir:IR2_reg|q[0] ; 1.4               ;
-+-----------------+--------------------------------------+-------------------+
-Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
-This will disable optimization of problematic paths and expose them for further analysis using either the TimeQuest Timing Analyzer or the Classic Timing Analyzer.
-
-
-+-------------------------------------------------------------------------------------------------------+
-; Estimated Delay Added for Hold Timing Details                                                         ;
-+-------------------------------+---------------------------------------------------+-------------------+
-; Source Register               ; Destination Register                              ; Delay Added in ns ;
-+-------------------------------+---------------------------------------------------+-------------------+
-; register_8bit_ir:IR2_reg|q[3] ; DataHazardControl:DataHazardControl|ALU_in2_BPSel ; 0.586             ;
-; register_8bit_ir:IR2_reg|q[1] ; DataHazardControl:DataHazardControl|ALU_in2_BPSel ; 0.586             ;
-; register_8bit_ir:IR2_reg|q[2] ; DataHazardControl:DataHazardControl|ALU_in2_BPSel ; 0.586             ;
-; register_8bit_ir:IR2_reg|q[5] ; DataHazardControl:DataHazardControl|ALU_in2_BPSel ; 0.586             ;
-; register_8bit_ir:IR2_reg|q[4] ; DataHazardControl:DataHazardControl|ALU_in2_BPSel ; 0.586             ;
-; register_8bit_ir:IR2_reg|q[0] ; DataHazardControl:DataHazardControl|ALU_in2_BPSel ; 0.586             ;
-; register_8bit_ir:IR3_reg|q[1] ; DataHazardControl:DataHazardControl|ALU_in2_BPSel ; 0.586             ;
-; register_8bit_ir:IR3_reg|q[2] ; DataHazardControl:DataHazardControl|ALU_in2_BPSel ; 0.586             ;
-; register_8bit_ir:IR3_reg|q[3] ; DataHazardControl:DataHazardControl|ALU_in2_BPSel ; 0.586             ;
-; register_8bit_ir:IR3_reg|q[0] ; DataHazardControl:DataHazardControl|ALU_in2_BPSel ; 0.586             ;
-; register_8bit_ir:IR3_reg|q[7] ; DataHazardControl:DataHazardControl|ALU_in2_BPSel ; 0.586             ;
-; register_8bit_ir:IR3_reg|q[6] ; DataHazardControl:DataHazardControl|ALU_in2_BPSel ; 0.586             ;
-+-------------------------------+---------------------------------------------------+-------------------+
-
-
 +-----------------+
 ; Fitter Messages ;
 +-----------------+
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Fitter
     Info: Version 11.1 Build 259 01/25/2012 Service Pack 2 SJ Web Edition
-    Info: Processing started: Tue Nov 26 16:28:29 2013
+    Info: Processing started: Tue Nov 26 22:10:29 2013
 Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off multicycle -c multicycle
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (119006): Selected device EP2C35F672C6 for design "multicycle"
@@ -2284,37 +2303,18 @@ Info (169124): Fitter converted 3 user pins into dedicated programming pins
 Info (176045): Design uses memory blocks. Violating setup or hold times of memory block address registers for either read or write operations could cause memory contents to be corrupted. Make sure that all memory block address registers meet the setup and hold time requirements.
 Warning (335093): Timing Analysis is analyzing one or more combinational loops as latches
     Warning (335094): Node "FSMExecute|squashIR2|combout" is a latch
-    Warning (335094): Node "DataHazardControl|DataMem_data_BPSel|combout" is a latch
-    Warning (335094): Node "DataHazardControl|DataMem_address_BPSel|combout" is a latch
     Warning (335094): Node "FSMExecute|PCSel|combout" is a latch
     Warning (335094): Node "FSMExecute|ALU_in2_mux_ctrl[2]|combout" is a latch
     Warning (335094): Node "FSMExecute|ALUop[1]|combout" is a latch
     Warning (335094): Node "FSMExecute|ALUop[0]|combout" is a latch
-    Warning (335094): Node "DataHazardControl|ALU_in1_BPSel|combout" is a latch
-    Warning (335094): Node "DataHazardControl|ALU_in2_BPSel|combout" is a latch
-    Warning (335094): Node "FSMExecute|ALU_in1_mux_ctrl[0]|combout" is a latch
-    Warning (335094): Node "FSMExecute|ALU_in2_mux_ctrl[1]|combout" is a latch
     Warning (335094): Node "FSMExecute|ALU_in2_mux_ctrl[0]|combout" is a latch
+    Warning (335094): Node "FSMExecute|ALU_in2_mux_ctrl[1]|combout" is a latch
+    Warning (335094): Node "FSMExecute|ALU_in1_mux_ctrl[0]|combout" is a latch
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'multicycle.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332144): No user constrained base clocks found in the design
-Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
-    Info (332098): Cell: DataHazardControl|ALU_in2_BPSel~0  from: datad  to: combout
-    Info (332098): Cell: DataHazardControl|ALU_in2_BPSel~2  from: datac  to: combout
 Info (332130): Timing requirements not specified -- quality metrics such as performance may be sacrificed to reduce compilation time.
 Info (176353): Automatically promoted node KEY[1] (placed in PIN N23 (LVDS126p, DPCLK7/DQS0R/CQ1R))
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G4
-    Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node register_8bit_ir:IR3_reg|q[0]
-        Info (176357): Destination node register_8bit_ir:IR3_reg|q[1]
-        Info (176357): Destination node register_8bit_ir:IR3_reg|q[2]
-        Info (176357): Destination node register_8bit_ir:IR3_reg|q[3]
-        Info (176357): Destination node register_8bit_ir:IR3_reg|q[7]
-        Info (176357): Destination node register_8bit_ir:IR3_reg|q[6]
-        Info (176357): Destination node register_8bit_ir:IR2_reg|q[5]
-        Info (176357): Destination node register_8bit_ir:IR2_reg|q[6]
-        Info (176357): Destination node register_8bit_ir:IR2_reg|q[4]
-        Info (176357): Destination node register_8bit_ir:IR2_reg|q[3]
-        Info (176358): Non-global destination nodes limited to 10 nodes
 Info (176353): Automatically promoted node FSMExecute:FSMExecute|stop_operation_finished 
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
@@ -2356,7 +2356,7 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "SW[7]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "SW[8]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "SW[9]" is assigned to location or region, but does not exist in design
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:00
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
@@ -2364,7 +2364,7 @@ Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:01
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 5% of the available device resources in the region that extends from location X44_Y12 to location X54_Y23
+    Info (170196): Router estimated peak interconnect usage is 5% of the available device resources in the region that extends from location X33_Y12 to location X43_Y23
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
@@ -2457,9 +2457,9 @@ Info (306005): Delay annotation completed successfully
 Info (176045): Design uses memory blocks. Violating setup or hold times of memory block address registers for either read or write operations could cause memory contents to be corrupted. Make sure that all memory block address registers meet the setup and hold time requirements.
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Warning (169174): The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
-Info: Quartus II 32-bit Fitter was successful. 0 errors, 37 warnings
-    Info: Peak virtual memory: 385 megabytes
-    Info: Processing ended: Tue Nov 26 16:28:39 2013
+Info: Quartus II 32-bit Fitter was successful. 0 errors, 33 warnings
+    Info: Peak virtual memory: 386 megabytes
+    Info: Processing ended: Tue Nov 26 22:10:39 2013
     Info: Elapsed time: 00:00:10
     Info: Total CPU time (on all processors): 00:00:10
 

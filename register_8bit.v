@@ -29,12 +29,14 @@ module register_8bit_ir (
 	clock,
 	data,
 	enable,
+	squash,
 	q);
 
 	input	  aclr;
 	input	  clock;
 	input	[7:0]  data;
 	input	  enable;
+	input squash;
 	output reg	[7:0]  q;
 	
 	always @(posedge clock, posedge aclr)
@@ -42,7 +44,12 @@ module register_8bit_ir (
 		if (aclr)
 			q <= 8'b1010;
 		else if (enable)
-			q <= data;
+		begin
+			if(squash)
+				q <= 8'b1010;
+			else
+				q <= data;
+		end
 	end
 
 endmodule

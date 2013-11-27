@@ -19,10 +19,12 @@ entity DataHazardControl is
         IR1             : in     vl_logic_vector(7 downto 0);
         IR2             : in     vl_logic_vector(7 downto 0);
         IR3             : in     vl_logic_vector(7 downto 0);
-        ALU_in1_BPSel   : out    vl_logic;
-        ALU_in2_BPSel   : out    vl_logic;
-        DataMem_data_BPSel: out    vl_logic;
-        DataMem_address_BPSel: out    vl_logic
+        ALU_in1_BPSel   : out    vl_logic_vector(1 downto 0);
+        ALU_in2_BPSel   : out    vl_logic_vector(1 downto 0);
+        DataMem_data_BPSel: out    vl_logic_vector(1 downto 0);
+        DataMem_address_BPSel: out    vl_logic_vector(1 downto 0);
+        R1_in_BPSel     : out    vl_logic_vector(1 downto 0);
+        R2_in_BPSel     : out    vl_logic_vector(1 downto 0)
     );
     attribute mti_svvh_generic_type : integer;
     attribute mti_svvh_generic_type of OP_LOAD : constant is 2;
