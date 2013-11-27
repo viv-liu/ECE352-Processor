@@ -2,25 +2,97 @@
 // Copyright (c) 2007 by University of Toronto ECE 243 development team 
 // ---------------------------------------------------------------------
 
+module DataHazardControl
+(	
+	IR1, IR2, IR3,
+	ALU_in1_BPSel, ALU_in2_BPSel, 
+	DataMem_data_BPSel, DataMem_address_BPSel
+);
+	input [7:0]IR1, IR2, IR3;
+	
+	output reg ALU_in1_BPSel, ALU_in2_BPSel;
+	output reg DataMem_data_BPSel, DataMem_address_BPSel;
+	
+	parameter [3:0] OP_LOAD = 4'b0000, OP_STORE = 4'b0010, OP_ADD = 4'b0100, OP_SUB = 4'b0110, OP_NAND = 4'b1000;
+	parameter [3:0] OP_BZ = 4'b0101, OP_BNZ = 4'b1001, OP_BPZ = 4'b1101, OP_STOP = 4'b0001, OP_NOP = 4'b1010;
+	parameter [2:0] OP_ORI = 3'b111, OP_SHIFT = 3'b011;
+	
+	always@(*)
+	begin
+		// add, add
+		if (		(IR3[3:0] == OP_ADD || IR3[3:0] == OP_SUB || IR3[3:0] == OP_NAND) &&	(IR2[3:0] == OP_ADD || IR2[3:0] == OP_SUB || IR2[3:0] == OP_NAND)) 
+		begin
+			if (IR2[7:6] == IR3[7:6])
+				ALU_in1_BPSel = 1;
+			if (IR2[5:4] == IR3[7:6])
+				ALU_in2_BPSel = 1;
 
-
+		end
+		
+		// add, ori
+		else if(	(IR3[3:0] == OP_ADD || IR3[3:0] == OP_SUB || IR3[3:0] == OP_NAND) &&	IR2[2:0] == OP_ORI)
+		begin
+			if (IR3[7:6] == 1)
+				ALU_in1_BPSel = 1;
+		end
+		
+		// add, shift
+		else if(	(IR3[3:0] == OP_ADD || IR3[3:0] == OP_SUB || IR3[3:0] == OP_NAND) &&	IR2[2:0] == OP_SHIFT)
+		begin
+			if (IR2[7:6] == IR3[7:6])
+				ALU_in1_BPSel = 1;
+		end	
+		
+		// add, store
+		else if(	(IR3[3:0] == OP_ADD || IR3[3:0] == OP_SUB || IR3[3:0] == OP_NAND) &&	IR2[3:0] == OP_STORE)
+		begin
+			if (IR2[7:6] == IR3[7:6])
+				DataMem_data_BPSel = 1;	
+			if (IR2[5:4] == IR3[7:6])
+				DataMem_address_BPSel = 1;
+		end
+		
+		// add, load
+		else if(	(IR3[3:0] == OP_ADD || IR3[3:0] == OP_SUB || IR3[3:0] == OP_NAND) &&	IR2[3:0] == OP_LOAD)
+		begin
+			if (IR2[5:4] == IR3[7:6])
+				DataMem_address_BPSel = 1;
+		end
+		
+		// add, 
+		
+		else
+		begin
+			ALU_in1_BPSel = 0;
+			ALU_in2_BPSel = 0;
+			
+			DataMem_data_BPSel = 0;
+			DataMem_address_BPSel = 0;
+		end
+	end
+	
+endmodule
+	
+	
 
 
 module	FSMExecute
 (
-reset, clock, instr, N, Z, 
-MemRead, MemWrite, MDRLoad, ALU2, ALUop, 
-FlagWrite, ALU_in1_mux_ctrl, PCSel, stop_operation_finished
+	reset, clock, instr, N, Z, 
+	MemRead, MemWrite, MDRLoad, ALU_in2_mux_ctrl, ALUop, 
+	FlagWrite, ALU_in1_mux_ctrl, PCSel, stop_operation_finished, 
+	squashIR1, squashIR2
 );
 
-	input	[3:0] instr;
+	input	[7:0] instr;
 	input	reset, clock;
 	input N, Z;
 	output reg MemRead, MemWrite, MDRLoad;
 	output reg FlagWrite;
-	output reg [2:0] ALU2, ALUop;
+	output reg [2:0] ALU_in2_mux_ctrl, ALUop;
 	output reg [7:0] ALU_in1_mux_ctrl;
 	output reg PCSel, stop_operation_finished;
+	output reg squashIR1, squashIR2;
 	
 	//op codes for the instructions
 	parameter [3:0] OP_LOAD = 4'b0000, OP_STORE = 4'b0010, OP_ADD = 4'b0100, OP_SUB = 4'b0110, OP_NAND = 4'b1000;
@@ -35,8 +107,9 @@ FlagWrite, ALU_in1_mux_ctrl, PCSel, stop_operation_finished
 	always@(posedge clock or posedge reset)
 	begin
 		if (reset) 						stop_operation_finished <= 0;
-		else if (instr == OP_STOP)	stop_operation_finished <= 1;
+		else if (instr[3:0] == OP_STOP || ((instr[3:0] == OP_BZ || instr[3:0] == OP_BNZ || instr[3:0] == OP_BPZ) && instr[7:4] == 0) )	stop_operation_finished <= 1;
 		else								stop_operation_finished <= stop_operation_finished;
+			
 	end
 	
 	
@@ -46,7 +119,7 @@ FlagWrite, ALU_in1_mux_ctrl, PCSel, stop_operation_finished
 	begin
 		if(~stop_operation_finished)
 		begin
-				if (instr == OP_LOAD)	// Load RESET DOES THIS
+				if (instr[3:0] == OP_LOAD)	// Load RESET DOES THIS
 				begin
 					MemRead = 1; // read from memory
 					MDRLoad = 1; // enable 
@@ -57,30 +130,30 @@ FlagWrite, ALU_in1_mux_ctrl, PCSel, stop_operation_finished
 					MDRLoad = 0;
 				end
 				
-				if (instr == OP_STORE) // Store	
+				if (instr[3:0] == OP_STORE) // Store	
 						MemWrite = 1;
 				else	MemWrite = 0;			
 				
-				if( instr == OP_ADD ) 		// Add
+				if( instr[3:0] == OP_ADD ) 		// Add
 				//control = 19'b0000000010000001001;
 				begin	
-					ALU2 = 0;
+					ALU_in2_mux_ctrl = 0;
 					ALUop = ALU_ADD;
 					FlagWrite = 1;
 					ALU_in1_mux_ctrl = 0;
 				end	
-				else if ( instr == OP_SUB ) 	// Sub
+				else if ( instr[3:0] == OP_SUB ) 	// Sub
 				//control = 19'b0000000010000011001;
 				begin
-					ALU2 = 0;
+					ALU_in2_mux_ctrl = 0;
 					ALUop = ALU_SUB;	
 					FlagWrite = 1;
 					ALU_in1_mux_ctrl = 0;
 				end
-				else if (instr == OP_NAND)		// Nand
+				else if (instr[3:0] == OP_NAND)		// Nand
 					//control = 19'b0000000010000111001;
 				begin	
-					ALU2 = 0;
+					ALU_in2_mux_ctrl = 0;
 					ALUop = ALU_NAND;		
 					FlagWrite = 1;
 					ALU_in1_mux_ctrl = 0;
@@ -88,7 +161,7 @@ FlagWrite, ALU_in1_mux_ctrl, PCSel, stop_operation_finished
 				else if (instr[2:0] == OP_SHIFT)	// Shift
 				//control = 19'b0000000011001001001;
 				begin
-					ALU2 = 4;
+					ALU_in2_mux_ctrl = 4;
 					ALUop = ALU_SHIFT;
 					FlagWrite = 1;
 					ALU_in1_mux_ctrl = 0;
@@ -96,15 +169,15 @@ FlagWrite, ALU_in1_mux_ctrl, PCSel, stop_operation_finished
 				else if (instr[2:0] == OP_ORI) // Ori
 				//control = 19'b0000010100000000000;
 				begin
-					ALU2 = 3;
+					ALU_in2_mux_ctrl = 3;
 					ALUop = ALU_ORI;
 					FlagWrite = 1;
 					ALU_in1_mux_ctrl = 0;
 				end
-				else if (instr == OP_BNZ || instr == OP_BPZ || instr == OP_BZ) // Ori
+				else if (instr[3:0] == OP_BNZ || instr[3:0] == OP_BPZ || instr[3:0] == OP_BZ) // Ori
 				//control = 19'b0000010100000000000;
 				begin
-					ALU2 = 2;
+					ALU_in2_mux_ctrl = 2;
 					ALUop = ALU_ADD;
 					FlagWrite = 0;
 					ALU_in1_mux_ctrl = 1;
@@ -112,7 +185,7 @@ FlagWrite, ALU_in1_mux_ctrl, PCSel, stop_operation_finished
 				
 				else	//control = 19'b0000000000000000000; ????????????????????????????
 				begin
-					ALU2 = 3'b000;
+					ALU_in2_mux_ctrl = 3'b000;
 					ALUop = 3'b000;
 					FlagWrite = 0;
 					ALU_in1_mux_ctrl = 0;
@@ -121,14 +194,31 @@ FlagWrite, ALU_in1_mux_ctrl, PCSel, stop_operation_finished
 				
 		
 					
-				if(instr == OP_BZ && Z)
+				if((instr[3:0] == OP_BZ && Z) || (instr[3:0] == OP_BNZ && ~Z) || (instr[3:0] == OP_BPZ && ~N))
+				begin
+					if(instr[7:4] == 2)
+					begin
+						PCSel = 1;
+						squashIR1 = 0;
+						squashIR2 = 1;
+					end
+					if(instr[7:4] == 3)
+					begin
+						PCSel = 1;
+						squashIR1 = 1;
+						squashIR2 = 1;
+					end
+					else
 					PCSel = 0;
-				else if(instr == OP_BNZ && ~Z)
-					PCSel = 0;
-				else if(instr == OP_BPZ && ~N)
-					PCSel = 0;
+					squashIR1 = 1;
+					squashIR2 = 1;
+				end
 				else
+				begin
 					PCSel = 1;
+					squashIR1 = 0;
+					squashIR2 = 0;
+				end
 		end
 		else
 		begin

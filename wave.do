@@ -39,8 +39,7 @@ add wave -noupdate -radix hexadecimal /multicycle_tb/DUT/RF_block/k3
 add wave -noupdate /multicycle_tb/DUT/IR1_reg/q 
 add wave -noupdate /multicycle_tb/DUT/IR2_reg/q 
 add wave -noupdate /multicycle_tb/DUT/IR3_reg/q 
-add wave -noupdate /multicycle_tb/DUT/IR4_reg/q 
-add wave -noupdate -radix hexadecimal /multicycle_tb/DUT/PC0/q
+
 add wave -noupdate -radix hexadecimal /multicycle_tb/DUT/PC1/q 
 add wave -noupdate -radix hexadecimal /multicycle_tb/DUT/PC2/q 
 add wave -noupdate -radix hexadecimal /multicycle_tb/DUT/PC3/q  

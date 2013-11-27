@@ -1,6 +1,6 @@
 Flow report for multicycle
-Wed Nov 20 15:45:10 2013
-Quartus II 64-Bit Version 11.1 Build 259 01/25/2012 Service Pack 2 SJ Full Version
+Tue Nov 26 16:28:43 2013
+Quartus II 32-bit Version 11.1 Build 259 01/25/2012 Service Pack 2 SJ Web Edition
 
 
 ---------------------
@@ -35,26 +35,26 @@ applicable agreement for further details.
 
 
 
-+-------------------------------------------------------------------------------------+
-; Flow Summary                                                                        ;
-+------------------------------------+------------------------------------------------+
-; Flow Status                        ; Successful - Wed Nov 20 15:45:08 2013          ;
-; Quartus II 64-Bit Version          ; 11.1 Build 259 01/25/2012 SP 2 SJ Full Version ;
-; Revision Name                      ; multicycle                                     ;
-; Top-level Entity Name              ; multicycle                                     ;
-; Family                             ; Cyclone II                                     ;
-; Device                             ; EP2C35F672C6                                   ;
-; Timing Models                      ; Final                                          ;
-; Total logic elements               ; 306 / 33,216 ( < 1 % )                         ;
-;     Total combinational functions  ; 278 / 33,216 ( < 1 % )                         ;
-;     Dedicated logic registers      ; 137 / 33,216 ( < 1 % )                         ;
-; Total registers                    ; 137                                            ;
-; Total pins                         ; 88 / 475 ( 19 % )                              ;
-; Total virtual pins                 ; 0                                              ;
-; Total memory bits                  ; 2,048 / 483,840 ( < 1 % )                      ;
-; Embedded Multiplier 9-bit elements ; 0 / 70 ( 0 % )                                 ;
-; Total PLLs                         ; 0 / 4 ( 0 % )                                  ;
-+------------------------------------+------------------------------------------------+
++------------------------------------------------------------------------------------+
+; Flow Summary                                                                       ;
++------------------------------------+-----------------------------------------------+
+; Flow Status                        ; Successful - Tue Nov 26 16:28:43 2013         ;
+; Quartus II 32-bit Version          ; 11.1 Build 259 01/25/2012 SP 2 SJ Web Edition ;
+; Revision Name                      ; multicycle                                    ;
+; Top-level Entity Name              ; multicycle                                    ;
+; Family                             ; Cyclone II                                    ;
+; Device                             ; EP2C35F672C6                                  ;
+; Timing Models                      ; Final                                         ;
+; Total logic elements               ; 344 / 33,216 ( 1 % )                          ;
+;     Total combinational functions  ; 333 / 33,216 ( 1 % )                          ;
+;     Dedicated logic registers      ; 121 / 33,216 ( < 1 % )                        ;
+; Total registers                    ; 121                                           ;
+; Total pins                         ; 88 / 475 ( 19 % )                             ;
+; Total virtual pins                 ; 0                                             ;
+; Total memory bits                  ; 2,048 / 483,840 ( < 1 % )                     ;
+; Embedded Multiplier 9-bit elements ; 0 / 70 ( 0 % )                                ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                                 ;
++------------------------------------+-----------------------------------------------+
 
 
 +-----------------------------------------+
@@ -62,22 +62,22 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/20/2013 15:44:34 ;
+; Start date & time ; 11/26/2013 16:28:24 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; multicycle          ;
 +-------------------+---------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                              ;
-+-------------------------------------+------------------------------+---------------+-------------+------------+
-; Assignment Name                     ; Value                        ; Default Value ; Entity Name ; Section Id ;
-+-------------------------------------+------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 156980626380.138498027303864 ; --            ; --          ; --         ;
-; PARTITION_COLOR                     ; 16764057                     ; --            ; --          ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING        ; --            ; --          ; Top        ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                       ; --            ; --          ; Top        ;
-+-------------------------------------+------------------------------+---------------+-------------+------------+
++----------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                               ;
++-------------------------------------+-------------------------------+---------------+-------------+------------+
+; Assignment Name                     ; Value                         ; Default Value ; Entity Name ; Section Id ;
++-------------------------------------+-------------------------------+---------------+-------------+------------+
+; COMPILER_SIGNATURE_ID               ; 1097958033065.138551210410832 ; --            ; --          ; --         ;
+; PARTITION_COLOR                     ; 16764057                      ; --            ; --          ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING         ; --            ; --          ; Top        ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                        ; --            ; --          ; Top        ;
++-------------------------------------+-------------------------------+---------------+-------------+------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -85,11 +85,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:12     ; 1.0                     ; 392 MB              ; 00:00:08                           ;
-; Fitter                    ; 00:00:08     ; 2.6                     ; 556 MB              ; 00:00:11                           ;
-; Assembler                 ; 00:00:06     ; 1.0                     ; 413 MB              ; 00:00:03                           ;
-; TimeQuest Timing Analyzer ; 00:00:07     ; 1.0                     ; 420 MB              ; 00:00:04                           ;
-; Total                     ; 00:00:33     ; --                      ; --                  ; 00:00:26                           ;
+; Analysis & Synthesis      ; 00:00:04     ; 1.0                     ; 304 MB              ; 00:00:04                           ;
+; Fitter                    ; 00:00:09     ; 1.0                     ; 385 MB              ; 00:00:09                           ;
+; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 289 MB              ; 00:00:03                           ;
+; Assembler                 ; 00:00:03     ; 1.0                     ; 328 MB              ; 00:00:03                           ;
+; Total                     ; 00:00:19     ; --                      ; --                  ; 00:00:19                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -98,10 +98,10 @@ applicable agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; BA3165WS14       ; Windows 7 ; 6.1        ; x86_64         ;
-; Fitter                    ; BA3165WS14       ; Windows 7 ; 6.1        ; x86_64         ;
-; Assembler                 ; BA3165WS14       ; Windows 7 ; 6.1        ; x86_64         ;
-; TimeQuest Timing Analyzer ; BA3165WS14       ; Windows 7 ; 6.1        ; x86_64         ;
+; Analysis & Synthesis      ; 3dot-PC          ; Windows 7 ; 6.1        ; x86_64         ;
+; Fitter                    ; 3dot-PC          ; Windows 7 ; 6.1        ; x86_64         ;
+; TimeQuest Timing Analyzer ; 3dot-PC          ; Windows 7 ; 6.1        ; x86_64         ;
+; Assembler                 ; 3dot-PC          ; Windows 7 ; 6.1        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 
@@ -110,8 +110,8 @@ applicable agreement for further details.
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off multicycle -c multicycle
 quartus_fit --read_settings_files=off --write_settings_files=off multicycle -c multicycle
-quartus_asm --read_settings_files=off --write_settings_files=off multicycle -c multicycle
 quartus_sta multicycle -c multicycle
+quartus_asm --read_settings_files=off --write_settings_files=off multicycle -c multicycle
 
 
 

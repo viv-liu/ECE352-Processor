@@ -9,10 +9,6 @@
 ; Final result should be:
 ; k0: 03   k1: 44    k2: 18    k3: 18
 ;
-	sub k1, k1 
-	nop
-	nop
-	nop
 	ori	16	; value loaded into k1
 	nop
 	nop	

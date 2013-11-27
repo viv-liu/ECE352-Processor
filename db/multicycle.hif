@@ -1,5 +1,5 @@
-Quartus II 64-Bit
-Version 11.1 Build 259 01/25/2012 Service Pack 2 SJ Full Version
+Quartus II 32-bit
+Version 11.1 Build 259 01/25/2012 Service Pack 2 SJ Web Edition
 14
 1343
 OFF
@@ -21,52 +21,6 @@ VHSM_ON
 -- End Library Paths --
 -- Start VHDL Libraries --
 -- End VHDL Libraries --
-# entity
-multicycle
-# storage
-db|multicycle.(0).cnf
-db|multicycle.(0).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-multicycle.v
-3f2091ebfc85c466f823ddbe4370e2a8
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-OP_STOP
-0001
-PARAMETER_UNSIGNED_BIN
-DEF
-OP_ORI
-111
-PARAMETER_UNSIGNED_BIN
-DEF
-}
-# hierarchies {
-|
-}
-# macro_sequence
-
-# end
 # entity
 HEXs
 # storage
@@ -147,198 +101,6 @@ HEXs:HEX_display|HEX:hex7
 
 # end
 # entity
-FSMExecute
-# storage
-db|multicycle.(3).cnf
-db|multicycle.(3).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-fsm.v
-e48ee39beaa93ca630a59f56902d3068
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-OP_LOAD
-0000
-PARAMETER_UNSIGNED_BIN
-DEF
-OP_STORE
-0010
-PARAMETER_UNSIGNED_BIN
-DEF
-OP_ADD
-0100
-PARAMETER_UNSIGNED_BIN
-DEF
-OP_SUB
-0110
-PARAMETER_UNSIGNED_BIN
-DEF
-OP_NAND
-1000
-PARAMETER_UNSIGNED_BIN
-DEF
-OP_BZ
-0101
-PARAMETER_UNSIGNED_BIN
-DEF
-OP_BNZ
-1001
-PARAMETER_UNSIGNED_BIN
-DEF
-OP_BPZ
-1101
-PARAMETER_UNSIGNED_BIN
-DEF
-OP_STOP
-0001
-PARAMETER_UNSIGNED_BIN
-DEF
-OP_NOP
-1010
-PARAMETER_UNSIGNED_BIN
-DEF
-OP_ORI
-111
-PARAMETER_UNSIGNED_BIN
-DEF
-OP_SHIFT
-011
-PARAMETER_UNSIGNED_BIN
-DEF
-ALU_ADD
-000
-PARAMETER_UNSIGNED_BIN
-DEF
-ALU_SUB
-001
-PARAMETER_UNSIGNED_BIN
-DEF
-ALU_NAND
-011
-PARAMETER_UNSIGNED_BIN
-DEF
-ALU_SHIFT
-100
-PARAMETER_UNSIGNED_BIN
-DEF
-ALU_ORI
-010
-PARAMETER_UNSIGNED_BIN
-DEF
-}
-# hierarchies {
-FSMExecute:FSMExecute
-}
-# macro_sequence
-
-# end
-# entity
-FSMWB
-# storage
-db|multicycle.(4).cnf
-db|multicycle.(4).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-fsm.v
-e48ee39beaa93ca630a59f56902d3068
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-OP_LOAD
-0000
-PARAMETER_UNSIGNED_BIN
-DEF
-OP_STORE
-0010
-PARAMETER_UNSIGNED_BIN
-DEF
-OP_ADD
-0100
-PARAMETER_UNSIGNED_BIN
-DEF
-OP_SUB
-0110
-PARAMETER_UNSIGNED_BIN
-DEF
-OP_NAND
-1000
-PARAMETER_UNSIGNED_BIN
-DEF
-OP_BZ
-0101
-PARAMETER_UNSIGNED_BIN
-DEF
-OP_BNZ
-1001
-PARAMETER_UNSIGNED_BIN
-DEF
-OP_BPZ
-1101
-PARAMETER_UNSIGNED_BIN
-DEF
-OP_STOP
-0001
-PARAMETER_UNSIGNED_BIN
-DEF
-OP_NOP
-1010
-PARAMETER_UNSIGNED_BIN
-DEF
-OP_ORI
-111
-PARAMETER_UNSIGNED_BIN
-DEF
-OP_SHIFT
-011
-PARAMETER_UNSIGNED_BIN
-DEF
-}
-# hierarchies {
-FSMWB:FSMWB
-}
-# macro_sequence
-
-# end
-# entity
 memory
 # storage
 db|multicycle.(5).cnf
@@ -390,47 +152,15 @@ VERILOG_NON_CONSTANT_LOOP_LIMIT
 }
 # hierarchies {
 memory:DataMem|mux2to1_8bit:inst3
+mux2to1_8bit:DataMem_data_BP_mux
+mux2to1_8bit:DataMem_address_BP_mux
+mux2to1_8bit:ALU_in1_BP_mux
+mux2to1_8bit:ALU_in2_BP_mux
 mux2to1_8bit:PcSel_mux
 mux2to1_8bit:RegMux
 }
 # macro_sequence
 
-# end
-# entity
-DualMem
-# storage
-db|multicycle.(7).cnf
-db|multicycle.(7).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-dualmem.v
-6d606dd59ed2112cd9ba72d56bb1ccb2
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-memory:DataMem|DualMem:inst
-}
-# macro_sequence
-ALTERA_RESERVED_QISALTERA_RESERVED_QIS
 # end
 # entity
 altsyncram
@@ -717,380 +447,22 @@ byteena_a
 2
 }
 # include_file {
-altrom.inc
-192b74eafa8debf2248ea73881e77f91
 altram.inc
 ad5518b39ffd3cf1df377e6360d1c9b6
-a_rdenreg.inc
-3fcdce755959d5a8afbe64788d21fb
-altdpram.inc
-2f9e6727b678ffd76e72bc5a95a2630
 lpm_mux.inc
 dd87bed9959d6126db09970164b7ba6
-stratix_ram_block.inc
-e3a03868917fb3dd57b6ed1dd195f22
-lpm_decode.inc
-10da69a8bbd590d66779e7a142f73790
+altdpram.inc
+2f9e6727b678ffd76e72bc5a95a2630
+a_rdenreg.inc
+3fcdce755959d5a8afbe64788d21fb
 aglobal111.inc
 9cc1f9de5ad83fc94dd171c3f7986bd
-}
-# hierarchies {
-memory:DataMem|DualMem:inst|altsyncram:altsyncram_component
-}
-# macro_sequence
-
-# end
-# entity
-mux5to1_8bit
-# storage
-db|multicycle.(10).cnf
-db|multicycle.(10).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-mux5to1_8bit.v
-bc26d366b2cc785d987ee08d414db54
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-mux5to1_8bit:ALU_in1_mux
-mux5to1_8bit:ALU2_mux
-}
-# macro_sequence
-
-# end
-# entity
-ALU
-# storage
-db|multicycle.(11).cnf
-db|multicycle.(11).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-alu.v
-10d86afcd8a9926b98bf5772b79b55ea
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-ALU:ALU
-ALU:PC_ALU
-}
-# macro_sequence
-
-# end
-# entity
-RF
-# storage
-db|multicycle.(12).cnf
-db|multicycle.(12).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-rf.v
-9b5d31e9227a463c8b1829aaee61955
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-RF:RF_block
-}
-# macro_sequence
-
-# end
-# entity
-register_8bit_ir
-# storage
-db|multicycle.(13).cnf
-db|multicycle.(13).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-register_8bit.v
-10c921b7cedd63be60e9cd18b6bf232e
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-register_8bit_ir:IR1_reg
-register_8bit_ir:IR2_reg
-register_8bit_ir:IR3_reg
-register_8bit_ir:IR4_reg
-}
-# macro_sequence
-
-# end
-# entity
-mux2to1_2bit
-# storage
-db|multicycle.(14).cnf
-db|multicycle.(14).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-mux2to1_2bit.v
-b8e15da514e2adb1ec2e7bfb5838dfc6
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-mux2to1_2bit:RWSel_mux
-mux2to1_2bit:R1Sel_mux
-}
-# macro_sequence
-
-# end
-# entity
-register_8bit
-# storage
-db|multicycle.(15).cnf
-db|multicycle.(15).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-register_8bit.v
-10c921b7cedd63be60e9cd18b6bf232e
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# hierarchies {
-register_8bit:MDR_reg
-register_8bit:PC0
-register_8bit:PC1
-register_8bit:PC2
-register_8bit:PC3
-register_8bit:R1
-register_8bit:R2
-register_8bit:ALUOut_reg
-}
-# macro_sequence
-
-# end
-# entity
-sExtend
-# storage
-db|multicycle.(16).cnf
-db|multicycle.(16).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-extend.v
-5c236121c2e6d89aca2fa9479114f299
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-n
-4
-PARAMETER_SIGNED_DEC
-USR
-}
-# hierarchies {
-sExtend:SE4
-}
-# macro_sequence
-
-# end
-# entity
-zExtend
-# storage
-db|multicycle.(17).cnf
-db|multicycle.(17).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-extend.v
-5c236121c2e6d89aca2fa9479114f299
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-n
-3
-PARAMETER_SIGNED_DEC
-USR
-}
-# hierarchies {
-zExtend:ZE3
-}
-# macro_sequence
-
-# end
-# entity
-zExtend
-# storage
-db|multicycle.(18).cnf
-db|multicycle.(18).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_sensitive
-# source_file
-extend.v
-5c236121c2e6d89aca2fa9479114f299
-8
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-IGNORE_VERILOG_INITIAL_CONSTRUCTS
-OFF
-VERILOG_CONSTANT_LOOP_LIMIT
-5000
-VERILOG_NON_CONSTANT_LOOP_LIMIT
-250
-}
-# user_parameter {
-n
-5
-PARAMETER_SIGNED_DEC
-USR
-}
-# hierarchies {
-zExtend:ZE5
+altrom.inc
+192b74eafa8debf2248ea73881e77f91
+lpm_decode.inc
+10da69a8bbd590d66779e7a142f73790
+stratix_ram_block.inc
+e3a03868917fb3dd57b6ed1dd195f22
 }
 # macro_sequence
 
@@ -1103,7 +475,7 @@ db|multicycle.(9).cnf
 # case_insensitive
 # source_file
 db|altsyncram_mv82.tdf
-9e0af7ad2eabf8496b626ebb4af89
+b95073c5148e4c98556acc16af2aa13
 7
 # used_port {
 wren_b
@@ -1264,8 +636,1678 @@ address_a0
 wk2test1.mif
 1cbe8f578f4fd4899e3536328ac3e494
 }
+# macro_sequence
+
+# end
+# entity
+mux5to1_8bit
+# storage
+db|multicycle.(10).cnf
+db|multicycle.(10).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+mux5to1_8bit.v
+bc26d366b2cc785d987ee08d414db54
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
 # hierarchies {
-memory:DataMem|DualMem:inst|altsyncram:altsyncram_component|altsyncram_mv82:auto_generated
+mux5to1_8bit:ALU_in1_mux
+mux5to1_8bit:ALU_in2_mux
+}
+# macro_sequence
+
+# end
+# entity
+ALU
+# storage
+db|multicycle.(11).cnf
+db|multicycle.(11).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+alu.v
+10d86afcd8a9926b98bf5772b79b55ea
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+ALU:ALU
+ALU:PC_ALU
+}
+# macro_sequence
+
+# end
+# entity
+RF
+# storage
+db|multicycle.(12).cnf
+db|multicycle.(12).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+rf.v
+9b5d31e9227a463c8b1829aaee61955
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+RF:RF_block
+}
+# macro_sequence
+
+# end
+# entity
+register_8bit_ir
+# storage
+db|multicycle.(13).cnf
+db|multicycle.(13).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+register_8bit.v
+10c921b7cedd63be60e9cd18b6bf232e
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+register_8bit_ir:IR1_reg
+register_8bit_ir:IR2_reg
+register_8bit_ir:IR3_reg
+}
+# macro_sequence
+
+# end
+# entity
+mux2to1_2bit
+# storage
+db|multicycle.(14).cnf
+db|multicycle.(14).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+mux2to1_2bit.v
+b8e15da514e2adb1ec2e7bfb5838dfc6
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+mux2to1_2bit:RWSel_mux
+mux2to1_2bit:R1Sel_mux
+}
+# macro_sequence
+
+# end
+# entity
+register_8bit
+# storage
+db|multicycle.(15).cnf
+db|multicycle.(15).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+register_8bit.v
+10c921b7cedd63be60e9cd18b6bf232e
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+register_8bit:MDR_reg
+register_8bit:PC1
+register_8bit:PC2
+register_8bit:PC3
+register_8bit:R1
+register_8bit:R2
+register_8bit:ALUOut_reg
+}
+# macro_sequence
+
+# end
+# entity
+sExtend
+# storage
+db|multicycle.(16).cnf
+db|multicycle.(16).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+extend.v
+5c236121c2e6d89aca2fa9479114f299
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+n
+4
+PARAMETER_SIGNED_DEC
+USR
+}
+# hierarchies {
+sExtend:SE4
+}
+# macro_sequence
+
+# end
+# entity
+zExtend
+# storage
+db|multicycle.(17).cnf
+db|multicycle.(17).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+extend.v
+5c236121c2e6d89aca2fa9479114f299
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+n
+3
+PARAMETER_SIGNED_DEC
+USR
+}
+# hierarchies {
+zExtend:ZE3
+}
+# macro_sequence
+
+# end
+# entity
+zExtend
+# storage
+db|multicycle.(18).cnf
+db|multicycle.(18).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+extend.v
+5c236121c2e6d89aca2fa9479114f299
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+n
+5
+PARAMETER_SIGNED_DEC
+USR
+}
+# hierarchies {
+zExtend:ZE5
+}
+# macro_sequence
+
+# end
+# entity
+altsyncram
+# storage
+db|multicycle.(20).cnf
+db|multicycle.(20).cnf
+# case_insensitive
+# source_file
+altsyncram.tdf
+5cfd856cb332de15aff17de3bf7c64
+7
+# user_parameter {
+BYTE_SIZE_BLOCK
+8
+PARAMETER_UNKNOWN
+DEF
+AUTO_CARRY_CHAINS
+ON
+AUTO_CARRY
+USR
+IGNORE_CARRY_BUFFERS
+OFF
+IGNORE_CARRY
+USR
+AUTO_CASCADE_CHAINS
+ON
+AUTO_CASCADE
+USR
+IGNORE_CASCADE_BUFFERS
+OFF
+IGNORE_CASCADE
+USR
+WIDTH_BYTEENA
+1
+PARAMETER_UNKNOWN
+DEF
+OPERATION_MODE
+BIDIR_DUAL_PORT
+PARAMETER_UNKNOWN
+USR
+WIDTH_A
+8
+PARAMETER_SIGNED_DEC
+USR
+WIDTHAD_A
+8
+PARAMETER_SIGNED_DEC
+USR
+NUMWORDS_A
+256
+PARAMETER_SIGNED_DEC
+USR
+OUTDATA_REG_A
+UNREGISTERED
+PARAMETER_UNKNOWN
+USR
+ADDRESS_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+DEF
+OUTDATA_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+USR
+WRCONTROL_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+DEF
+INDATA_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+DEF
+BYTEENA_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+DEF
+WIDTH_B
+8
+PARAMETER_SIGNED_DEC
+USR
+WIDTHAD_B
+8
+PARAMETER_SIGNED_DEC
+USR
+NUMWORDS_B
+256
+PARAMETER_SIGNED_DEC
+USR
+INDATA_REG_B
+CLOCK0
+PARAMETER_UNKNOWN
+USR
+WRCONTROL_WRADDRESS_REG_B
+CLOCK0
+PARAMETER_UNKNOWN
+USR
+RDCONTROL_REG_B
+CLOCK1
+PARAMETER_UNKNOWN
+DEF
+ADDRESS_REG_B
+CLOCK0
+PARAMETER_UNKNOWN
+USR
+OUTDATA_REG_B
+UNREGISTERED
+PARAMETER_UNKNOWN
+USR
+BYTEENA_REG_B
+CLOCK1
+PARAMETER_UNKNOWN
+DEF
+INDATA_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+WRCONTROL_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+ADDRESS_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+OUTDATA_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+USR
+RDCONTROL_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+BYTEENA_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+WIDTH_BYTEENA_A
+1
+PARAMETER_SIGNED_DEC
+USR
+WIDTH_BYTEENA_B
+1
+PARAMETER_SIGNED_DEC
+USR
+RAM_BLOCK_TYPE
+AUTO
+PARAMETER_UNKNOWN
+DEF
+BYTE_SIZE
+8
+PARAMETER_UNKNOWN
+DEF
+READ_DURING_WRITE_MODE_MIXED_PORTS
+OLD_DATA
+PARAMETER_UNKNOWN
+USR
+READ_DURING_WRITE_MODE_PORT_A
+NEW_DATA_NO_NBE_READ
+PARAMETER_UNKNOWN
+DEF
+READ_DURING_WRITE_MODE_PORT_B
+NEW_DATA_NO_NBE_READ
+PARAMETER_UNKNOWN
+DEF
+INIT_FILE
+trial1.mif
+PARAMETER_UNKNOWN
+USR
+INIT_FILE_LAYOUT
+PORT_A
+PARAMETER_UNKNOWN
+DEF
+MAXIMUM_DEPTH
+0
+PARAMETER_UNKNOWN
+DEF
+CLOCK_ENABLE_INPUT_A
+BYPASS
+PARAMETER_UNKNOWN
+USR
+CLOCK_ENABLE_INPUT_B
+BYPASS
+PARAMETER_UNKNOWN
+USR
+CLOCK_ENABLE_OUTPUT_A
+BYPASS
+PARAMETER_UNKNOWN
+USR
+CLOCK_ENABLE_OUTPUT_B
+BYPASS
+PARAMETER_UNKNOWN
+USR
+CLOCK_ENABLE_CORE_A
+USE_INPUT_CLKEN
+PARAMETER_UNKNOWN
+DEF
+CLOCK_ENABLE_CORE_B
+USE_INPUT_CLKEN
+PARAMETER_UNKNOWN
+DEF
+ENABLE_ECC
+FALSE
+PARAMETER_UNKNOWN
+DEF
+WIDTH_ECCSTATUS
+3
+PARAMETER_UNKNOWN
+DEF
+DEVICE_FAMILY
+Cyclone II
+PARAMETER_UNKNOWN
+USR
+CBXI_PARAMETER
+altsyncram_tp82
+PARAMETER_UNKNOWN
+USR
+}
+# used_port {
+wren_b
+-1
+3
+wren_a
+-1
+3
+q_b
+-1
+3
+q_a
+-1
+3
+data_b
+-1
+3
+data_a
+-1
+3
+clock0
+-1
+3
+address_b
+-1
+3
+address_a
+-1
+3
+addressstall_b
+-1
+1
+addressstall_a
+-1
+1
+aclr1
+-1
+1
+aclr0
+-1
+1
+rden_b
+-1
+2
+rden_a
+-1
+2
+clocken3
+-1
+2
+clocken2
+-1
+2
+clocken1
+-1
+2
+clocken0
+-1
+2
+clock1
+-1
+2
+byteena_b
+-1
+2
+byteena_a
+-1
+2
+}
+# include_file {
+a_rdenreg.inc
+3fcdce755959d5a8afbe64788d21fb
+lpm_mux.inc
+dd87bed9959d6126db09970164b7ba6
+lpm_decode.inc
+10da69a8bbd590d66779e7a142f73790
+altrom.inc
+192b74eafa8debf2248ea73881e77f91
+stratix_ram_block.inc
+e3a03868917fb3dd57b6ed1dd195f22
+aglobal111.inc
+9cc1f9de5ad83fc94dd171c3f7986bd
+altdpram.inc
+2f9e6727b678ffd76e72bc5a95a2630
+altram.inc
+ad5518b39ffd3cf1df377e6360d1c9b6
+}
+# macro_sequence
+
+# end
+# entity
+altsyncram_tp82
+# storage
+db|multicycle.(21).cnf
+db|multicycle.(21).cnf
+# case_insensitive
+# source_file
+db|altsyncram_tp82.tdf
+8574d7476c64eac86a83a9c253fa67
+7
+# used_port {
+wren_b
+-1
+3
+wren_a
+-1
+3
+q_b7
+-1
+3
+q_b6
+-1
+3
+q_b5
+-1
+3
+q_b4
+-1
+3
+q_b3
+-1
+3
+q_b2
+-1
+3
+q_b1
+-1
+3
+q_b0
+-1
+3
+q_a7
+-1
+3
+q_a6
+-1
+3
+q_a5
+-1
+3
+q_a4
+-1
+3
+q_a3
+-1
+3
+q_a2
+-1
+3
+q_a1
+-1
+3
+q_a0
+-1
+3
+data_b7
+-1
+3
+data_b6
+-1
+3
+data_b5
+-1
+3
+data_b4
+-1
+3
+data_b3
+-1
+3
+data_b2
+-1
+3
+data_b1
+-1
+3
+data_b0
+-1
+3
+data_a7
+-1
+3
+data_a6
+-1
+3
+data_a5
+-1
+3
+data_a4
+-1
+3
+data_a3
+-1
+3
+data_a2
+-1
+3
+data_a1
+-1
+3
+data_a0
+-1
+3
+clock0
+-1
+3
+address_b7
+-1
+3
+address_b6
+-1
+3
+address_b5
+-1
+3
+address_b4
+-1
+3
+address_b3
+-1
+3
+address_b2
+-1
+3
+address_b1
+-1
+3
+address_b0
+-1
+3
+address_a7
+-1
+3
+address_a6
+-1
+3
+address_a5
+-1
+3
+address_a4
+-1
+3
+address_a3
+-1
+3
+address_a2
+-1
+3
+address_a1
+-1
+3
+address_a0
+-1
+3
+}
+# memory_file {
+trial1.mif
+55dcb65bd7af3fbe55edd0592fb7c5
+}
+# macro_sequence
+
+# end
+# entity
+multicycle
+# storage
+db|multicycle.(0).cnf
+db|multicycle.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+multicycle.v
+e73a71f6cc604091a05d53b9cafbcff3
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+OP_STOP
+0001
+PARAMETER_UNSIGNED_BIN
+DEF
+OP_ORI
+111
+PARAMETER_UNSIGNED_BIN
+DEF
+}
+# hierarchies {
+|
+}
+# macro_sequence
+
+# end
+# entity
+FSMExecute
+# storage
+db|multicycle.(3).cnf
+db|multicycle.(3).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+fsm.v
+d7bdc3362f118518ba83bca397acd4b
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+OP_LOAD
+0000
+PARAMETER_UNSIGNED_BIN
+DEF
+OP_STORE
+0010
+PARAMETER_UNSIGNED_BIN
+DEF
+OP_ADD
+0100
+PARAMETER_UNSIGNED_BIN
+DEF
+OP_SUB
+0110
+PARAMETER_UNSIGNED_BIN
+DEF
+OP_NAND
+1000
+PARAMETER_UNSIGNED_BIN
+DEF
+OP_BZ
+0101
+PARAMETER_UNSIGNED_BIN
+DEF
+OP_BNZ
+1001
+PARAMETER_UNSIGNED_BIN
+DEF
+OP_BPZ
+1101
+PARAMETER_UNSIGNED_BIN
+DEF
+OP_STOP
+0001
+PARAMETER_UNSIGNED_BIN
+DEF
+OP_NOP
+1010
+PARAMETER_UNSIGNED_BIN
+DEF
+OP_ORI
+111
+PARAMETER_UNSIGNED_BIN
+DEF
+OP_SHIFT
+011
+PARAMETER_UNSIGNED_BIN
+DEF
+ALU_ADD
+000
+PARAMETER_UNSIGNED_BIN
+DEF
+ALU_SUB
+001
+PARAMETER_UNSIGNED_BIN
+DEF
+ALU_NAND
+011
+PARAMETER_UNSIGNED_BIN
+DEF
+ALU_SHIFT
+100
+PARAMETER_UNSIGNED_BIN
+DEF
+ALU_ORI
+010
+PARAMETER_UNSIGNED_BIN
+DEF
+}
+# hierarchies {
+FSMExecute:FSMExecute
+}
+# macro_sequence
+
+# end
+# entity
+FSMWB
+# storage
+db|multicycle.(4).cnf
+db|multicycle.(4).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+fsm.v
+d7bdc3362f118518ba83bca397acd4b
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+OP_LOAD
+0000
+PARAMETER_UNSIGNED_BIN
+DEF
+OP_STORE
+0010
+PARAMETER_UNSIGNED_BIN
+DEF
+OP_ADD
+0100
+PARAMETER_UNSIGNED_BIN
+DEF
+OP_SUB
+0110
+PARAMETER_UNSIGNED_BIN
+DEF
+OP_NAND
+1000
+PARAMETER_UNSIGNED_BIN
+DEF
+OP_BZ
+0101
+PARAMETER_UNSIGNED_BIN
+DEF
+OP_BNZ
+1001
+PARAMETER_UNSIGNED_BIN
+DEF
+OP_BPZ
+1101
+PARAMETER_UNSIGNED_BIN
+DEF
+OP_STOP
+0001
+PARAMETER_UNSIGNED_BIN
+DEF
+OP_NOP
+1010
+PARAMETER_UNSIGNED_BIN
+DEF
+OP_ORI
+111
+PARAMETER_UNSIGNED_BIN
+DEF
+OP_SHIFT
+011
+PARAMETER_UNSIGNED_BIN
+DEF
+}
+# hierarchies {
+FSMWB:FSMWB
+}
+# macro_sequence
+
+# end
+# entity
+DataHazardControl
+# storage
+db|multicycle.(7).cnf
+db|multicycle.(7).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+fsm.v
+d7bdc3362f118518ba83bca397acd4b
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# user_parameter {
+OP_LOAD
+0000
+PARAMETER_UNSIGNED_BIN
+DEF
+OP_STORE
+0010
+PARAMETER_UNSIGNED_BIN
+DEF
+OP_ADD
+0100
+PARAMETER_UNSIGNED_BIN
+DEF
+OP_SUB
+0110
+PARAMETER_UNSIGNED_BIN
+DEF
+OP_NAND
+1000
+PARAMETER_UNSIGNED_BIN
+DEF
+OP_BZ
+0101
+PARAMETER_UNSIGNED_BIN
+DEF
+OP_BNZ
+1001
+PARAMETER_UNSIGNED_BIN
+DEF
+OP_BPZ
+1101
+PARAMETER_UNSIGNED_BIN
+DEF
+OP_STOP
+0001
+PARAMETER_UNSIGNED_BIN
+DEF
+OP_NOP
+1010
+PARAMETER_UNSIGNED_BIN
+DEF
+OP_ORI
+111
+PARAMETER_UNSIGNED_BIN
+DEF
+OP_SHIFT
+011
+PARAMETER_UNSIGNED_BIN
+DEF
+}
+# hierarchies {
+DataHazardControl:DataHazardControl
+}
+# macro_sequence
+
+# end
+# entity
+DualMem
+# storage
+db|multicycle.(19).cnf
+db|multicycle.(19).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+dualmem.v
+a7cbde6da5b759cf58298353f1fc7b7e
+8
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+IGNORE_VERILOG_INITIAL_CONSTRUCTS
+OFF
+VERILOG_CONSTANT_LOOP_LIMIT
+5000
+VERILOG_NON_CONSTANT_LOOP_LIMIT
+250
+}
+# hierarchies {
+memory:DataMem|DualMem:inst
+}
+# macro_sequence
+ALTERA_RESERVED_QISALTERA_RESERVED_QIS
+# end
+# entity
+altsyncram
+# storage
+db|multicycle.(22).cnf
+db|multicycle.(22).cnf
+# case_insensitive
+# source_file
+altsyncram.tdf
+5cfd856cb332de15aff17de3bf7c64
+7
+# user_parameter {
+BYTE_SIZE_BLOCK
+8
+PARAMETER_UNKNOWN
+DEF
+AUTO_CARRY_CHAINS
+ON
+AUTO_CARRY
+USR
+IGNORE_CARRY_BUFFERS
+OFF
+IGNORE_CARRY
+USR
+AUTO_CASCADE_CHAINS
+ON
+AUTO_CASCADE
+USR
+IGNORE_CASCADE_BUFFERS
+OFF
+IGNORE_CASCADE
+USR
+WIDTH_BYTEENA
+1
+PARAMETER_UNKNOWN
+DEF
+OPERATION_MODE
+BIDIR_DUAL_PORT
+PARAMETER_UNKNOWN
+USR
+WIDTH_A
+8
+PARAMETER_SIGNED_DEC
+USR
+WIDTHAD_A
+8
+PARAMETER_SIGNED_DEC
+USR
+NUMWORDS_A
+256
+PARAMETER_SIGNED_DEC
+USR
+OUTDATA_REG_A
+UNREGISTERED
+PARAMETER_UNKNOWN
+USR
+ADDRESS_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+DEF
+OUTDATA_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+USR
+WRCONTROL_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+DEF
+INDATA_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+DEF
+BYTEENA_ACLR_A
+NONE
+PARAMETER_UNKNOWN
+DEF
+WIDTH_B
+8
+PARAMETER_SIGNED_DEC
+USR
+WIDTHAD_B
+8
+PARAMETER_SIGNED_DEC
+USR
+NUMWORDS_B
+256
+PARAMETER_SIGNED_DEC
+USR
+INDATA_REG_B
+CLOCK0
+PARAMETER_UNKNOWN
+USR
+WRCONTROL_WRADDRESS_REG_B
+CLOCK0
+PARAMETER_UNKNOWN
+USR
+RDCONTROL_REG_B
+CLOCK1
+PARAMETER_UNKNOWN
+DEF
+ADDRESS_REG_B
+CLOCK0
+PARAMETER_UNKNOWN
+USR
+OUTDATA_REG_B
+UNREGISTERED
+PARAMETER_UNKNOWN
+USR
+BYTEENA_REG_B
+CLOCK1
+PARAMETER_UNKNOWN
+DEF
+INDATA_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+WRCONTROL_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+ADDRESS_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+OUTDATA_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+USR
+RDCONTROL_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+BYTEENA_ACLR_B
+NONE
+PARAMETER_UNKNOWN
+DEF
+WIDTH_BYTEENA_A
+1
+PARAMETER_SIGNED_DEC
+USR
+WIDTH_BYTEENA_B
+1
+PARAMETER_SIGNED_DEC
+USR
+RAM_BLOCK_TYPE
+AUTO
+PARAMETER_UNKNOWN
+DEF
+BYTE_SIZE
+8
+PARAMETER_UNKNOWN
+DEF
+READ_DURING_WRITE_MODE_MIXED_PORTS
+OLD_DATA
+PARAMETER_UNKNOWN
+USR
+READ_DURING_WRITE_MODE_PORT_A
+NEW_DATA_NO_NBE_READ
+PARAMETER_UNKNOWN
+DEF
+READ_DURING_WRITE_MODE_PORT_B
+NEW_DATA_NO_NBE_READ
+PARAMETER_UNKNOWN
+DEF
+INIT_FILE
+trial2.mif
+PARAMETER_UNKNOWN
+USR
+INIT_FILE_LAYOUT
+PORT_A
+PARAMETER_UNKNOWN
+DEF
+MAXIMUM_DEPTH
+0
+PARAMETER_UNKNOWN
+DEF
+CLOCK_ENABLE_INPUT_A
+BYPASS
+PARAMETER_UNKNOWN
+USR
+CLOCK_ENABLE_INPUT_B
+BYPASS
+PARAMETER_UNKNOWN
+USR
+CLOCK_ENABLE_OUTPUT_A
+BYPASS
+PARAMETER_UNKNOWN
+USR
+CLOCK_ENABLE_OUTPUT_B
+BYPASS
+PARAMETER_UNKNOWN
+USR
+CLOCK_ENABLE_CORE_A
+USE_INPUT_CLKEN
+PARAMETER_UNKNOWN
+DEF
+CLOCK_ENABLE_CORE_B
+USE_INPUT_CLKEN
+PARAMETER_UNKNOWN
+DEF
+ENABLE_ECC
+FALSE
+PARAMETER_UNKNOWN
+DEF
+WIDTH_ECCSTATUS
+3
+PARAMETER_UNKNOWN
+DEF
+DEVICE_FAMILY
+Cyclone II
+PARAMETER_UNKNOWN
+USR
+CBXI_PARAMETER
+altsyncram_up82
+PARAMETER_UNKNOWN
+USR
+}
+# used_port {
+wren_b
+-1
+3
+wren_a
+-1
+3
+q_b
+-1
+3
+q_a
+-1
+3
+data_b
+-1
+3
+data_a
+-1
+3
+clock0
+-1
+3
+address_b
+-1
+3
+address_a
+-1
+3
+addressstall_b
+-1
+1
+addressstall_a
+-1
+1
+aclr1
+-1
+1
+aclr0
+-1
+1
+rden_b
+-1
+2
+rden_a
+-1
+2
+clocken3
+-1
+2
+clocken2
+-1
+2
+clocken1
+-1
+2
+clocken0
+-1
+2
+clock1
+-1
+2
+byteena_b
+-1
+2
+byteena_a
+-1
+2
+}
+# include_file {
+aglobal111.inc
+9cc1f9de5ad83fc94dd171c3f7986bd
+altdpram.inc
+2f9e6727b678ffd76e72bc5a95a2630
+altram.inc
+ad5518b39ffd3cf1df377e6360d1c9b6
+a_rdenreg.inc
+3fcdce755959d5a8afbe64788d21fb
+lpm_mux.inc
+dd87bed9959d6126db09970164b7ba6
+lpm_decode.inc
+10da69a8bbd590d66779e7a142f73790
+altrom.inc
+192b74eafa8debf2248ea73881e77f91
+stratix_ram_block.inc
+e3a03868917fb3dd57b6ed1dd195f22
+}
+# hierarchies {
+memory:DataMem|DualMem:inst|altsyncram:altsyncram_component
+}
+# macro_sequence
+
+# end
+# entity
+altsyncram_up82
+# storage
+db|multicycle.(23).cnf
+db|multicycle.(23).cnf
+# case_insensitive
+# source_file
+db|altsyncram_up82.tdf
+1ddefe2a3c3be9d0dc278e7750ab21c
+7
+# used_port {
+wren_b
+-1
+3
+wren_a
+-1
+3
+q_b7
+-1
+3
+q_b6
+-1
+3
+q_b5
+-1
+3
+q_b4
+-1
+3
+q_b3
+-1
+3
+q_b2
+-1
+3
+q_b1
+-1
+3
+q_b0
+-1
+3
+q_a7
+-1
+3
+q_a6
+-1
+3
+q_a5
+-1
+3
+q_a4
+-1
+3
+q_a3
+-1
+3
+q_a2
+-1
+3
+q_a1
+-1
+3
+q_a0
+-1
+3
+data_b7
+-1
+3
+data_b6
+-1
+3
+data_b5
+-1
+3
+data_b4
+-1
+3
+data_b3
+-1
+3
+data_b2
+-1
+3
+data_b1
+-1
+3
+data_b0
+-1
+3
+data_a7
+-1
+3
+data_a6
+-1
+3
+data_a5
+-1
+3
+data_a4
+-1
+3
+data_a3
+-1
+3
+data_a2
+-1
+3
+data_a1
+-1
+3
+data_a0
+-1
+3
+clock0
+-1
+3
+address_b7
+-1
+3
+address_b6
+-1
+3
+address_b5
+-1
+3
+address_b4
+-1
+3
+address_b3
+-1
+3
+address_b2
+-1
+3
+address_b1
+-1
+3
+address_b0
+-1
+3
+address_a7
+-1
+3
+address_a6
+-1
+3
+address_a5
+-1
+3
+address_a4
+-1
+3
+address_a3
+-1
+3
+address_a2
+-1
+3
+address_a1
+-1
+3
+address_a0
+-1
+3
+}
+# memory_file {
+trial2.mif
+5fd072d645cb23a81a68cc45a8fd25c
+}
+# hierarchies {
+memory:DataMem|DualMem:inst|altsyncram:altsyncram_component|altsyncram_up82:auto_generated
 }
 # macro_sequence
 

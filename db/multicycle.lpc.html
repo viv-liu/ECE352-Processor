@@ -64,22 +64,6 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ALU2_mux</TD>
-<TD >43</TD>
-<TD >6</TD>
-<TD >0</TD>
-<TD >6</TD>
-<TD >8</TD>
-<TD >6</TD>
-<TD >6</TD>
-<TD >6</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-</TR>
-<TR >
 <TD >RegMux</TD>
 <TD >17</TD>
 <TD >0</TD>
@@ -240,22 +224,6 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >PC0</TD>
-<TD >11</TD>
-<TD >1</TD>
-<TD >0</TD>
-<TD >1</TD>
-<TD >8</TD>
-<TD >1</TD>
-<TD >1</TD>
-<TD >1</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-</TR>
-<TR >
 <TD >MDR_reg</TD>
 <TD >11</TD>
 <TD >0</TD>
@@ -281,22 +249,6 @@
 <TD >0</TD>
 <TD >0</TD>
 <TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-<TD >0</TD>
-</TR>
-<TR >
-<TD >IR4_reg</TD>
-<TD >11</TD>
-<TD >1</TD>
-<TD >0</TD>
-<TD >1</TD>
-<TD >8</TD>
-<TD >1</TD>
-<TD >1</TD>
-<TD >1</TD>
 <TD >0</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -368,6 +320,70 @@
 <TD >0</TD>
 </TR>
 <TR >
+<TD >ALU_in2_mux</TD>
+<TD >43</TD>
+<TD >6</TD>
+<TD >0</TD>
+<TD >6</TD>
+<TD >8</TD>
+<TD >6</TD>
+<TD >6</TD>
+<TD >6</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >ALU_in1_mux</TD>
+<TD >19</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >8</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >ALU_in2_BP_mux</TD>
+<TD >17</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >8</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >ALU_in1_BP_mux</TD>
+<TD >17</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >8</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
 <TD >ALU</TD>
 <TD >19</TD>
 <TD >0</TD>
@@ -384,8 +400,24 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ALU_in1_mux</TD>
-<TD >19</TD>
+<TD >DataMem_address_BP_mux</TD>
+<TD >17</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >8</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >DataMem_data_BP_mux</TD>
+<TD >17</TD>
 <TD >0</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -464,6 +496,22 @@
 <TD >0</TD>
 </TR>
 <TR >
+<TD >DataHazardControl</TD>
+<TD >24</TD>
+<TD >0</TD>
+<TD >10</TD>
+<TD >0</TD>
+<TD >4</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
 <TD >FSMWB</TD>
 <TD >4</TD>
 <TD >0</TD>
@@ -481,11 +529,11 @@
 </TR>
 <TR >
 <TD >FSMExecute</TD>
-<TD >8</TD>
+<TD >12</TD>
 <TD >7</TD>
 <TD >0</TD>
 <TD >7</TD>
-<TD >20</TD>
+<TD >22</TD>
 <TD >7</TD>
 <TD >7</TD>
 <TD >7</TD>

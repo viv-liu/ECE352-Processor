@@ -42,12 +42,12 @@ wire	clock, reset;
 wire	MDRLoad, MemRead, MemWrite, RegIn;
 wire	FlagWrite, R1Sel_OR, RFWrite;
 wire	[7:0] R2wire, R1wire, RFout1wire, RFout2wire;
-wire	[7:0] ALU2wire, ALUwire, ALUOut, MDRwire, MEMwire;
+wire	[7:0] ALU_in2, ALUwire, ALUOut, MDRwire, MEMwire;
 wire	[7:0] SE4wire, ZE5wire, ZE3wire, RegWire;
 wire	[7:0] reg0, reg1, reg2, reg3;
 wire	[7:0] hexin0, hexin1;
 wire	[7:0] constant8bit_d1;
-wire	[2:0] ALUOp, ALU2;
+wire	[2:0] ALUOp, ALU_in2_mux_ctrl;
 wire	[1:0] R1_in;
 wire	Nwire, Zwire;
 reg		N, Z;
@@ -58,18 +58,28 @@ wire stop_operation_finished;
 wire [7:0] q_pc;
 
 
-wire [7:0]mux_PC_out, PC_ALUwire;
+wire [7:0] mux_PC_out, PC_ALUwire;
 wire PCSel;
 
-wire [7:0]IR1_to_IR2, IR2_to_IR3, IR3_to_IR4, IR4_to_regw;
-wire [1:0]RW_in;
+wire [7:0] IR1_to_IR2, IR2_to_IR3, IR3_to_regw;
+wire [1:0] RW_in;
 
 wire RWSel;
 
 wire [2:0] ALU_in1_mux_ctrl;
 wire [7:0] ALU_in1;
 
-wire [7:0] PC0_to_PC1, PC1_to_PC2, PC2_to_PC3, PC3_out;
+wire [7:0] PC1_to_PC2, PC2_to_PC3, PC3_out;
+
+wire squashIR1, squashIR2;
+
+// data hazard
+
+wire ALU_in1_BPSel, ALU_in2_BPSel;
+wire [7:0]ALU_in1_muxOut, ALU_in2_muxOut;
+
+wire DataMem_data_BPSel, DataMem_address_BPSel;
+wire [7:0]DataMem_data, DataMem_address;
 
 
 // ------------------------ Parameters ------------------------------ //
@@ -97,32 +107,41 @@ HEXs	HEX_display(
 
  // (EXEC stage) Control curcuit for ALU operations. 
 FSMExecute FSMExecute(
-	.reset(reset),.clock(clock), .instr(IR3_to_IR4[3:0]), .N(N), .Z(Z), 
-	.MemRead(MemRead),.MemWrite(MemWrite), .MDRLoad(MDRLoad), .ALU2(ALU2), .ALUop(ALUOp), 
-	.FlagWrite(FlagWrite), .ALU_in1_mux_ctrl(ALU_in1_mux_ctrl), .PCSel(PCSel), .stop_operation_finished(stop_operation_finished)
+	.reset(reset),.clock(clock), .instr(IR2_to_IR3), .N(N), .Z(Z), 
+	.MemRead(MemRead),.MemWrite(MemWrite), .MDRLoad(MDRLoad), .ALU_in2_mux_ctrl(ALU_in2_mux_ctrl), .ALUop(ALUOp), 
+	.FlagWrite(FlagWrite), .ALU_in1_mux_ctrl(ALU_in1_mux_ctrl), .PCSel(PCSel), .stop_operation_finished(stop_operation_finished), 
+	.squashIR1(squashIR1), .squashIR2(squashIR2)
 );
 
 
 // (WB stage) Control curcuit for writing the results of ALU to where they are meant to go. Or storing a load.
 FSMWB		FSMWB(
-	.instr(IR4_to_regw[3:0]),
+	.instr(IR3_to_regw[3:0]),
 	.RFWrite(RFWrite),.RegIn(RegIn), .RWSel (RWSel)
 );
 
 // (RF stage) Really just checking if its the ori instruction, then the reg1 input to rf is muxed a constant 1 instead of from the instruction bits
 /*FSMRF	FSMRF(
-	.instr (IR2_to_IR3[3:0]),
+	.instr (IR1_to_IR2[3:0]),
 	.R1Sel_OR (R1Sel_OR)
 	); */
 
+// (Data Hazard Detection)
+DataHazardControl	DataHazardControl
+(	
+	.IR1(IR1_to_IR2), .IR2(IR2_to_IR3), .IR3(IR3_to_regw),
+	
+	.ALU_in1_BPSel(ALU_in1_BPSel), .ALU_in2_BPSel(ALU_in2_BPSel), 
+	.DataMem_data_BPSel(DataMem_data_BPSel), .DataMem_address_BPSel(DataMem_address_BPSel)
+);
 
 
 memory DataMem(
 	.MemRead(MemRead),
-	.data(R1wire),
-	.address(R2wire),
+	.data(DataMem_data),
+	.address(DataMem_address),
 	.wren(MemWrite),
-	.address_pc(PC0_to_PC1),
+	.address_pc(PC1_to_PC2),
 	.clock(clock),
 	
 	.q(MEMwire),
@@ -130,52 +149,84 @@ memory DataMem(
 	);
 	
 	
+//bypasses
+mux2to1_8bit 		DataMem_data_BP_mux(
+	.data0x(R1wire),.data1x(ALUOut),
+	.sel(DataMem_data_BPSel),.result(DataMem_data)
+);
+
+mux2to1_8bit 		DataMem_address_BP_mux(
+	.data0x(R2wire),.data1x(ALUOut),
+	.sel(DataMem_address_BPSel),.result(DataMem_address)
+);
+
+
 
 	
-mux5to1_8bit 		ALU_in1_mux(
-	.data0x(R1wire),.data1x(PC3_out),.data2x(),
-	.data3x(),.data4x(),.sel(ALU_in1_mux_ctrl),.result(ALU_in1)
-);	
-	
 ALU		ALU(
-	.in1(ALU_in1),.in2(ALU2wire),.out(ALUwire),
+	.in1(ALU_in1),.in2(ALU_in2),.out(ALUwire),
 	.ALUOp(ALUOp),.N(Nwire),.Z(Zwire)
 );
 
+//bypasses
+mux2to1_8bit 		ALU_in1_BP_mux(
+	.data0x(ALU_in1_muxOut),.data1x(ALUOut),
+	.sel(ALU_in1_BPSel),.result(ALU_in1)
+);
+
+mux2to1_8bit 		ALU_in2_BP_mux(
+	.data0x(ALU_in2_muxOut),.data1x(ALUOut),
+	.sel(ALU_in2_BPSel),.result(ALU_in2)
+);
+
+
+//normal operation muxes
+mux5to1_8bit 		ALU_in1_mux(
+	.data0x(R1wire),.data1x(PC3_out),.data2x(),
+	.data3x(),.data4x(),.sel(ALU_in1_mux_ctrl),.result(ALU_in1_muxOut)
+);	
+
+mux5to1_8bit 		ALU_in2_mux(
+	.data0x(R2wire),.data1x(constant8bit_d1),.data2x(SE4wire),
+	.data3x(ZE5wire),.data4x(ZE3wire),.sel(ALU_in2_mux_ctrl),.result(ALU_in2_muxOut)
+);
+
+	
+
+
+
 RF		RF_block(
 	.clock(clock),.reset(reset),.RFWrite(RFWrite),
-	.dataw(RegWire),.reg1(R1_in),.reg2(IR2_to_IR3[5:4]),
+	.dataw(RegWire),.reg1(R1_in),.reg2(IR1_to_IR2[5:4]),
 	.regw(RW_in),.data1(RFout1wire),.data2(RFout2wire),
 	.r0(reg0),.r1(reg1),.r2(reg2),.r3(reg3)
 );
 
 //***************************
-// Decode and IR chain
- 
+//  IR chain
+
+
+
 register_8bit_ir	IR1_reg(
-	.clock(clock),.aclr(reset),.enable(1'b1),
+	.clock(clock),.aclr(reset|squashIR1|stop_operation_finished),.enable(1'b1),
 	.data(q_pc),.q(IR1_to_IR2)
 );
 
-
 register_8bit_ir	IR2_reg(
-	.clock(clock),.aclr(reset),.enable(1'b1),
+	.clock(clock),.aclr(reset|squashIR2|stop_operation_finished),.enable(1'b1),
 	.data(IR1_to_IR2),.q(IR2_to_IR3)
 );
 
+
+
 register_8bit_ir	IR3_reg(
 	.clock(clock),.aclr(reset),.enable(1'b1),
-	.data(IR2_to_IR3),.q(IR3_to_IR4)
-);
-
-register_8bit_ir	IR4_reg(
-	.clock(clock),.aclr(reset),.enable(1'b1),
-	.data(IR3_to_IR4),.q(IR4_to_regw)
+	.data(IR2_to_IR3),.q(IR3_to_regw)
 );
 
 
 mux2to1_2bit		RWSel_mux(
-	.data0x(IR4_to_regw[7:6]),.data1x(constant8bit_d1[1:0]),
+	.data0x(IR3_to_regw[7:6]),.data1x(constant8bit_d1[1:0]),
 	.sel(RWSel),.result(RW_in)
 );
 
@@ -191,14 +242,9 @@ register_8bit	MDR_reg(
 
 
 
-register_8bit	PC0(
-	.clock(clock),.aclr(reset),.enable(1'b1),
-	.data(mux_PC_out),.q(PC0_to_PC1)
-);
-
 register_8bit	PC1(
 	.clock(clock),.aclr(reset),.enable(1'b1),
-	.data(PC0_to_PC1),.q(PC1_to_PC2)
+	.data(mux_PC_out),.q(PC1_to_PC2)
 );
 
 register_8bit	PC2(
@@ -220,7 +266,7 @@ mux2to1_8bit 		PcSel_mux(
 );
 
 ALU		PC_ALU(
-	.in1(8'b1),.in2(PC0_to_PC1),.out(PC_ALUwire),
+	.in1(8'b1),.in2(PC1_to_PC2),.out(PC_ALUwire),
 	.ALUOp(3'b000),.N(),.Z()
 );
 //****************************
@@ -242,11 +288,11 @@ register_8bit	ALUOut_reg(
 );
 
 mux2to1_2bit		R1Sel_mux(
-	.data0x(IR2_to_IR3[7:6]),.data1x(constant8bit_d1[1:0]),
+	.data0x(IR1_to_IR2[7:6]),.data1x(constant8bit_d1[1:0]),
 	.sel(R1Sel_OR),.result(R1_in)
 );
 
-assign R1Sel_OR = (IR2_to_IR3[2:0] == OP_ORI) ? 1 : 0;
+assign R1Sel_OR = (IR1_to_IR2[2:0] == OP_ORI) ? 1 : 0;
 
 
 
@@ -258,14 +304,10 @@ mux2to1_8bit 		RegMux(
 
 
 
-mux5to1_8bit 		ALU2_mux(
-	.data0x(R2wire),.data1x(constant8bit_d1),.data2x(SE4wire),
-	.data3x(ZE5wire),.data4x(ZE3wire),.sel(ALU2),.result(ALU2wire)
-);
 
-sExtend		SE4(.in(IR3_to_IR4[7:4]),.out(SE4wire));
-zExtend		ZE3(.in(IR3_to_IR4[5:3]),.out(ZE3wire));
-zExtend		ZE5(.in(IR3_to_IR4[7:3]),.out(ZE5wire));
+sExtend		SE4(.in(IR2_to_IR3[7:4]),.out(SE4wire));
+zExtend		ZE3(.in(IR2_to_IR3[5:3]),.out(ZE3wire));
+zExtend		ZE5(.in(IR2_to_IR3[7:3]),.out(ZE5wire));
 
 // define parameter for the data size to be extended
 defparam	SE4.n = 4;
